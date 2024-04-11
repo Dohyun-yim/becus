@@ -1,0 +1,19 @@
+/* InfoCus 컴포넌트의 스타일 */
+.cusInfo {
+  margin-top: 20px;
+}
+
+.cusInfo table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cusInfo table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.cusInfo table td:first-child {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}

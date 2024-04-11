@@ -1,0 +1,28 @@
+.allcusone {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.topcusone {
+  margin-bottom: 20px;
+}
+
+.middlecusone {
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+.middletitlecusone {
+  border-bottom: 1px solid #ccc;
+  font-size: 30px;
+  color: #1d2c45;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.middlecontentscusone {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}

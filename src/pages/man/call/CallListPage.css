@@ -1,0 +1,24 @@
+.keyword-container {
+  display: block;
+  flex-wrap: wrap; /* 키워드가 넘칠 경우 자동으로 다음 줄로 이동하도록 설정 */
+}
+
+.keyword-box {
+  display: inline-block;
+  padding: 5px 10px; /* 각 키워드 네모 상자의 padding 설정 */
+  margin: 5px; /* 각 키워드 네모 상자 간의 간격 설정 */
+  border: 1px solid #13233c; /* 키워드 네모 상자 테두리 스타일 설정 */
+  border-radius: 10px; /* 키워드 네모 상자 테두리 둥글기 설정 */
+  background-color: transparent; /* 키워드 네모 상자 배경색 설정 */
+}
+
+/* ManCallPage.css 파일 */
+.link-more {
+  color: rgb(159, 159, 159);
+  transition: color 0.1s ease;
+}
+
+.link-more:hover {
+  color: #13233c;
+  font-weight: bold;
+}

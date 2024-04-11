@@ -1,0 +1,30 @@
+/* SearchMan.module.css */
+.searchContainer {
+  align-items: center;
+  display: flex;
+}
+
+.searchInput {
+  height: 40px;
+  width: 200px;
+  border: 1.5px solid #a7a8aa; /* 검색창 테두리 설정 */
+  border-radius: 5px; /* 검색창 테두리를 조금 둥글게 설정 */
+  font-size: 13px;
+}
+
+.searchButton {
+  height: 40px;
+  width: 40px;
+  background-color: #13233c; /* 버튼 색상을 남색으로 설정 */
+  border: none;
+  border-radius: 5px; /* 버튼 테두리를 조금 둥글게 설정 */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchButton img {
+  width: 20px; /* 아이콘 크기 설정 */
+  height: 20px; /* 아이콘 크기 설정 */
+}

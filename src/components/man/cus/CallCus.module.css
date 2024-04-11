@@ -1,0 +1,17 @@
+/* CallCus.module.css */
+
+.cusCall {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cusCall th,
+.cusCall td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cusCall th {
+  text-align: left;
+  background-color: #f2f2f2;
+}

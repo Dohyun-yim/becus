@@ -1,0 +1,4 @@
+.tablePageContainer {
+  margin-top: 30px; /* 버튼과 테이블 사이의 간격을 조정할 여백 값을 지정합니다. */
+  margin-left: 55px;
+}

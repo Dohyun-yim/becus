@@ -1,0 +1,26 @@
+.widgets {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 30px;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 5px 30px;
+}
+
+.box2 {
+  width: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box3 {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,33 @@
+.cusSearch {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* 가운데 정렬을 위해 margin-left와 margin-right를 auto로 설정합니다. */
+  margin-right: auto;
+  margin-bottom: 15px; /* 각 검색창 사이의 간격 조절을 위해 추가 */
+  width: 50%;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  border-collapse: collapse;
+  overflow-x: auto; /* 가로 스크롤이 필요한 경우 스크롤 표시 */
+}
+
+.cusSearchInput {
+  flex: 1;
+  max-width: 800px;
+  padding: 10px;
+  border: 1px solid #13233c23;
+  border-radius: 15px;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 17px;
+}
+
+.cusSearchInput::placeholder {
+  color: #a0aec0;
+}
+
+.cusSearchInput:focus {
+  border: 2px solid #415b84;
+}

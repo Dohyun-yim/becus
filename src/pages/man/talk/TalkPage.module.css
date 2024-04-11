@@ -1,0 +1,59 @@
+html {
+  overflow-y: scroll; /* 오타 수정 */
+}
+
+.alltalk {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.middletalk {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+}
+
+.button-container-talk {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.button-each-talk {
+  width: 250px;
+  margin: 0 20px; /* 버튼 사이의 간격 조정 */
+  border: 1px solid rgba(128, 128, 128, 0.293);
+  padding: 10px 20px; /* 버튼 내부 여백 조정 */
+  background-color: #f2f2f2; /* 배경색 설정 */
+  color: #7572727f; /* 글자색 설정 */
+  font-size: 20px; /* 폰트 크기 설정 */
+  font-weight: 600; /* 글자 굵기 설정 */
+  border-radius: 30px; /* 버튼을 둥글게 만듦 */
+  cursor: pointer; /* 마우스 커서 모양 변경 */
+  transition: background-color 0.3s, color 0.3s; /* hover 시 부드러운 전환 효과 */
+}
+
+.button-each-talk:hover {
+  background-color: #ddd; /* hover 시 배경색 변경 */
+}
+
+.active {
+  background-color: #13233c; /* 선택된 버튼 배경색 */
+  color: #fff; /* 선택된 버튼 글자색 */
+}
+
+.bottomtalk {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; /* 원하는 여백 값으로 조정하세요 */
+  /* 기타 원하는 스타일 추가 */
+}
+
+@media (max-width: 768px) {
+  .button-container-talk {
+    flex-direction: column; /* 화면이 작아질 때 세로로 정렬 */
+    align-items: flex-start;
+  }
+}

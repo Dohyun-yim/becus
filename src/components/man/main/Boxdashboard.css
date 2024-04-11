@@ -1,0 +1,32 @@
+.Boxdashboard {
+  display: flex;
+  flex: 1;
+  border: 2px solid #13233c;
+  border-radius: 20px;
+  min-height: 60px;
+  max-height: 100px;
+  max-width: 240px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(17, 135, 231, 0.171);
+}
+
+.right-db {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+
+.title-db {
+  font-size: 25px;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.explain-db {
+  font-size: 14px;
+  margin: 0;
+  padding-top: 0;
+  padding-right: 10px;
+}

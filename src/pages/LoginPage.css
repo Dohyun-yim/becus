@@ -1,0 +1,27 @@
+/* 이미지 스타일 */
+.loginImg {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.login-title {
+  color: #13233c;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.login-intro {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+.login-becusImg {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

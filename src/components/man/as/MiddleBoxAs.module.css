@@ -1,0 +1,79 @@
+.middleboxas {
+  background-color: rgba(255, 255, 255, 0.619);
+  border: 1px solid #13233c25;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column; /* 모바일 화면에서 세로로 정렬 */
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  height: auto; /* 높이 자동 조정 */
+  width: 90%; /* 가로폭 조정 */
+  max-width: 600px; /* 최대 가로폭 설정 */
+  margin: 45px auto; /* 가운데 정렬 */
+}
+
+.middleboxas > * {
+  margin-bottom: 20px; /* 모바일 화면에서 아이템 간 여백 설정 */
+}
+
+/* 요청 상태 스타일 */
+.requestas,
+.acceptas,
+.completedas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px; /* 왼쪽 여백 추가 */
+  margin-right: 20px; /* 오른쪽 여백 추가 */
+}
+
+/* 수량 스타일 */
+.numrequestas,
+.numacceptas,
+.numcompletedas {
+  font-size: 80px;
+  font-weight: 600;
+}
+
+/* 요청 대기 수량 색상 */
+.numrequestas {
+  color: rgb(158, 18, 18);
+}
+
+/* 요청 수락 수량 색상 */
+.numacceptas {
+  color: black;
+}
+
+/* 처리 완료 수량 색상 */
+.numcompletedas {
+  color: rgb(175, 175, 175);
+}
+
+/* 영문 텍스트 스타일 */
+.engas {
+  font-size: 25px;
+  color: #13233c;
+}
+
+/* 한글 텍스트 스타일 */
+.koras {
+  font-size: 25px;
+  font-weight: bold;
+  color: #13233c;
+}
+
+/* 태블릿 및 데스크톱 화면을 위한 @media 쿼리 */
+@media (min-width: 768px) {
+  .middleboxas {
+    flex-direction: row; /* 태블릿 및 데스크톱 화면에서 가로로 정렬 */
+  }
+
+  /* 아이템 간 여백을 모바일 화면과 동일하게 유지 */
+  .middleboxas > * {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+}

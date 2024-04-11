@@ -1,0 +1,13 @@
+.topas {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.middleas {
+  padding: 20px;
+}
+
+.bottomas {
+  padding: 10px;
+}

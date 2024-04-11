@@ -1,0 +1,49 @@
+/* TitleBasic.module.css */
+
+.TitleBox {
+  height: 80px;
+  max-width: 420px;
+  border: 2px solid #13233c;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 20px 20px 20px 10px;
+  margin: 20px 0px 0px 30px;
+}
+
+.TitleBoxImg {
+  width: 55px;
+  height: 55px;
+}
+
+.TitleBoxtitle {
+  font-weight: bold;
+  font-size: 40px;
+  color: #13233c;
+}
+
+/* TitleBasic 반응형 스타일 */
+@media (max-width: 768px) {
+  .TitleBox {
+    /* 모바일 화면에서 가로 정렬 */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: auto; /* 높이 자동 조정 */
+    width: 90%; /* 가로폭 조정 */
+    max-width: none; /* 최대 가로폭 제거 */
+    margin: 10px auto; /* 가운데 정렬 */
+  }
+
+  .TitleBoxImg {
+    margin-bottom: 10px; /* 모바일 화면에서 아이콘과 제목 사이 간격 추가 */
+  }
+
+  .TitleBoxtitle {
+    font-size: 30px; /* 모바일 화면에서 제목 폰트 크기 조정 */
+    text-align: center; /* 모바일 화면에서 텍스트 가운데 정렬 */
+  }
+}

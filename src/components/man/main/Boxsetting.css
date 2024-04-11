@@ -1,0 +1,25 @@
+.Boxsetting {
+  flex: 1;
+  border-radius: 20px;
+  height: 150px;
+  max-width: 100px;
+  border: 1px solid darkgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+}
+
+.img {
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+}
+
+.word {
+  color: gray;
+  font-size: 18px;
+  font-weight: 200;
+  margin: 0;
+}
