@@ -30,7 +30,7 @@ function CallListPage() {
       {/* 데이터가 존재하면 출력 */}
       {rowData && (
         <div>
-          <table className="table-container">
+          <table className="call-table">
             <thead>
               <tr>
                 <th>이름</th>

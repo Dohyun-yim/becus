@@ -1,60 +1,65 @@
-.title {
-  border: 2px solid;
+/* 스크립트타이틀 */
+.title-message {
+  border: 1px solid #9b9b9b;
   border-radius: 10px;
-  padding: 5px;
-  margin: 0 20px 20px;
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 24px;
+  background-color: #f2f2f2;
+  color: #3c3c3c;
 }
 
-/* 메시지 컨테이너 스타일 */
 .message-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-/* 메시지 래퍼 스타일 */
-.message-wrapper {
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 8px;
-  border: 2px solid #13233c;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  text-align: center;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  font-size: 16px;
-}
-
-/* 스피커 0 메시지 스타일 */
-.message-wrapper.spk-0 {
-  border: 2px solid #546ef4;
-  text-align: left;
   align-items: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
-/* 스피커 1 메시지 스타일 */
+.message-wrapper {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  overflow-wrap: break-word;
+  width: 100%; /* 기본 너비 설정 */
+}
+
+/* 화자 0 메시지 */
+.message-wrapper.spk-0 {
+  background-color: #d6e4f5a4;
+  border: 1px solid #d5d5d5;
+  text-align: left; /* 왼쪽 정렬 추가 */
+}
+
+/* 화자 1 메시지 */
 .message-wrapper.spk-1 {
-  border: 2px solid #13233c;
-  text-align: right;
+  background-color: #fbfacd76;
+  border: 1px solid #d5d5d5;
+  text-align: right; /* 오른쪽 정렬 추가 */
 }
 
-.buttons-script {
-  display: flex;
-}
-
+/* 뒤로가기 버튼 */
 .button-script {
-  border: 2px solid #13233c;
-  font-size: 20px;
+  border: 1px solid #a4a4a4;
+  border-radius: 10px;
+  font-size: 18px;
   padding: 10px 20px;
   margin: 20px 10px;
   text-decoration: none;
   color: #13233c;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .button-script:hover {
-  background-color: #13233c;
+  background-color: #3c3c3c;
   color: white;
+}
+
+/* 반응형 쿼리: 화면 너비가 768px 이상일 때 */
+@media (min-width: 768px) {
+  .message-wrapper {
+    max-width: 600px; /* 768px 이상일 때 최대 너비 설정 */
+  }
 }

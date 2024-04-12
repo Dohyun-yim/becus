@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axiosInstance from "../../../lib/axios";
+import TitleCall from "../../../components/man/call/TitleCall";
 import "./CallScriptPage.css";
 
 //import mockData from "../a_mock_sample.json";
@@ -28,11 +29,11 @@ function CallScriptPage() {
     return <div>원본 데이터를 찾을 수 없습니다.</div>;
   }
 
-  const { original } = originalData;
+  const { original, name } = originalData;
 
   return (
     <div className="message-container">
-      <h1 className="title">통화 내용</h1>
+      <TitleCall title={name} />
       <div className="message-wrapper">
         {original.map((message, index) => (
           <div
