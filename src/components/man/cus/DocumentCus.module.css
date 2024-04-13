@@ -1,0 +1,19 @@
+.CusDocuTitle {
+  font-size: 25px;
+  font-weight: 600;
+  color: #13233c;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.CusDocuSubTitle {
+  font-size: 20px; /* CusDocuTitle보다 작은 크기로 설정 */
+  font-weight: 500; /* 덜 진하게 설정 */
+  color: #636363; /* CusDocuTitle보다 약간 더 연한 색상으로 설정 */
+  padding: 8px 30px; /* 좀 더 작은 여백 설정 */
+  border-radius: 15px; /* 둥근 모서리 */
+  background-color: #f3f4f6; /* CusDocuTitle보다 약간 덜 강조되는 색상으로 설정 */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 추가 */
+}

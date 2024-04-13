@@ -1,42 +1,58 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./CallCus.module.css";
 
-import mockCallData from "../../../mockdata/a_mock_sample.json";
-
-const CallCus = ({ phone }) => {
-  const [callList, setCallList] = useState([]);
-
-  useEffect(() => {
-    // 전화번호로 일치하는 통화 리스트를 필터링하여 설정
-    const filteredCallList = mockCallData.filter(
-      (call) => call.phoneNumber === phone
-    );
-    setCallList(filteredCallList);
-  }, [phone]); // phone이 변경될 때마다 실행됩니다.
-
+function CallCus({ rowData }) {
   return (
     <div>
-      <h2>통화 리스트</h2>
-      <table className={styles.cusCall}>
-        <thead>
-          <tr>
-            <th>날 짜</th>
-            <th>분 류</th>
-            <th>키워드</th>
-          </tr>
-        </thead>
-        <tbody>
-          {callList.map((call) => (
-            <tr key={call.id}>
-              <td>{call.date}</td>
-              <td>{call.cluster}</td>
-              <td>{call.keyword}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <h2 className={styles.CusCallTitle}>통화 목록</h2>
+      {rowData && (
+        <div>
+          <table className={styles.CuscallTable}>
+            <thead>
+              <tr>
+                <th>날짜</th>
+                <th>시간</th>
+                <th>분류</th>
+                <th>키워드</th>
+                <th>더보기</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rowData.map((data) => (
+                <tr key={data.id}>
+                  <td>{data.date}</td>
+                  <td>{data.time}</td>
+                  <td>{data.cluster}</td>
+                  <td>
+                    <div className={styles.CuskeywordContainer}>
+                      {data.keyword &&
+                        data.keyword.map((keyword, keywordIndex) => (
+                          <div
+                            key={keywordIndex}
+                            className={styles.CuskeywordBox}
+                          >
+                            {keyword}
+                          </div>
+                        ))}
+                    </div>
+                  </td>
+                  <td>
+                    <Link
+                      to={`/manager/calllist/call/${data.id}`}
+                      className={styles.CuslinkMore}
+                    >
+                      더보기
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
-};
+}
 
 export default CallCus;
