@@ -1,0 +1,16 @@
+.LineInfo {
+  display: flex;
+  align-items: center;
+}
+
+.LineInfoImg {
+  width: 30px;
+  height: 30px;
+}
+
+.LineInfocontents {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}

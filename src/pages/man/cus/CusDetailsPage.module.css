@@ -4,25 +4,20 @@
   padding: 20px;
 }
 
+.titlecusone {
+  margin-bottom: 20px;
+  display: flex;
+}
+
 .topcusone {
-  margin-bottom: 20px;
+  margin-left: 50px;
 }
 
-.middlecusone {
+.middlecusone,
+.bottomcusone {
   padding: 20px;
-  margin-bottom: 20px;
-  margin-left: 60px;
-}
-
-.middletitlecusone {
-  border-bottom: 1px solid #ccc;
-  font-size: 30px;
-  color: #1d2c45;
-  font-weight: 700;
   margin-bottom: 10px;
-}
-
-.middlecontentscusone {
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  margin-left: auto; /* 오른쪽으로 붙이기 */
+  margin-right: auto; /* 왼쪽으로 붙이기 */
+  width: 800px; /* 최대 너비 설정 */
 }

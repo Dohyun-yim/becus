@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axiosInstance from "../../../lib/axios";
+import TitleCall from "../../../components/man/call/TitleCall";
 import "./CallDetailsPage.css";
 
 //import mockData from "../a_mock_sample.json";
@@ -25,7 +26,7 @@ function CallDetailsPage() {
   const { name, date, time, cluster, keyword, summarize } = callData || {};
   return (
     <div className="container-detail">
-      <h1 className="title-detail">{name}</h1>
+      <TitleCall title={name} />
       <div className="content-detail">
         <table className="details-table">
           <tbody>
@@ -49,7 +50,7 @@ function CallDetailsPage() {
         </table>
         <div className="summary-box">
           <p>
-            <strong>요약:</strong>
+            <strong>▶ 요약</strong>
           </p>
           <p>{summarize}</p>
         </div>

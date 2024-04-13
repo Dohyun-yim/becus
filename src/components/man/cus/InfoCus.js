@@ -1,31 +1,22 @@
 import React from "react";
+import InfoLine from "./InfoLine";
 import styles from "./InfoCus.module.css";
 
-const InfoCus = ({ customerId, email, phone }) => {
+import CusCall from "../../../assets/man/CusCall_navy.png";
+import CusEmail from "../../../assets/man/CusEmail_navy.png";
+
+const InfoCus = ({ name, customerId, email, phone }) => {
   return (
-    <div>
-      <table className={styles.cusInfo}>
-        <tbody>
-          <tr>
-            <td>
-              <strong>ID</strong>
-            </td>
-            <td>{customerId}</td>
-          </tr>
-          <tr>
-            <td>
-              <strong>이메일</strong>
-            </td>
-            <td>{email}</td>
-          </tr>
-          <tr>
-            <td>
-              <strong>전화번호</strong>
-            </td>
-            <td>{phone}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div className={styles.cusInfo}>
+      <div className={styles.cusInfoTop}>
+        <div className={styles.cusInfoName}>{name} 고객님</div>
+        <div className={styles.cusInfoId}>{customerId}</div>
+      </div>
+      <hr className={styles.separator} /> {/*top과 bottom 사이의 선 */}
+      <div className={styles.cusInfoBottom}>
+        <InfoLine imgSrc={CusCall} contents={phone} />
+        <InfoLine imgSrc={CusEmail} contents={email} />
+      </div>
     </div>
   );
 };

@@ -1,19 +1,41 @@
-/* InfoCus 컴포넌트의 스타일 */
 .cusInfo {
-  margin-top: 20px;
+  border: 1px solid #7a7b7d60;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto; /* 가운데 정렬 추가 */
 }
 
-.cusInfo table {
-  width: 100%;
-  border-collapse: collapse;
+.cusInfoName {
+  font-size: 30px;
+  color: #13233c;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.cusInfo table td {
-  padding: 8px;
-  border: 1px solid #ccc;
+.cusInfoId {
+  font-size: 20px;
+  color: #13233c70;
 }
 
-.cusInfo table td:first-child {
-  font-weight: bold;
-  background-color: #f0f0f0;
+.separator {
+  border: none;
+  border-top: 1px solid #676666;
+  margin: 20px 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .cusInfo {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .cusInfoName {
+    font-size: 24px;
+  }
+
+  .cusInfoId {
+    font-size: 16px;
+  }
 }
