@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TableAs.module.css";
 
-import mockDataAs from "./mockAs.json";
+import mockDataAs from "../../../mockdata/mockAs.json";
 
 // 테이블 구성 코드
 const TableAs = () => {

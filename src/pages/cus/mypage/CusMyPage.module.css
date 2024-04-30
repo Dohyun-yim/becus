@@ -1,0 +1,70 @@
+.cusMyPage {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #ffffff;
+  max-width: 600px; /* 페이지 너비 제한 */
+  margin: auto; /* 중앙 정렬 */
+}
+
+.cusMyTitle {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #13233c;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.cusMyTop {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #13233c;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.cusName {
+  font-weight: bold;
+  color: #13233c;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.cusSubInfo {
+  font-size: 18px;
+  color: #555555c2;
+}
+
+.cusMyBottom {
+  background-color: #f5f5f588;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.cusMyBottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cusMyBottom li {
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  cursor: pointer;
+  font-size: 16px;
+  color: #13233c7b;
+}
+
+.cusMyBottom li:last-child {
+  border-bottom: none;
+}
+
+.cusMyBottom li:hover {
+  background-color: #e0e0e064;
+  color: #13233c;
+}
