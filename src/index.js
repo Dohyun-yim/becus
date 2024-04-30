@@ -20,10 +20,14 @@ import CusMainPage from "./pages/cus/CusMainPage";
 import CusOrderPage from "./pages/cus/CusOrderPage";
 import CusAsPage from "./pages/cus/CusAsPage";
 import CusTalkPage from "./pages/cus/CusTalkPage";
+import CusProductTalkPage from "./pages/cus/CusProductTalkPage";
+import CusMyPage from "./pages/cus/mypage/CusMyPage";
+
+import ConnectPage from "./pages/man/ConnectPage";
 
 import ManMainPage from "./pages/man/ManMainPage";
 import ManCusPage from "./pages/man/cus/CusPage";
-import ManAsPage from "./pages/man/AsPage";
+import ManAsPage from "./pages/man/as/AsPage";
 import ManTalkPage from "./pages/man/talk/TalkPage";
 
 import CallMainPage from "./pages/man/call/CallMainPage"; //통화리스트
@@ -45,7 +49,11 @@ const router = createBrowserRouter([
       { path: "order", element: <CusOrderPage /> },
       { path: "as", element: <CusAsPage /> },
       { path: "talk", element: <CusTalkPage /> },
+      { path: "producttalk", element: <CusProductTalkPage /> },
+      { path: "mypage", element: <CusMyPage /> },
+
       { path: "login", element: <LoginPage /> },
+      { path: "connect", element: <ConnectPage /> },
     ],
   },
   {

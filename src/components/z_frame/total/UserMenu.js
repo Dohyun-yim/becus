@@ -28,7 +28,7 @@ function UserMenu({ Icon }) {
       </button>
       {isOpen && (
         <ul className={styles.popup}>
-          <Link to="/mypage">
+          <Link to="./mypage">
             <li>마이페이지</li>
           </Link>
           <Link to="/login">

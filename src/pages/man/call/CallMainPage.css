@@ -1,12 +1,12 @@
 html {
-  overflow-y: scrolll;
+  overflow-y: scroll; /* 화면에 콘텐츠가 많을 경우 스크롤바 유지 */
 }
 
 .containercall {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 20px auto;
+  padding: 20px;
 }
 
 .titlecall {
@@ -24,13 +24,13 @@ html {
   flex-wrap: wrap;
   margin-top: 45px;
   margin-left: 40px;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .button-each {
   margin: 0 20px;
   border: none;
-  padding: 5px 15p;
+  padding: 5px 15px;
   background-color: transparent;
   color: gray;
   transition: color 0.4s ease;
@@ -38,7 +38,7 @@ html {
 
 .button-each:hover {
   color: #13233c;
-  text-decoration: 1px solid underline;
+  text-decoration: underline 1px solid;
 }
 
 .active {
@@ -48,17 +48,15 @@ html {
 }
 
 th {
-  border-bottom: 1px solid rgb(19, 35, 60);
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
+  padding: 10px;
+  border-bottom: 2px solid rgba(19, 35, 60, 0.1);
 }
 
 td {
   text-align: center;
-  border-spacing: 10px;
-  padding: 10px;
-  border-bottom: 2px solid rgba(19, 35, 60, 0.1);
 }
 
 .content {
@@ -66,5 +64,48 @@ td {
   font-size: 20px;
   display: block;
   flex-direction: column;
-  width: 100;
+  width: 100%;
+}
+
+/* 핸드폰 */
+@media (max-width: 600px) {
+  .titlecall {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
+  .button-container {
+    margin-left: 20px;
+    flex-direction: column;
+  }
+
+  .button-each {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  th,
+  td {
+    font-size: 16px;
+  }
+}
+
+/* 태블릿 */
+@media (max-width: 900px) and (min-width: 601px) {
+  .titlecall {
+    font-size: 35px;
+  }
+
+  .button-container {
+    margin-left: 30px;
+  }
+
+  .button-each {
+    font-size: 24px;
+  }
+
+  th,
+  td {
+    font-size: 16px;
+  }
 }

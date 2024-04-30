@@ -1,0 +1,98 @@
+/* ConnectPage.css */
+
+.topconnect {
+  border: 1px solid #13233c;
+  padding: 25px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  color: #13233c;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.bottomconnect {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.leftconnect,
+.rightconnect {
+  justify-content: space-around;
+  border: 1px solid #13233c77;
+  padding-bottom: 30px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  margin: 0 10px;
+}
+
+.imgconnect {
+  width: 200px;
+  height: auto;
+}
+
+.titleconnect {
+  font-size: 33px;
+  color: #13233c;
+  font-weight: 500;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 768px) {
+  .topconnect {
+    font-size: 24px;
+    padding: 15px;
+  }
+
+  .bottomconnect {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .leftconnect,
+  .rightconnect {
+    margin: 10px 0;
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .imgconnect {
+    width: 80px; /* 핸드폰에서는 이미지 크기 감소 */
+  }
+
+  .titleconnect {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topconnect {
+    font-size: 20px;
+  }
+
+  .bottomconnect {
+    padding: 5px;
+  }
+
+  .leftconnect,
+  .rightconnect {
+    padding: 10px;
+  }
+
+  .imgconnect {
+    width: 60px; /* 매우 작은 화면에서는 더 작은 이미지 */
+  }
+
+  .titleconnect {
+    font-size: 14px;
+  }
+}

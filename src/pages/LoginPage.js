@@ -1,7 +1,6 @@
 import React from "react";
 import naverLogo from "../assets/login/naver_button.png";
 import kakaoLogo from "../assets/login/kakao_button.png";
-import becusLogo from "../assets/logo/logo_vertical.png";
 import "./LoginPage.css";
 
 const NAVER_CLIENT_ID = "18hzVmnCAGBW303Cl527";
@@ -16,7 +15,6 @@ const NaverLogin = () => {
 
   return (
     <div>
-      <img src={becusLogo} alt="BE-CUS로고" className="login-becusImg" />
       <h1 className="login-title">로그인</h1>
       <p className="login-intro">BE-CUS 홈페이지에 오신 것을 환영합니다</p>
       <a href={NAVER_AUTH_URL} onClick={handleNaverLogin}>

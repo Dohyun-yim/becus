@@ -5,6 +5,8 @@ import "./CallListPage.css";
 
 function CallListPage() {
   const [rowData, setRowData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchCategory, setSearchCategory] = useState("name"); // 검색 카테고리 상태
 
   // 통화 목록 데이터 추출 함수
   const fetchCallListData = async () => {
@@ -20,10 +22,36 @@ function CallListPage() {
     fetchCallListData();
   }, []);
 
+  const filteredData = rowData.filter((item) =>
+    item[searchCategory]
+      .toString()
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
-      {/* CallTable 컴포넌트에 rowData를 props로 전달 */}
-      <TableCallList rowData={rowData} />
+      <div className="calllistSearchContainer">
+        <select
+          value={searchCategory}
+          onChange={(e) => setSearchCategory(e.target.value)}
+          className="calllistSearchCategory"
+        >
+          <option value="name">이름</option>
+          <option value="date">날짜</option>
+          <option value="cluster">분류</option>
+        </select>
+        <input
+          type="text"
+          placeholder="검색"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="calllistSearchInput"
+        />
+      </div>
+      <div className="calllistTable">
+        <TableCallList rowData={filteredData} />
+      </div>
     </div>
   );
 }
