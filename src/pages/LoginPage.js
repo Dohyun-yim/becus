@@ -4,9 +4,11 @@ import kakaoLogo from "../assets/login/kakao_button.png";
 import "./LoginPage.css";
 
 const NAVER_CLIENT_ID = "18hzVmnCAGBW303Cl527";
-const REIDRECT_URI = "http://127.0.0.1:8000/api/v1/user/naver/callback";
+const REIDRECT_URI = "http://127.0.0.1:3000/callback";
 const STATE = "false";
 const NAVER_AUTH_URL = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${NAVER_CLIENT_ID}&state=${STATE}&redirect_uri=${REIDRECT_URI}`;
+
+// http://34.64.53.159:8000/api/v1/user/naver/callback?code=3qY3kxooc1txH9xLWC
 
 const NaverLogin = () => {
   const handleNaverLogin = () => {

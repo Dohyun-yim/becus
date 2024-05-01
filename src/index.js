@@ -15,6 +15,7 @@ import ManagerLayout from "./layout/ManagerLayout";
 import NotFound from "./pages/NotFound";
 
 import LoginPage from "./pages/LoginPage";
+import LoadingPage from "./pages/LoadingPage";
 
 import CusMainPage from "./pages/cus/CusMainPage";
 import CusOrderPage from "./pages/cus/CusOrderPage";
@@ -53,6 +54,7 @@ const router = createBrowserRouter([
       { path: "mypage", element: <CusMyPage /> },
 
       { path: "login", element: <LoginPage /> },
+      { path: "callback", element: <LoadingPage /> },
       { path: "connect", element: <ConnectPage /> },
     ],
   },
