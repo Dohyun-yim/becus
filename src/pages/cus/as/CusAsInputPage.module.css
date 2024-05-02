@@ -1,0 +1,84 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.cusAsInputContainer {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.cusAsInputHeader {
+  font-size: 28px;
+  font-weight: bold;
+  color: #13233c;
+  text-align: start;
+  padding: 15px 0px 15px 10px;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #e4e4e4;
+}
+
+.cusAsInputStep {
+  margin-bottom: 20px;
+}
+
+.cusAsInputLabel {
+  padding: 0px 0px 0px 10px;
+  display: block;
+  font-size: 20px;
+  color: #13233c;
+  margin-bottom: 10px;
+}
+
+.cusAsInputInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.cusAsInputSelect {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #666;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.cusAsInputButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cusAsInputButton:hover {
+  background-color: #45a049;
+}
+
+.cusAsInputProductInfo {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #444;
+}
+
+.cusAsInputBackButton {
+  background-color: #ccc; /* 회색 배경 */
+  margin-left: 10px; /* 왼쪽 여백 */
+}
+
+.cusAsInputBackButton:hover {
+  background-color: #bbb; /* 호버 시 조금 더 어두운 회색 */
+}

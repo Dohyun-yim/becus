@@ -33,10 +33,6 @@ const MenuList = () => {
           {" "}
           <Link to="/manager/callmiss">부재중 통화</Link>
         </Menu.Item>
-        <Menu.Item key="callkeyword">
-          {" "}
-          <Link to="/manager/callone">키워드 분류</Link>
-        </Menu.Item>
       </Menu.SubMenu>
     </Menu>
   );

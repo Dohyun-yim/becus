@@ -4,37 +4,37 @@ import Form from "../../components/cus/Form";
 function ProductTalkPage() {
   const formFields = [
     {
-      id: "PC_name",
-      name: "PC_name",
+      id: "pc_name",
+      name: "pc_name",
       label: "이름 및 업체명",
       type: "text",
       required: true,
     },
     {
-      id: "PC_phone",
-      name: "PC_phone",
+      id: "pc_phone",
+      name: "pc_phone",
       label: "연락처",
       type: "text",
       required: true,
     },
     {
-      id: "PC_email",
-      name: "PC_email",
+      id: "pc_email",
+      name: "pc_email",
       label: "이메일",
       type: "email",
       required: true,
     },
     {
-      id: "PC_product",
-      name: "PC_product",
+      id: "pc_product_id",
+      name: "pc_product_id",
       label: "문의상품명",
       type: "text",
       required: true,
     },
 
     {
-      id: "PC_content",
-      name: "PC_content",
+      id: "pc_content",
+      name: "pc_content",
       label: "기타사항",
       type: "textarea",
       required: false,

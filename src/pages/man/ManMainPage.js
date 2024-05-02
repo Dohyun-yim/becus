@@ -5,11 +5,10 @@ import "./ManMainPage.css";
 import ManCusImg from "../../assets/man/cus_navy.png";
 import ManAsImg from "../../assets/man/as_navy.png";
 import ManTalkImg from "../../assets/man/talk_navy.png";
-import SettingImg from "../../assets/man/setting_gray.png";
 import CusImg from "../../assets/man/cus_gray.png";
 
 import Widget from "../../components/man/main/Widget";
-import Boxcall from "../../components/man/main/Boxcall";
+import Boxcall from "../../components/man/main/BoxCall";
 import Boxdashboard from "../../components/man/main/Boxdashboard";
 import Boxsetting from "../../components/man/main/Boxsetting";
 
@@ -31,7 +30,7 @@ const ManMainPage = () => {
           <a href="/manager/as">
             <Widget
               imgSrc={ManAsImg}
-              title="수리 현황"
+              title="A/S 현황"
               smalltitle1="미 처리"
               num1="17"
               smalltitle2="현재 진행"
@@ -59,7 +58,6 @@ const ManMainPage = () => {
               <Link to="/">
                 <Boxsetting imgSrc={CusImg} word="고객용 페이지" />
               </Link>
-              <Boxsetting imgSrc={SettingImg} word="SETTING 설정" />
             </div>
           </div>
         </div>

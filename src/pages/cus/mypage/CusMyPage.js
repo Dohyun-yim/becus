@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./CusMyPage.module.css";
 
 function CusMyPage() {
@@ -26,7 +27,9 @@ function CusMyPage() {
       </div>
       <div className={styles.cusMyBottom}>
         <ul>
-          <li>작성문서 조회</li>
+          <li>
+            <Link to="/mypage/documents">작성문서 조회</Link>
+          </li>
           <li>회원정보 수정</li>
           <li onClick={handleLogout}>로그아웃</li>
           <li onClick={handleUnsubscribe}>회원 탈퇴</li>

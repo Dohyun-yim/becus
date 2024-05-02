@@ -1,52 +1,49 @@
 import React from "react";
-import "./Boxcall.css";
+import callIcon from "../../../assets/man/CusCall_navy.png";
+import styles from "./BoxCall.module.css";
 
-const Box_call = () => {
+// 날짜 포매팅 함수
+const formatDate = (date) => {
+  return `${date.getMonth() + 1}.${date.getDate()}`;
+};
+
+const BoxCall = () => {
+  // 현재 날짜와 일주일 전 날짜 계산
+  const currentDate = new Date();
+  const lastWeekDate = new Date(
+    currentDate.getTime() - 7 * 24 * 60 * 60 * 1000
+  );
+
+  // 날짜 포매팅
+  const formattedCurrentDate = formatDate(currentDate);
+  const formattedLastWeekDate = formatDate(lastWeekDate);
+
   return (
-    <div className="Box_call">
-      <div className="top">
-        <h1 className="title-bc">통화</h1>
-        <h5 className="more"> ▷ 더보기 </h5>
-      </div>
-
-      <div className="middle">
-        <div className="middle_top">03.04~03.10 기준</div>
-
-        <div className="middle_bottom">
-          <div className="left_middle_bottom">
-            <div className="smalltitle">부재중 건</div>
-            <div className="smallnum">34</div>
-          </div>
-          <div className="right_middle_bottom">
-            <div className="smalltitle">일 TOTAL</div>
-            <div className="smallnum">121</div>
-          </div>
+    <div className={styles.BoxCall}>
+      <div className={styles.BoxCallFirst}>
+        <img className={styles.callIcon} src={callIcon} alt="아이콘" />
+        <div className={styles.CallDate}>
+          {formattedLastWeekDate}~{formattedCurrentDate} 기준
         </div>
       </div>
 
-      <div className="bottom">
-        <table className="table">
-          <th>Name</th>
-          <th>분 류</th>
-          <th>키워드</th>
-          <tr>
-            <td>S기업</td>
-            <td>A/S</td>
-            <td>칼날 교체</td>
-          </tr>
-          <tr>
-            <td>A정육점</td>
-            <td>견적</td>
-            <td>사과</td>
-          </tr>
-          <tr>
-            <td>임도현</td>
-            <td>문의</td>
-            <td>세척</td>
-          </tr>
-        </table>
+      <div className={styles.BoxCallSecond}>
+        <div className={styles.smalltitle}>
+          <span className={styles.smallTitleLine}>부재중</span>
+          <span className={styles.smallTitleLine}>건수</span>
+        </div>
+        <div className={styles.smallnum}>34</div>
+      </div>
+
+      <div className={styles.BoxCallThird}>
+        <div className={styles.smalltitle}>
+          <span className={styles.smallTitleLine}>일</span>
+          <span className={styles.smallTitleLine}>TOTAL</span>
+        </div>
+        <div className={styles.smallnum}>121</div>
       </div>
     </div>
   );
 };
-export default Box_call;
+
+export default BoxCall;

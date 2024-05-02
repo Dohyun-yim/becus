@@ -19,10 +19,14 @@ import LoadingPage from "./pages/LoadingPage";
 
 import CusMainPage from "./pages/cus/CusMainPage";
 import CusOrderPage from "./pages/cus/CusOrderPage";
-import CusAsPage from "./pages/cus/CusAsPage";
+
+import CusAsPage from "./pages/cus/as/CusAsPage";
+import CusAsInputPage from "./pages/cus/as/CusAsInputPage";
+
 import CusTalkPage from "./pages/cus/CusTalkPage";
 import CusProductTalkPage from "./pages/cus/CusProductTalkPage";
 import CusMyPage from "./pages/cus/mypage/CusMyPage";
+import CusMyPageDocs from "./pages/cus/mypage/CusMyPageDocs";
 
 import ConnectPage from "./pages/man/ConnectPage";
 
@@ -48,10 +52,13 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <CusMainPage /> },
       { path: "order", element: <CusOrderPage /> },
+
+      { path: "asinput", element: <CusAsInputPage /> },
       { path: "as", element: <CusAsPage /> },
       { path: "talk", element: <CusTalkPage /> },
       { path: "producttalk", element: <CusProductTalkPage /> },
       { path: "mypage", element: <CusMyPage /> },
+      { path: "mypage/documents", element: <CusMyPageDocs /> },
 
       { path: "login", element: <LoginPage /> },
       { path: "callback", element: <LoadingPage /> },
