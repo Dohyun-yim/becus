@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import styles from "./CusLayout.module.css";
 import Nav from "../components/z_frame/cus/Nav";
-import Footer from "../components/z_frame/cus/Footer";
+import Footer from "../components/z_frame/total/Footer";
 
 function CusLayout() {
   return (

@@ -1,37 +1,52 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
-
-* {
+body {
   font-family: "Noto Sans KR", sans-serif;
-  box-sizing: border-box;
-  word-break: keep-all;
 }
 
-html {
-  overflow-y: scroll;
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 100vh;
+  width: 100vw;
 }
 
-.sidebar {
-  color: #ffffff;
+.sider {
+  grid-row: 1 / -1; /* 사이드바는 행 전체를 차지 */
+  background-color: #0d182c;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
-  border: 10px;
-  border-bottom: 0.5px dotted rgb(112, 111, 111);
+}
+
+.logo img {
+  width: 80%;
+  display: block;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .header {
-  background-color: #ffffff;
-  padding: 0 200px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #fffffff9;
+}
+
+.content {
+  padding: 5px;
+  overflow-y: auto;
+  background-color: #efefef;
 }
 
 .footer {
+  padding: 10px;
+  background-color: #efefef;
   text-align: center;
-  display: flex;
-  flex: none;
 }
