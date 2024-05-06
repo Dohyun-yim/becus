@@ -1,14 +1,20 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./UserMenu.module.css";
-import useStoredUserInfo from "../../../lib/localStorage";
+// import useStoredUserInfo from "../../../lib/localStorage";
 import Logout from "../../../pages/Logout";
 
 const UserMenu = ({ Icon }) => {
-  const userInfo = useStoredUserInfo();
-  console.log("usermenu", userInfo);
-
   const [isOpen, setIsOpen] = useState(false);
+  // const userInfo = setTimeout(useStoredUserInfo, 1000);
+  const [userInfo, setUserInfo] = useState(null);
+  useEffect(() => {
+    // localStorage에서 사용자 정보를 가져옴
+    const storedUserInfo = localStorage.getItem("customerInfo");
+    if (storedUserInfo) {
+      setUserInfo(storedUserInfo);
+    }
+  }, []);
 
   const handleButtonClick = useCallback((e) => {
     e.stopPropagation();
@@ -16,15 +22,13 @@ const UserMenu = ({ Icon }) => {
   }, []);
 
   useEffect(() => {
-    if (!isOpen) return;
-
     const handleClickOutside = () => setIsOpen(false);
     window.addEventListener("click", handleClickOutside);
 
     return () => {
       window.removeEventListener("click", handleClickOutside);
     };
-  }, [isOpen]);
+  }, []);
 
   return (
     <div className={styles.userMenu}>
@@ -39,7 +43,7 @@ const UserMenu = ({ Icon }) => {
                 <li>마이페이지</li>
               </Link>
               <li>
-                <Logout className={styles.disabled} />
+                <Logout />
               </li>{" "}
               {/* 로그아웃 버튼*/}
             </>
