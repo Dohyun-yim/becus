@@ -1,8 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./UserMenu.module.css";
+import useStoredUserInfo from "../../../lib/localStorage";
+import Logout from "../../../pages/Logout";
 
-function UserMenu({ Icon }) {
+const UserMenu = ({ Icon }) => {
+  const userInfo = useStoredUserInfo();
+  console.log("usermenu", userInfo);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleButtonClick = useCallback((e) => {
@@ -28,17 +33,25 @@ function UserMenu({ Icon }) {
       </button>
       {isOpen && (
         <ul className={styles.popup}>
-          <Link to="./mypage">
-            <li>마이페이지</li>
-          </Link>
-          <Link to="/login">
-            <li>로그인</li>
-          </Link>
-          <li className={styles.disabled}>로그아웃</li>
+          {userInfo ? (
+            <>
+              <Link to="./mypage">
+                <li>마이페이지</li>
+              </Link>
+              <li>
+                <Logout className={styles.disabled} />
+              </li>{" "}
+              {/* 로그아웃 버튼*/}
+            </>
+          ) : (
+            <Link to="/login">
+              <li>로그인</li>
+            </Link>
+          )}
         </ul>
       )}
     </div>
   );
-}
-//나중에 로그인 성립시 disabled 스타일 삽입 가능 (조건절로!)
+};
+
 export default UserMenu;

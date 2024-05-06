@@ -52,14 +52,12 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <CusMainPage /> },
       { path: "order", element: <CusOrderPage /> },
-
       { path: "asinput", element: <CusAsInputPage /> },
       { path: "as", element: <CusAsPage /> },
       { path: "talk", element: <CusTalkPage /> },
       { path: "producttalk", element: <CusProductTalkPage /> },
       { path: "mypage", element: <CusMyPage /> },
       { path: "mypage/documents", element: <CusMyPageDocs /> },
-
       { path: "login", element: <LoginPage /> },
       { path: "callback", element: <LoadingPage /> },
       { path: "connect", element: <ConnectPage /> },
