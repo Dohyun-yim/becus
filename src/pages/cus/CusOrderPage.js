@@ -27,7 +27,7 @@ function OrderPage() {
     {
       id: "o_product_id",
       name: "o_product_id",
-      label: "상품명",
+      label: "상품 품번",
       type: "text",
       required: true,
     },
@@ -54,19 +54,36 @@ function OrderPage() {
     },
   ];
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = {};
-    formData.forEach((value, key) => (data[key] = value));
-    console.log(data); // 여기서 서버로 데이터를 보낼 수 있습니다.
+  const handleSubmit = async (formData) => {
+    console.log(formData);
+    try {
+      const response = await fetch("http://34.64.53.159:8000/api/v1/order/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "X-CSRFToken":
+            "VM8ze4ZAqNElg4sdSIu7M7oAB0CojeF0jLqMZT04Cu9i2gnS4jitO7uZyVd0vAyR",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        console.log("서버로부터의 응답:", jsonResponse);
+      } else {
+        throw new Error("서버 응답 문제 발생");
+      }
+    } catch (error) {
+      console.error("요청 에러 발생", error);
+    }
   };
 
   return (
     <Form
+      onSubmit={handleSubmit}
       title="견적 요청서 작성"
       fields={formFields}
-      onSubmit={handleSubmit}
     />
   );
 }

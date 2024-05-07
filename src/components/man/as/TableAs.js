@@ -3,8 +3,12 @@ import styles from "./TableAs.module.css";
 
 import mockDataAs from "../../../mockdata/mockAs.json";
 
-// 테이블 구성 코드
 const TableAs = () => {
+  // 작성일을 기준으로 최신순 정렬
+  const sortedData = mockDataAs.sort((a, b) => {
+    return new Date(b.r_created_at) - new Date(a.r_created_at);
+  });
+
   return (
     <table className={styles.AsTable}>
       <thead>
@@ -18,23 +22,23 @@ const TableAs = () => {
         </tr>
       </thead>
       <tbody>
-        {mockDataAs.map((item) => (
+        {sortedData.map((item) => (
           <tr key={item.id}>
-            <td>{item.작성일}</td>
-            <td>{item.업체명}</td>
-            <td>{item.전화번호}</td>
-            <td>{item.수리상품}</td>
-            <td>{item.수리유형}</td>
+            <td>{item.r_created_at}</td>
+            <td>{item.r_name}</td>
+            <td>{item.r_phone}</td>
+            <td>{item.r_product_id}</td>
+            <td>{item.r_type}</td>
             <td
               className={
-                item.상태 === "요청 대기"
+                item.r_status === "요청 대기"
                   ? styles.waiting
-                  : item.상태 === "처리 완료"
+                  : item.r_status === "처리 완료"
                   ? styles.completed
                   : ""
               }
             >
-              {item.상태}
+              {item.r_status}
             </td>
           </tr>
         ))}

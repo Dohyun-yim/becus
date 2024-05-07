@@ -4,8 +4,6 @@ import axiosInstance from "../../../lib/axios";
 import TitleCall from "../../../components/man/call/TitleCall";
 import "./CallDetailsPage.css";
 
-//import mockData from "../a_mock_sample.json";
-
 function CallDetailsPage() {
   const { id } = useParams(); // URL에서 id를 가져옵니다.
   const [callData, setCallData] = useState(null);
@@ -43,8 +41,8 @@ function CallDetailsPage() {
               <td>{cluster}</td>
             </tr>
             <tr>
-              <td>키워드</td>
-              <td>{keyword && keyword.join(", ")}</td>
+              <td>요약</td>
+              <td>{keyword}</td>
             </tr>
           </tbody>
         </table>

@@ -1,83 +1,92 @@
 [
   {
     "id": 1,
-    "작성일": "2024-04-07",
-    "업체명": "ABC 정육점",
-    "전화번호": "123-456-7890",
-    "이메일": "abc@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "요청 수락"
+    "pc_created_at": "2024-04-07",
+    "pc_name": "권근중",
+    "pc_phone": "010-2345-6789",
+    "pc_email": "kkj234@google.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": "전화 상담 요망",
+    "pc_status": "요청 수락"
   },
   {
     "id": 2,
-    "작성일": "2024-04-06",
-    "업체명": "XYZ 푸드",
-    "전화번호": "987-654-3210",
-    "이메일": "xyz@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "요청 대기"
+    "pc_created_at": "2024-04-06",
+    "pc_name": "굿미트",
+    "pc_phone": "053-356-7890",
+    "pc_email": "goodmeet@example.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": "다른 제품 추천받고 싶음",
+    "pc_status": "요청 대기"
   },
   {
     "id": 3,
-    "작성일": "2024-04-05",
-    "업체명": "예스마트",
-    "전화번호": "555-555-5555",
-    "이메일": "yesmart@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "요청 대기"
+    "pc_created_at": "2024-04-05",
+    "pc_name": "돌우물",
+    "pc_phone": "02-3456-7890",
+    "pc_email": "dwellfs@example.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": "가격 궁금",
+    "pc_status": "요청 대기"
   },
   {
     "id": 4,
-    "작성일": "2024-04-04",
-    "업체명": "에이스 테크",
-    "전화번호": "111-111-1111",
-    "이메일": "ace@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "요청 수락"
+    "pc_created_at": "2024-04-04",
+    "pc_name": "청미식품",
+    "pc_phone": "010-3456-7890",
+    "pc_email": "chungmifood@example.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": "오전중으로 전화 희망",
+    "pc_status": "요청 수락"
   },
   {
     "id": 5,
-    "작성일": "2024-03-31",
-    "업체명": "ABC 정육점",
-    "전화번호": "123-456-7890",
-    "이메일": "abc@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "요청 대기"
+    "pc_created_at": "2024-03-31",
+    "pc_name": "근대산업",
+    "pc_phone": "031-456-7890",
+    "pc_email": "geundaecon@example.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": null,
+    "pc_status": "요청 대기"
   },
   {
     "id": 6,
-    "작성일": "2024-04-06",
-    "업체명": "XYZ 푸드",
-    "전화번호": "987-654-3210",
-    "이메일": "xyz@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "처리 완료"
+    "pc_created_at": "2024-04-06",
+    "pc_name": "명가축산",
+    "pc_phone": "032-543-2454",
+    "pc_email": "meonggaga@example.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": "가격 궁금",
+    "pc_status": "처리 완료"
   },
   {
     "id": 7,
-    "작성일": "2024-04-05",
-    "업체명": "예스마트",
-    "전화번호": "555-555-5555",
-    "이메일": "yesmart@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "처리 완료"
+    "pc_created_at": "2024-04-05",
+    "pc_name": "임도현",
+    "pc_phone": "010-1234-5678",
+    "pc_email": "hong@naver.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": "오전중으로 전화 희망",
+    "pc_status": "처리 완료"
   },
   {
     "id": 8,
-    "작성일": "2024-04-04",
-    "업체명": "에이스 테크",
-    "전화번호": "02-1311-3241",
-    "이메일": "ace@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "처리 완료"
+    "pc_created_at": "2024-04-04",
+    "pc_name": "구포육절기",
+    "pc_phone": "010-3456-7890",
+    "pc_email": "gupoomeet@nate.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": "다른 제품 추천받고 싶음",
+    "pc_status": "처리 완료"
   },
   {
     "id": 9,
-    "작성일": "2024-04-04",
-    "업체명": "비커즈",
-    "전화번호": "031-125-1451",
-    "이메일": "ace@example.com",
-    "문의상품": "다이서 MCD-380N",
-    "상태": "처리 완료"
+    "pc_created_at": "2024-04-04",
+    "pc_name": "화성양감",
+    "pc_phone": "031-456-7890",
+    "pc_email": "kssfood@naver.com",
+    "pc_product_id": "MCD-380N",
+    "pc_content": "전화 상담 요망",
+    "pc_status": "처리 완료"
   }
 ]

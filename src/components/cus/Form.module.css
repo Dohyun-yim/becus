@@ -61,22 +61,63 @@
   background-color: #003d80;
 }
 
-/* 필수 입력 필드 표시 */
 .requiredStar {
   color: red;
   margin-left: 4px;
 }
 
-/* Select 스타일 */
 .form select {
   background-color: white;
-  appearance: none; /* 브라우저 기본 디자인 제거 */
+  appearance: none;
   cursor: pointer;
 }
 
 .form select:focus {
   border-color: #0056b3;
   outline: none;
+}
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+}
+
+.modalContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.modalButton {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #13233ca9;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modalButton:hover {
+  background-color: #233548;
+  transform: scale(1.05);
+}
+
+.modalButton:not(:last-child) {
+  margin-right: 15px;
 }
 
 /* 반응형 디자인 */

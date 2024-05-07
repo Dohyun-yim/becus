@@ -27,7 +27,7 @@ function AsPage() {
     {
       id: "r_product_id",
       name: "r_product_id",
-      label: "수리 상품명",
+      label: "수리 상품 품번",
       type: "text",
       required: true,
     },
@@ -45,7 +45,7 @@ function AsPage() {
       name: "r_content",
       label: "요청사항",
       type: "textarea",
-      required: true,
+      required: false,
     },
   ];
 

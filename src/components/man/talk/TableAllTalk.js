@@ -1,9 +1,13 @@
-// TableOrder.js
 import React from "react";
 import styles from "./TalkTable.module.css";
 import mockDataAll from "../../../mockdata/mockAll.json";
 
 const TableAllTalk = () => {
+  // 작성일을 기준으로 데이터를 내림차순 정렬
+  const sortedData = [...mockDataAll].sort((a, b) => {
+    return new Date(b.gc_created_at) - new Date(a.gc_created_at);
+  });
+
   return (
     <table className={styles.OrderTable}>
       <thead>
@@ -18,24 +22,24 @@ const TableAllTalk = () => {
         </tr>
       </thead>
       <tbody>
-        {mockDataAll.map((item) => (
+        {sortedData.map((item) => (
           <tr key={item.id}>
-            <td>{item.작성일}</td>
-            <td>{item.업체명}</td>
-            <td>{item.전화번호}</td>
-            <td>{item.이메일}</td>
-            <td>{item.유형}</td>
-            <td>{item.문의상품}</td>
+            <td>{item.gc_created_at}</td>
+            <td>{item.gc_name}</td>
+            <td>{item.gc_phone}</td>
+            <td>{item.gc_email}</td>
+            <td>{item.gc_type}</td>
+            <td>{item.gc_product_id}</td>
             <td
               className={
-                item.상태 === "요청 대기"
+                item.gc_status === "요청 대기"
                   ? styles.waiting
-                  : item.상태 === "처리 완료"
+                  : item.gc_status === "처리 완료"
                   ? styles.completed
                   : ""
               }
             >
-              {item.상태}
+              {item.gc_status}
             </td>
           </tr>
         ))}
