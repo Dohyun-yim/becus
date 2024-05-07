@@ -23,22 +23,22 @@ const TableAs = () => {
       </thead>
       <tbody>
         {sortedData.map((item) => (
-          <tr key={item.id}>
-            <td>{item.r_created_at}</td>
-            <td>{item.r_name}</td>
-            <td>{item.r_phone}</td>
-            <td>{item.r_product_id}</td>
-            <td>{item.r_type}</td>
+          <tr key={item.pk}>
+            <td>{item.fields.r_created_at}</td>
+            <td>{item.fields.r_name}</td>
+            <td>{item.fields.r_phone}</td>
+            <td>{item.fields.r_product_id}</td>
+            <td>{item.fields.r_type}</td>
             <td
               className={
-                item.r_status === "요청 대기"
+                item.fields.r_status === "요청 대기"
                   ? styles.waiting
-                  : item.r_status === "처리 완료"
+                  : item.fields.r_status === "처리 완료"
                   ? styles.completed
                   : ""
               }
             >
-              {item.r_status}
+              {item.fields.r_status}
             </td>
           </tr>
         ))}

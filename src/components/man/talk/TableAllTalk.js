@@ -5,7 +5,7 @@ import mockDataAll from "../../../mockdata/mockAll.json";
 const TableAllTalk = () => {
   // 작성일을 기준으로 데이터를 내림차순 정렬
   const sortedData = [...mockDataAll].sort((a, b) => {
-    return new Date(b.gc_created_at) - new Date(a.gc_created_at);
+    return new Date(b.fields.gc_created_at) - new Date(a.fields.gc_created_at);
   });
 
   return (
@@ -23,23 +23,23 @@ const TableAllTalk = () => {
       </thead>
       <tbody>
         {sortedData.map((item) => (
-          <tr key={item.id}>
-            <td>{item.gc_created_at}</td>
-            <td>{item.gc_name}</td>
-            <td>{item.gc_phone}</td>
-            <td>{item.gc_email}</td>
-            <td>{item.gc_type}</td>
-            <td>{item.gc_product_id}</td>
+          <tr key={item.pk}>
+            <td>{item.fields.gc_created_at}</td>
+            <td>{item.fields.gc_name}</td>
+            <td>{item.fields.gc_phone}</td>
+            <td>{item.fields.gc_email}</td>
+            <td>{item.fields.gc_type}</td>
+            <td>{item.fields.gc_product_id}</td>
             <td
               className={
-                item.gc_status === "요청 대기"
+                item.fields.gc_status === "요청 대기"
                   ? styles.waiting
-                  : item.gc_status === "처리 완료"
+                  : item.fields.gc_status === "처리 완료"
                   ? styles.completed
                   : ""
               }
             >
-              {item.gc_status}
+              {item.fields.gc_status}
             </td>
           </tr>
         ))}

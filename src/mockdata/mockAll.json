@@ -1,101 +1,137 @@
 [
   {
-    "id": 1,
-    "gc_created_at": "2024-04-07",
-    "gc_name": "돌우물",
-    "gc_phone": "02-3456-7890",
-    "gc_email": "dwellfs@example.com",
-    "gc_type": "AS",
-    "gc_product_id": "MCD-380N",
-    "gc_content": "오전중으로 전화 희망",
-    "gc_status": "요청 수락"
+    "model": "consult",
+    "pk": 1,
+    "fields": {
+      "gc_created_at": "2024-04-07",
+      "gc_name": "돌우물",
+      "gc_phone": "02-3456-7890",
+      "gc_email": "dwellfs@example.com",
+      "gc_type": "AS",
+      "gc_product_id": "MCD-380N",
+      "gc_content": "오전중으로 전화 희망",
+      "gc_status": "요청 수락",
+      "gc_author_id": 4
+    }
   },
   {
-    "id": 2,
-    "gc_created_at": "2024-04-06",
-    "gc_name": "권근중",
-    "gc_phone": "010-2345-6789",
-    "gc_email": "kkj234@google.com",
-    "gc_type": "구매",
-    "gc_product_id": "MCD-380N",
-    "gc_content": "가격 궁금",
-    "gc_status": "요청 대기"
+    "model": "consult",
+    "pk": 2,
+    "fields": {
+      "gc_created_at": "2024-04-06",
+      "gc_name": "권근중",
+      "gc_phone": "010-2345-6789",
+      "gc_email": "kkj234@google.com",
+      "gc_type": "구매",
+      "gc_product_id": "MCD-380N",
+      "gc_content": "가격 궁금",
+      "gc_status": "요청 대기",
+      "gc_author_id": 2
+    }
   },
   {
-    "id": 3,
-    "gc_created_at": "2024-04-05",
-    "gc_name": "근대산업",
-    "gc_phone": "031-456-7890",
-    "gc_email": "geundaecon@example.com",
-    "gc_type": "구매",
-    "gc_product_id": "MCD-380N",
-    "gc_content": "비슷한 제품 추천",
-    "gc_status": "요청 대기"
+    "model": "consult",
+    "pk": 3,
+    "fields": {
+      "gc_created_at": "2024-04-05",
+      "gc_name": "근대산업",
+      "gc_phone": "031-456-7890",
+      "gc_email": "geundaecon@example.com",
+      "gc_type": "구매",
+      "gc_product_id": "MCD-380N",
+      "gc_content": "비슷한 제품 추천",
+      "gc_status": "요청 대기",
+      "gc_author_id": 8
+    }
   },
   {
-    "id": 4,
-    "gc_created_at": "2024-04-04",
-    "gc_name": "미진식품",
-    "gc_phone": "031-124-7235",
-    "gc_email": "mijinfood@example.com",
-    "gc_type": "AS",
-    "gc_product_id": "MCD-380N",
-    "gc_content": "전화 상담 요망",
-    "gc_status": "요청 수락"
+    "model": "consult",
+    "pk": 4,
+    "fields": {
+      "gc_created_at": "2024-04-04",
+      "gc_name": "미진식품",
+      "gc_phone": "031-124-7235",
+      "gc_email": "mijinfood@example.com",
+      "gc_type": "AS",
+      "gc_product_id": "MCD-380N",
+      "gc_content": "전화 상담 요망",
+      "gc_status": "요청 수락",
+      "gc_author_id": 10
+    }
   },
   {
-    "id": 5,
-    "gc_created_at": "2024-03-31",
-    "gc_name": "구포육절기",
-    "gc_phone": "010-3456-7890",
-    "gc_email": "gupoomeet@nate.com",
-    "gc_type": "상담",
-    "gc_product_id": "MCD-380N",
-    "gc_content": "오전중으로 전화 희망",
-    "gc_status": "요청 대기"
+    "model": "consult",
+    "pk": 5,
+    "fields": {
+      "gc_created_at": "2024-03-31",
+      "gc_name": "구포육절기",
+      "gc_phone": "010-3456-7890",
+      "gc_email": "gupoomeet@nate.com",
+      "gc_type": "상담",
+      "gc_product_id": "MCD-380N",
+      "gc_content": "오전중으로 전화 희망",
+      "gc_status": "요청 대기",
+      "gc_author_id": 6
+    }
   },
   {
-    "id": 6,
-    "gc_created_at": "2024-04-06",
-    "gc_name": "임도현",
-    "gc_phone": "010-1234-5678",
-    "gc_email": "hong@naver.com",
-    "gc_type": "상담",
-    "gc_product_id": "MCD-380N",
-    "gc_content": "전화 상담 요망",
-    "gc_status": "처리 완료"
+    "model": "consult",
+    "pk": 6,
+    "fields": {
+      "gc_created_at": "2024-04-06",
+      "gc_name": "임도현",
+      "gc_phone": "010-1234-5678",
+      "gc_email": "hong@naver.com",
+      "gc_type": "상담",
+      "gc_product_id": "MCD-380N",
+      "gc_content": "전화 상담 요망",
+      "gc_status": "처리 완료",
+      "gc_author_id": 1
+    }
   },
   {
-    "id": 7,
-    "gc_created_at": "2024-04-05",
-    "gc_name": "화성양감",
-    "gc_phone": "031-456-7890",
-    "gc_email": "kssfood@naver.com",
-    "gc_type": "상담",
-    "gc_product_id": "MCD-380N",
-    "gc_content": null,
-    "gc_status": "처리 완료"
+    "model": "consult",
+    "pk": 7,
+    "fields": {
+      "gc_created_at": "2024-04-05",
+      "gc_name": "화성양감",
+      "gc_phone": "031-456-7890",
+      "gc_email": "kssfood@naver.com",
+      "gc_type": "상담",
+      "gc_product_id": "MCD-380N",
+      "gc_content": null,
+      "gc_status": "처리 완료",
+      "gc_author_id": 5
+    }
   },
   {
-    "id": 8,
-    "gc_created_at": "2024-04-04",
-    "gc_name": "명가축산",
-    "gc_phone": "032-543-2454",
-    "gc_email": "meonggaga@example.com",
-    "gc_type": "AS",
-    "gc_product_id": "MCD-380N",
-    "gc_content": null,
-    "gc_status": "처리 완료"
+    "model": "consult",
+    "pk": 8,
+    "fields": {
+      "gc_created_at": "2024-04-04",
+      "gc_name": "명가축산",
+      "gc_phone": "032-543-2454",
+      "gc_email": "meonggaga@example.com",
+      "gc_type": "AS",
+      "gc_product_id": "MCD-380N",
+      "gc_content": null,
+      "gc_status": "처리 완료",
+      "gc_author_id": 9
+    }
   },
   {
-    "id": 9,
-    "gc_created_at": "2024-04-04",
-    "gc_name": "청미식품",
-    "gc_phone": "010-3456-7890",
-    "gc_email": "chungmifood@example.com",
-    "gc_type": "상담",
-    "gc_product_id": "MCD-380N",
-    "gc_content": "최근 구매했는데, 사용법이 궁금해요.",
-    "gc_status": "처리 완료"
+    "model": "consult",
+    "pk": 9,
+    "fields": {
+      "gc_created_at": "2024-04-04",
+      "gc_name": "청미식품",
+      "gc_phone": "010-3456-7890",
+      "gc_email": "chungmifood@example.com",
+      "gc_type": "상담",
+      "gc_product_id": "MCD-380N",
+      "gc_content": "최근 구매했는데, 사용법이 궁금해요.",
+      "gc_status": "처리 완료",
+      "gc_author_id": 3
+    }
   }
 ]

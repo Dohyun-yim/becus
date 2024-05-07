@@ -17,9 +17,9 @@ const AsPage = () => {
   useEffect(() => {
     const counts = mockDataAs.reduce(
       (acc, item) => {
-        if (item.r_status === "요청 대기") acc.request++;
-        else if (item.r_status === "요청 수락") acc.accept++;
-        else if (item.r_status === "처리 완료") acc.completed++;
+        if (item.fields.r_status === "요청 대기") acc.request++;
+        else if (item.fields.r_status === "요청 수락") acc.accept++;
+        else if (item.fields.r_status === "처리 완료") acc.completed++;
         return acc;
       },
       { request: 0, accept: 0, completed: 0 }

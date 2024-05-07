@@ -5,7 +5,7 @@ import mockDataProduct from "../../../mockdata/mockProduct.json";
 const TableProduct = () => {
   // 작성일을 기준으로 데이터를 내림차순 정렬
   const sortedData = [...mockDataProduct].sort((a, b) => {
-    return new Date(b.pc_created_at) - new Date(a.pc_created_at);
+    return new Date(b.fields.pc_created_at) - new Date(a.fields.pc_created_at);
   });
 
   return (
@@ -22,22 +22,22 @@ const TableProduct = () => {
       </thead>
       <tbody>
         {sortedData.map((item) => (
-          <tr key={item.id}>
-            <td>{item.pc_created_at}</td>
-            <td>{item.pc_name}</td>
-            <td>{item.pc_phone}</td>
-            <td>{item.pc_email}</td>
-            <td>{item.pc_product_id}</td>
+          <tr key={item.pk}>
+            <td>{item.fields.pc_created_at}</td>
+            <td>{item.fields.pc_name}</td>
+            <td>{item.fields.pc_phone}</td>
+            <td>{item.fields.pc_email}</td>
+            <td>{item.fields.pc_product_id}</td>
             <td
               className={
-                item.pc_status === "요청 대기"
+                item.fields.pc_status === "요청 대기"
                   ? styles.waiting
-                  : item.pc_status === "처리 완료"
+                  : item.fields.pc_status === "처리 완료"
                   ? styles.completed
                   : ""
               }
             >
-              {item.pc_status}
+              {item.fields.pc_status}
             </td>
           </tr>
         ))}

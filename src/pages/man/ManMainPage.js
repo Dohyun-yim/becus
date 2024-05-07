@@ -16,10 +16,10 @@ const ManMainPage = () => {
 
   useEffect(() => {
     const pending = asMockData.filter(
-      (item) => item.r_status === "요청 대기"
+      (item) => item.fields.r_status === "요청 대기"
     ).length;
     const inProgress = asMockData.filter(
-      (item) => item.r_status === "요청 수락"
+      (item) => item.fields.r_status === "요청 수락"
     ).length;
     setAsCounts({ pending, inProgress });
   }, []);
