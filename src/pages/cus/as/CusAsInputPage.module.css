@@ -4,7 +4,7 @@ body {
 
 .cusAsInputContainer {
   max-width: 600px;
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -35,6 +35,7 @@ body {
 
 .cusAsInputInput {
   width: 100%;
+  margin-top: 15px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -54,7 +55,7 @@ body {
 }
 
 .cusAsInputButton {
-  background-color: #4caf50;
+  background-color: #13233c;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -65,7 +66,7 @@ body {
 }
 
 .cusAsInputButton:hover {
-  background-color: #45a049;
+  background-color: #456ca0;
 }
 
 .cusAsInputProductInfo {

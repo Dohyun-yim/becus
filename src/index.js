@@ -43,6 +43,7 @@ import CallScriptPage from "./pages/man/call/CallScriptPage"; //개별 통화 �
 import CusDetailsPage from "./pages/man/cus/CusDetailsPage"; // 고객 개별 상세페이지
 
 import ManCallonePage from "./pages/man/call/ManCallonePage";
+import ProductListPage from "./pages/cus/product/ProductListPage";
 
 const router = createBrowserRouter([
   {
@@ -51,13 +52,19 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <CusMainPage /> },
+
+      { path: "product", element: <ProductListPage /> },
       { path: "order", element: <CusOrderPage /> },
+
       { path: "asinput", element: <CusAsInputPage /> },
       { path: "as", element: <CusAsPage /> },
+
       { path: "talk", element: <CusTalkPage /> },
       { path: "producttalk", element: <CusProductTalkPage /> },
+
       { path: "mypage", element: <CusMyPage /> },
       { path: "mypage/documents", element: <CusMyPageDocs /> },
+
       { path: "login", element: <LoginPage /> },
       { path: "callback", element: <LoadingPage /> },
       { path: "connect", element: <ConnectPage /> },
