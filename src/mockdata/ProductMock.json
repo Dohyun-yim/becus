@@ -1,0 +1,97 @@
+[
+  {
+    "model": "Product",
+    "pk": 1,
+    "fields": {
+      "part_number": "SFO-300",
+      "name": "생육 일괄 절단기",
+      "image_url": "https://via.placeholder.com/150",
+      "demo_video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "description": "- 냉장상태의 원육덩어리를 단 한번에 일괄 절단해주는 제품입니다.\n- 칼날헤드의 교체작업이 간단하여 불고기용, 탕수육용, 장조림용 등 다용도로 사용 가능합니다.\n- 제품 전반이 스테인레시 스틸로 위생적이고 물청소가 가능하여 청소작업이 간편합니다.\n- 제품의 크기를 최소화하여 작은 공간에서 대량의 작업을 하는데 적합합니다.\n- 대량의 원육을 가공하는 급식납품업체 등에 적합한 제품입니다.\n- 칼날간격은 주문제작입니다.",
+      "dimension": "790x530x575mm",
+      "capacity": "BY CONTROL",
+      "net_weight": "87kg",
+      "fresh_frozen": "fresh",
+      "washable": true,
+      "feature1": "간단한 칼날 교체",
+      "feature2": "작은 공간에서 대량의 작업",
+      "feature3": "칼날간격 주문제작"
+    }
+  },
+  {
+    "model": "Product",
+    "pk": 2,
+    "fields": {
+      "part_number": "SFO-300A",
+      "name": "생육 일괄 절단기",
+      "image_url": "https://via.placeholder.com/150",
+      "demo_video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "description": "- 기존제품 SFO-300에 출구 컨베이어를 추가하여 작업의 효율성을 향상시켰습니다.\n- 작업장의 조건에 따라 작업다이 및 이송테이블과 일체형으로 제작이 가능합니다.\n- 칼날 간격은 주문제작입니다.",
+      "dimension": "1125x530x575mm",
+      "capacity": "BY CONTROL",
+      "net_weight": "98kg",
+      "fresh_frozen": "fresh",
+      "washable": true,
+      "feature1": "출구컨베이어 추가",
+      "feature2": "작업다이 및 이송테이블 일체형 제작 가능",
+      "feature3": "칼날간격 주문제작"
+    }
+  },
+  {
+    "model": "Product",
+    "pk": 3,
+    "fields": {
+      "part_number": "SEM-300",
+      "name": "냉장 편육기",
+      "image_url": "https://via.placeholder.com/150",
+      "demo_video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "description": "- 냉장상태의 원육을 넓게 확장시켜주는 제품입니다. \n- 업체의 용도에 따라 가공두께를 간편하게 조절할 수 있습니다. \n- 제품 전반이 스테인레스 스틸로 위생적이며 고압 물세척이 가능하여 청소작업이 수월합니다. \n- 각 부품의 탈착이 간편하여 초보자도 손쉽게 사용하고 관리할 수 있습니다. \n- 컨베이어 구동방식으로 연속작업이 가능하여 생산성 향상 효과가 큽니다.",
+      "dimension": "960x650x1040mm",
+      "capacity": "BY CONTROL",
+      "net_weight": "70kg",
+      "fresh_frozen": "fresh",
+      "washable": true,
+      "feature1": "가공두께 조절 가능",
+      "feature2": "부품 탈착 간편",
+      "feature3": "컨베이어 구동방식으로 연속작업 가능"
+    }
+  },
+  {
+    "model": "Product",
+    "pk": 4,
+    "fields": {
+      "part_number": "SEM-280",
+      "name": "냉동 편육기",
+      "image_url": "https://via.placeholder.com/150",
+      "demo_video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "description": "- 4개의 구동로라가 한번에 원육을 넓게 확장시킵니다. \n- 사용자의 용도에 따라 원육의 확장폭을 자유롭게 조절할 수 있습니다. \n- 구동로라의 분해 및 결합이 간단하여 청소작업이 수월하고 위생적입니다. \n- 제품의 성능은 최대화, 외형은 최소화하여 좁은 공간에서 효율적으로 사용할 수 있습니다.",
+      "dimension": "440x480x640mm",
+      "capacity": "BY CONTROL",
+      "net_weight": "73kg",
+      "fresh_frozen": "fresh",
+      "washable": true,
+      "feature1": "4개의 구동로라",
+      "feature2": "원육의 학장폭 조절 가능",
+      "feature3": "좁은 공간에서 사용 가능"
+    }
+  },
+  {
+    "model": "Product",
+    "pk": 5,
+    "fields": {
+      "part_number": "FDS-100",
+      "name": "과일 등분기",
+      "image_url": "https://via.placeholder.com/150",
+      "demo_video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "description": "- 사과, 귤, 오렌지 등 과일등분작업에 적합한 기계입니다. \n- 컴팩트한 사이즈로 소량 작업에 적합한 기계입니다.\n- 등분칼을 편리하게 교환 가능합니다.\n- 제품전반에 스테인레스 스틸을 사용하여 물청소가 가능합니다.",
+      "dimension": "420x420x970mm",
+      "capacity": "BY CONTROL",
+      "net_weight": "45kg",
+      "fresh_frozen": null,
+      "washable": true,
+      "feature1": "소량 작업에 적합",
+      "feature2": "전기 사용X",
+      "feature3": "간편한 칼날 교체"
+    }
+  }
+]

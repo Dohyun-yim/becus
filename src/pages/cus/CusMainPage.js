@@ -73,7 +73,10 @@ function Cus_MainPage() {
                 src={AsImg}
                 alt="A/S 수리"
               />
-              <Link to="/as" className="w-100 btn btn-lg btn-outline-primary">
+              <Link
+                to="/asinput"
+                className="w-100 btn btn-lg btn-outline-primary"
+              >
                 해결방안 및 수리 요청서 작성
               </Link>
             </div>

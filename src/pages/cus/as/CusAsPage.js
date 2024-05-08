@@ -1,7 +1,11 @@
 import React from "react";
 import Form from "../../../components/cus/Form";
+import { useLocation } from "react-router-dom";
 
 function AsPage() {
+  const location = useLocation();
+  const { partNumber, repairType } = location.state || {};
+
   const formFields = [
     {
       id: "r_name",
@@ -30,6 +34,7 @@ function AsPage() {
       label: "수리 상품 품번",
       type: "text",
       required: true,
+      defaultValue: partNumber,
     },
 
     {
@@ -38,7 +43,8 @@ function AsPage() {
       label: "수리유형",
       type: "select",
       required: true,
-      options: ["기계 멈춤 현상", "부품 마모/손상", "기계 오작동", "기타"], // 추가: select 옵션
+      options: ["기계 멈춤 현상", "부품 마모/손상", "기계 오작동", "기타"],
+      defaultValue: repairType,
     },
     {
       id: "r_content",

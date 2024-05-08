@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./CusAsInputPage.module.css";
 
 function CusAsInputPage() {
@@ -6,6 +7,8 @@ function CusAsInputPage() {
   const [partNumber, setPartNumber] = useState("");
   const [productInfo, setProductInfo] = useState({});
   const [repairType, setRepairType] = useState("");
+
+  const navigate = useNavigate();
 
   const handlePartNumberSubmit = () => {
     setProductInfo({ name: "제품명", model: "모델명" });
@@ -18,6 +21,7 @@ function CusAsInputPage() {
 
   const handleFinalSubmit = () => {
     console.log({ partNumber, productInfo, repairType });
+    navigate("/as", { state: { partNumber, repairType } });
   };
 
   const goBack = () => {
@@ -42,6 +46,7 @@ function CusAsInputPage() {
           </label>
           <button
             onClick={handlePartNumberSubmit}
+            disabled={!partNumber.trim()}
             className={styles.cusAsInputButton}
           >
             다음
@@ -73,6 +78,7 @@ function CusAsInputPage() {
           <div>
             <button
               onClick={handleRepairTypeSubmit}
+              disabled={!repairType}
               className={styles.cusAsInputButton}
             >
               다음
