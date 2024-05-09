@@ -54,9 +54,7 @@ function OrderPage() {
     },
   ];
 
-  // 제출 핸들러 함수 정의
   const handleSubmit = async (formData) => {
-    // 제출 내용 로그 출력
     console.log(formData);
     try {
       // API 호출
@@ -82,8 +80,6 @@ function OrderPage() {
       console.error("요청 에러 발생", error);
     }
   };
-
-  // 폼 컴포넌트 반환
   return (
     <Form
       onSubmit={handleSubmit}

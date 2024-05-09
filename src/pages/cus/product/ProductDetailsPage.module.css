@@ -1,0 +1,8 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.ProductDetailsContainer {
+  max-width: 1000px;
+  margin: 50px auto;
+}
