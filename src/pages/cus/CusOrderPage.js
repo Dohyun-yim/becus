@@ -1,5 +1,5 @@
-import React from "react";
 import Form from "../../components/cus/Form";
+import useStoredUserInfo from "../../lib/localStorage";
 
 function OrderPage() {
   const formFields = [
@@ -54,9 +54,12 @@ function OrderPage() {
     },
   ];
 
+  // 제출 핸들러 함수 정의
   const handleSubmit = async (formData) => {
+    // 제출 내용 로그 출력
     console.log(formData);
     try {
+      // API 호출
       const response = await fetch("http://34.64.53.159:8000/api/v1/order/", {
         method: "POST",
         headers: {
@@ -68,6 +71,7 @@ function OrderPage() {
         body: JSON.stringify(formData),
       });
 
+      // 응답 확인
       if (response.ok) {
         const jsonResponse = await response.json();
         console.log("서버로부터의 응답:", jsonResponse);
@@ -79,6 +83,7 @@ function OrderPage() {
     }
   };
 
+  // 폼 컴포넌트 반환
   return (
     <Form
       onSubmit={handleSubmit}

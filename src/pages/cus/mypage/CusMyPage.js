@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./CusMyPage.module.css";
-import getStoredUserInfo from "../../../lib/localStorage";
+import useStoredUserInfo from "../../../lib/localStorage";
 
 function CusMyPage() {
   const handleUnsubscribe = () => {
@@ -11,7 +11,7 @@ function CusMyPage() {
     }
   };
 
-  const userInfo = getStoredUserInfo();
+  const userInfo = useStoredUserInfo();
   console.log(userInfo);
 
   return (
