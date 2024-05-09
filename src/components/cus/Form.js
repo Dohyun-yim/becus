@@ -19,7 +19,7 @@ function Form({ title, fields, onSubmit }) {
   const validateForm = () => {
     for (let field of fields) {
       if (field.required && !formData[field.name]) {
-        setErrorModalOpen(true); // 필수 필드가 비어있으면 에러 모달을 열어줍니다.
+        setErrorModalOpen(true);
         return false;
       }
     }

@@ -18,6 +18,12 @@ import LoginPage from "./pages/LoginPage";
 import LoadingPage from "./pages/LoadingPage";
 
 import CusMainPage from "./pages/cus/CusMainPage";
+
+import ProductListPage from "./pages/cus/product/ProductListPage";
+import ProductDetailsPage from "./pages/cus/product/ProductDetailsPage";
+
+import ProductComparePage from "./pages/cus/product/ProductComparePage";
+
 import CusOrderPage from "./pages/cus/CusOrderPage";
 
 import CusAsPage from "./pages/cus/as/CusAsPage";
@@ -43,7 +49,6 @@ import CallScriptPage from "./pages/man/call/CallScriptPage"; //개별 통화 �
 import CusDetailsPage from "./pages/man/cus/CusDetailsPage"; // 고객 개별 상세페이지
 
 import ManCallonePage from "./pages/man/call/ManCallonePage";
-import ProductListPage from "./pages/cus/product/ProductListPage";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +59,10 @@ const router = createBrowserRouter([
       { index: true, element: <CusMainPage /> },
 
       { path: "product", element: <ProductListPage /> },
+      { path: "product/:id", element: <ProductDetailsPage /> },
       { path: "order", element: <CusOrderPage /> },
+
+      { path: "compare", element: <ProductComparePage /> },
 
       { path: "asinput", element: <CusAsInputPage /> },
       { path: "as", element: <CusAsPage /> },

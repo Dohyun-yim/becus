@@ -1,0 +1,166 @@
+.productContainer {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #13233c;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.productImageContainer {
+  flex: 1;
+  max-width: 400px;
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+}
+
+.productInfo {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.productName {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.productName h1,
+.productName h2 {
+  margin-right: 10px;
+}
+
+.productName h1 {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.productName h2 {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.productDescription {
+  color: #666;
+  line-height: 1.6;
+  text-align: start;
+  white-space: pre-wrap;
+  margin-left: 20px;
+}
+
+.productDetailsTable {
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 20px;
+}
+
+.productDetailsTable th,
+.productDetailsTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.productDetailsTable th {
+  background-color: #f8f8f8;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.button,
+.buttonCompare,
+.buttonBack {
+  padding: 10px 20px;
+  color: white;
+  background-color: #13233c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  flex-grow: 1;
+  text-decoration: none; /* 링크의 밑줄 제거 */
+  display: inline-block; /* 버튼처럼 보이도록 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  opacity: 1;
+}
+
+.button {
+  background-color: #000000;
+  font-weight: 700;
+}
+
+.buttonCompare {
+  background-color: #024712;
+}
+
+.buttonBack {
+  background-color: #820c18;
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+  }
+
+  .productImageContainer {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .productImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .productInfo {
+    padding: 20px 0;
+  }
+
+  .productName h1 {
+    font-size: 30px;
+  }
+
+  .productName h2 {
+    font-size: 20px;
+  }
+
+  .productDetailsTable {
+    width: 100%;
+    margin: 0;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button,
+  .buttonCompare,
+  .buttonBack {
+    width: 90%;
+    margin: 10px 0;
+  }
+}
