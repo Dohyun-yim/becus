@@ -53,12 +53,12 @@ import Home from "./pages/home/HomePage";
 
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     errorElement: <NotFound />,
     children: [{ index: true, element: <Home /> }],
   },
   {
-    path: "/",
+    path: "/cus",
     element: <CusLayout />,
     errorElement: <NotFound />,
     children: [

@@ -7,6 +7,7 @@ import Services from "./Services";
 import CallToAction from "./CallToAction";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import "./styles.css";
 
 const Home = () => {
   return (

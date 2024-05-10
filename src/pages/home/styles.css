@@ -11281,7 +11281,7 @@ header.masthead {
       rgba(2, 0, 36, 0.8) 0%,
       rgba(4, 4, 65, 0.8) 100%
     ),
-    url("../assets/img/bg-masthead.png");
+    url("./home/img/bg-masthead.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
