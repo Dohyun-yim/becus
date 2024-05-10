@@ -21,7 +21,7 @@ const HomeHeader = () => {
               <br />
               통화 목록 관리, 고객 주문, 상담, AS 요청 관리 서비스
             </p>
-            <a className="btn btn-primary btn-xl" href="/">
+            <a className="btn btn-primary btn-xl" href="/cus">
               서비스 이용하러 가기
             </a>
           </div>
