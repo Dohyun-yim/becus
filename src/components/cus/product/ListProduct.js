@@ -9,7 +9,7 @@ function ListProduct() {
       {products.map((product) => (
         <Link
           key={product.pk}
-          to={`/product/${product.pk}`}
+          to={`/cus/product/${product.pk}`}
           className={styles.productCard}
         >
           <img src={product.fields.image_url} alt={product.fields.name} />

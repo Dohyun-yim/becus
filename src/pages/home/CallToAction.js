@@ -8,7 +8,7 @@ const CallToAction = () => {
         <h2 className="mb-4">Becus Team Notion Page</h2>
         <a
           className="btn btn-light btn-xl"
-          href="https://startbootstrap.com/theme/creative/"
+          href="https://www.notion.so/BE-CUS-Dashboard-32ad0b0b783f4f7e84adfc8197e79f58?pvs=4"
         >
           노션 페이지 이동
         </a>

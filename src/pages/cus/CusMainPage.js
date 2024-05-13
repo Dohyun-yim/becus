@@ -46,7 +46,7 @@ function Cus_MainPage() {
                 alt="견적 문의"
               />
               <Link
-                to="/order"
+                to="product"
                 className="w-100 btn btn-lg btn-outline-primary"
               >
                 상품 조회/비교 및 견적서 작성
@@ -74,7 +74,7 @@ function Cus_MainPage() {
                 alt="A/S 수리"
               />
               <Link
-                to="/asinput"
+                to="asinput"
                 className="w-100 btn btn-lg btn-outline-primary"
               >
                 해결방안 및 수리 요청서 작성
@@ -101,7 +101,7 @@ function Cus_MainPage() {
                 src={TalkImg}
                 alt="제품 상담"
               />
-              <Link to="/talk" className="w-100 btn btn-lg btn-outline-primary">
+              <Link to="talk" className="w-100 btn btn-lg btn-outline-primary">
                 이용법 및 기타 상담
               </Link>
             </div>

@@ -48,7 +48,7 @@ const UserMenu = ({ Icon }) => {
               {/* 로그아웃 버튼*/}
             </>
           ) : (
-            <Link to="/login">
+            <Link to="/cus/login">
               <li>로그인</li>
             </Link>
           )}
