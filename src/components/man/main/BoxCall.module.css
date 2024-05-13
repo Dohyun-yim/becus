@@ -1,3 +1,7 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 .BoxCall {
   flex: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -10,8 +14,8 @@
   transition: all 0.3s ease;
   display: flex;
   justify-content: start;
-  text-decoration: none; /* 링크의 밑줄을 없앱니다. */
-  color: inherit; /* 링크의 색상을 상위 요소에서 상속받은 색상으로 설정합니다. */
+  text-decoration: none;
+  color: inherit;
 }
 
 .BoxCall:hover {

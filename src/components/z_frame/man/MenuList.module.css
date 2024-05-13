@@ -1,3 +1,7 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 .menu-bar {
   height: 88vh;
   margin-top: 2rem;
@@ -6,4 +10,5 @@
   gap: 15px;
   font-size: 1rem;
   position: relative;
+  text-decoration: none;
 }

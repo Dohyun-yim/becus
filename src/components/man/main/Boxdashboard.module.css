@@ -1,14 +1,19 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 .Boxdashboard {
   display: flex;
-  align-items: center;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #f7f7f7;
   border: 1px solid #cbcfcf;
   padding: 10px;
   margin-bottom: 20px;
+  min-width: 200px;
   max-width: 300px;
   transition: all 0.3s ease;
+  align-items: center;
 }
 
 .Boxdashboard:hover {
@@ -19,27 +24,104 @@
 .dashboardIcon {
   width: 60px;
   height: 80px;
+  margin-left: 15px;
 }
 
 .left {
   margin-right: 10px;
 }
 
-.right-db {
+.rightDb {
+  margin-left: 10px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: right;
+  margin-right: 15px;
 }
 
-.title-db {
+.titleDb {
   color: #13233c;
   font-weight: bold;
-  font-size: 20px; /* 조정된 크기 */
+  font-size: 20px;
 }
 
-.explain-db {
-  font-size: 15px; /* 조정된 크기 */
+.explainDb {
+  font-size: 15px;
   color: #13233c;
+}
+@media (max-width: 768px) {
+  .Boxdashboard {
+    max-width: 400px;
+  }
+
+  .dashboardIcon {
+    width: 50px;
+    height: 60px;
+  }
+
+  .titleDb {
+    font-size: 18px;
+  }
+
+  .explainDb {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Boxdashboard {
+    max-width: 300px;
+  }
+
+  .dashboardIcon {
+    width: 40px;
+    height: 50px;
+  }
+
+  .title-db {
+    font-size: 16px;
+  }
+
+  .explain-db {
+    font-size: 12px;
+  }
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .Boxdashboard {
+    max-width: 250px;
+  }
+
+  .dashboardIcon {
+    width: 30px;
+    height: 40px;
+  }
+
+  .title-db {
+    font-size: 14px;
+  }
+
+  .explain-db {
+    font-size: 10px;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .Boxdashboard {
+    max-width: 350px;
+  }
+
+  .dashboardIcon {
+    width: 45px;
+    height: 55px;
+  }
+
+  .title-db {
+    font-size: 16px;
+  }
+
+  .explain-db {
+    font-size: 12px;
+  }
 }

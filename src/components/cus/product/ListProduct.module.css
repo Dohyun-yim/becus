@@ -14,6 +14,7 @@ body {
   text-align: center;
   padding: 24px;
   transition: transform 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 .productCard:hover {

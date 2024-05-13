@@ -6,6 +6,7 @@ import ManCusImg from "../../assets/man/cus_navy.png";
 import ManAsImg from "../../assets/man/as_navy.png";
 import ManTalkImg from "../../assets/man/talk_navy.png";
 import CusImg from "../../assets/man/cus_gray.png";
+
 import Widget from "../../components/man/main/Widget";
 import Boxcall from "../../components/man/main/Boxcall";
 import Boxdashboard from "../../components/man/main/Boxdashboard";
@@ -27,12 +28,12 @@ const ManMainPage = () => {
   }, []);
 
   return (
-    <div className={styles.home}>
-      <div className={styles.homeContainer}>
-        <div className={styles.widgets}>
-          <Link to="/manager/cus">
+    <div className={styles.managerhome}>
+      <div className={styles.managerhomeContainer}>
+        <div className={styles.managerwidgets}>
+          <Link to="/manager/cus" style={{ textDecoration: "none" }}>
             <Widget
-              className={styles.widget}
+              className={styles.managerwidget}
               imgSrc={ManCusImg}
               title="고객관리"
               smalltitle1="신규 고객"
@@ -41,9 +42,9 @@ const ManMainPage = () => {
               num2="500"
             />
           </Link>
-          <Link to="/manager/as">
+          <Link to="/manager/as" style={{ textDecoration: "none" }}>
             <Widget
-              className={styles.widget}
+              className={styles.managerwidget}
               imgSrc={ManAsImg}
               title="A/S 현황"
               smalltitle1="미 처리"
@@ -52,9 +53,9 @@ const ManMainPage = () => {
               num2={asCounts.inProgress}
             />
           </Link>
-          <Link to="/manager/talk">
+          <Link to="/manager/talk" style={{ textDecoration: "none" }}>
             <Widget
-              className={styles.widget}
+              className={styles.managerwidget}
               imgSrc={ManTalkImg}
               title="문의 조회"
               smalltitle1="처리 대기"
@@ -64,13 +65,13 @@ const ManMainPage = () => {
             />
           </Link>
         </div>
-        <div className={styles.box}>
+        <div className={styles.managerbox}>
           <Link to="/manager/call">
             <Boxcall />
           </Link>
-          <div className={styles.box2}>
+          <div className={styles.managerbox2}>
             <Boxdashboard />
-            <div className={styles.box3}>
+            <div className={styles.managerbox3}>
               <Link to="/cus">
                 <Boxsetting imgSrc={CusImg} word="고객용 페이지" />
               </Link>
