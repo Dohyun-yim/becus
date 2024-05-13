@@ -3,8 +3,9 @@ import styles from "./SelectProduct.module.css";
 import products from "../../../mockdata/ProductMock.json";
 
 function SelectProduct({ goToStep2 }) {
-  const handleProductClick = (pk) => {
-    goToStep2(pk);
+  const handleProductClick = (product) => {
+    // 수정된 부분
+    goToStep2(product); // 수정된 부분
   };
 
   return (
@@ -15,7 +16,7 @@ function SelectProduct({ goToStep2 }) {
           <h3>{product.fields.name}</h3>
           <h4>{product.fields.part_number}</h4>
           {goToStep2 && (
-            <button onClick={() => handleProductClick(product.pk)}>선택</button>
+            <button onClick={() => handleProductClick(product)}>선택</button>
           )}
         </div>
       ))}
