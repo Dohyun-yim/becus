@@ -26,7 +26,6 @@ import ProductComparePage from "./pages/cus/product/ProductComparePage";
 
 import CusOrderPage from "./pages/cus/CusOrderPage";
 
-import CusAsPage from "./pages/cus/as/CusAsPage";
 import CusAsInputPage from "./pages/cus/as/CusAsInputPage";
 
 import CusTalkPage from "./pages/cus/CusTalkPage";
@@ -71,7 +70,6 @@ const router = createBrowserRouter([
       { path: "compare", element: <ProductComparePage /> },
 
       { path: "asinput", element: <CusAsInputPage /> },
-      { path: "as", element: <CusAsPage /> },
 
       { path: "talk", element: <CusTalkPage /> },
       { path: "producttalk", element: <CusProductTalkPage /> },

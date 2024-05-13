@@ -22,25 +22,44 @@ body {
 }
 
 .cusAsInputStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
+  margin: 10px;
 }
 
-.cusAsInputLabel {
-  padding: 0px 0px 0px 10px;
-  display: block;
-  font-size: 20px;
-  color: #13233c;
-  margin-bottom: 10px;
+.cusAsInputSteptitle {
+  font-size: 18px;
 }
 
-.cusAsInputInput {
+.productInfo {
+  display: flex;
+  align-items: center;
+}
+
+.productImage {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.productName {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.productNumber {
+  font-size: 1em;
+  color: #747474;
+}
+
+.divider {
   width: 100%;
-  margin-top: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  margin-bottom: 20px;
+  border: none;
+  border-top: 1px solid #959595;
+  margin: 20px 0;
 }
 
 .cusAsInputSelect {
@@ -65,14 +84,14 @@ body {
   transition: background-color 0.3s;
 }
 
-.cusAsInputButton:hover {
-  background-color: #456ca0;
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.cusAsInputProductInfo {
-  margin-bottom: 20px;
-  font-size: 16px;
-  color: #444;
+.cusAsInputButton:hover {
+  background-color: #456ca0;
 }
 
 .cusAsInputBackButton {
