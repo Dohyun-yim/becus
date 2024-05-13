@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SelectProduct from "../../../components/cus/as/SelectProduct";
 import styles from "./CusAsInputPage.module.css";
 
 function CusAsInputPage() {
   const [step, setStep] = useState(1);
-  const [partNumber, setPartNumber] = useState("");
-  const [productInfo, setProductInfo] = useState({});
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [repairType, setRepairType] = useState("");
 
   const navigate = useNavigate();
 
-  const handlePartNumberSubmit = () => {
-    setProductInfo({ name: "제품명", model: "모델명" });
+  const goToStep2 = (product) => {
+    setSelectedProduct(product);
     setStep(2);
   };
 
@@ -20,8 +20,8 @@ function CusAsInputPage() {
   };
 
   const handleFinalSubmit = () => {
-    console.log({ partNumber, productInfo, repairType });
-    navigate("/as", { state: { partNumber, repairType } });
+    console.log({ selectedProduct, repairType });
+    navigate("/cus/as", { state: { selectedProduct, repairType } });
   };
 
   const goBack = () => {
@@ -35,33 +35,19 @@ function CusAsInputPage() {
       <h1 className={styles.cusAsInputHeader}>A/S 수리 요청</h1>
       {step === 1 && (
         <div className={styles.cusAsInputStep}>
-          <label className={styles.cusAsInputLabel}>
-            어떤 상품인가요? (품번을 정확히 입력해주세요.)
-            <input
-              type="text"
-              value={partNumber}
-              onChange={(e) => setPartNumber(e.target.value)}
-              className={styles.cusAsInputInput}
-            />
-          </label>
-          <button
-            onClick={handlePartNumberSubmit}
-            disabled={!partNumber.trim()}
-            className={styles.cusAsInputButton}
-          >
-            다음
-          </button>
+          <p>상품을 선택하세요:</p>
+          <SelectProduct goToStep2={goToStep2} />
         </div>
       )}
-      {step === 2 && (
+      {step === 2 && selectedProduct && (
         <div className={styles.cusAsInputStep}>
-          <p className={styles.cusAsInputProductInfo}>
-            제품 {productInfo.name}
-          </p>
-          <p className={styles.cusAsInputProductInfo}>
-            모델명 {productInfo.model}
-          </p>
-          <label className={styles.cusAsInputLabel}>
+          <img
+            src={selectedProduct.fields.image_url}
+            alt={selectedProduct.fields.name}
+          />
+          <p>제품명: {selectedProduct.fields.name}</p>
+          <p>모델명: {selectedProduct.fields.model}</p>
+          <label>
             수리 유형 선택:
             <select
               value={repairType}

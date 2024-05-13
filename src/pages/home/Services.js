@@ -13,9 +13,7 @@ const Services = () => {
                 <i className="bi-telephone-plus-fill fs-1 text-primary"></i>
               </div>
               <h3 className="h4 mb-2">부재중 통화 관리</h3>
-              <p className="text-muted mb-0">
-                Our themes are updated regularly to keep them bug free!
-              </p>
+              <p className="text-muted mb-0">Manage missed calls</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 text-center">
@@ -24,9 +22,7 @@ const Services = () => {
                 <i className="bi-telephone-inbound-fill fs-1 text-primary"></i>
               </div>
               <h3 className="h4 mb-2">수신 통화 목록 관리</h3>
-              <p className="text-muted mb-0">
-                All dependencies are kept current to keep things fresh.
-              </p>
+              <p className="text-muted mb-0">Manage incoming call lists</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 text-center">
@@ -35,9 +31,7 @@ const Services = () => {
                 <i className="bi-people-fill fs-1 text-primary"></i>
               </div>
               <h3 className="h4 mb-2">고객 관리</h3>
-              <p className="text-muted mb-0">
-                You can use this design as is, or you can make changes!
-              </p>
+              <p className="text-muted mb-0">Customer Management</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 text-center">
@@ -46,9 +40,7 @@ const Services = () => {
                 <i className="bi-display fs-1 text-primary"></i>
               </div>
               <h3 className="h4 mb-2">모니터링</h3>
-              <p className="text-muted mb-0">
-                Is it really open source if it's not made with love?
-              </p>
+              <p className="text-muted mb-0">Monitoring</p>
             </div>
           </div>
         </div>

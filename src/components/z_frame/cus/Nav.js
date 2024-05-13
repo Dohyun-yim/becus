@@ -16,7 +16,7 @@ function Nav() {
   return (
     <div className={styles.nav}>
       <Container className={styles.container}>
-        <Link to="/">
+        <Link to="/cus">
           <img
             src={logoImg}
             alt="Becus Logo"

@@ -49,13 +49,15 @@ function DetailProduct() {
         </div>
       </div>
       <div className={styles.buttonContainer}>
-        <Link to="/order" className={styles.button}>
+        <Link to="/cus/order" className={styles.button}>
           견적 문의
         </Link>
-        <Link to="/producttalk" className={styles.button}>
+        <Link to="/cus/producttalk" className={styles.button}>
           제품 문의
         </Link>
-        <button className={styles.buttonCompare}>타 제품과의 비교</button>
+        <Link to="/cus/compare" className={styles.buttonCompare}>
+          타 제품과의 비교
+        </Link>
         <button className={styles.buttonBack} onClick={() => navigate(-1)}>
           뒤로 가기
         </button>

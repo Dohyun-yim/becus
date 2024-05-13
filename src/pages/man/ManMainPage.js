@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./ManMainPage.css";
+import styles from "./ManMainPage.module.css";
+
 import ManCusImg from "../../assets/man/cus_navy.png";
 import ManAsImg from "../../assets/man/as_navy.png";
 import ManTalkImg from "../../assets/man/talk_navy.png";
@@ -9,7 +10,8 @@ import Widget from "../../components/man/main/Widget";
 import Boxcall from "../../components/man/main/Boxcall";
 import Boxdashboard from "../../components/man/main/Boxdashboard";
 import Boxsetting from "../../components/man/main/Boxsetting";
-import asMockData from "../../mockdata/mockAs.json"; // 데이터를 로컬에서 불러옵니다.
+
+import asMockData from "../../mockdata/mockAs.json";
 
 const ManMainPage = () => {
   const [asCounts, setAsCounts] = useState({ pending: 0, inProgress: 0 });
@@ -25,11 +27,12 @@ const ManMainPage = () => {
   }, []);
 
   return (
-    <div className="home">
-      <div className="homeContainer">
-        <div className="widgets">
+    <div className={styles.home}>
+      <div className={styles.homeContainer}>
+        <div className={styles.widgets}>
           <Link to="/manager/cus">
             <Widget
+              className={styles.widget}
               imgSrc={ManCusImg}
               title="고객관리"
               smalltitle1="신규 고객"
@@ -40,6 +43,7 @@ const ManMainPage = () => {
           </Link>
           <Link to="/manager/as">
             <Widget
+              className={styles.widget}
               imgSrc={ManAsImg}
               title="A/S 현황"
               smalltitle1="미 처리"
@@ -50,6 +54,7 @@ const ManMainPage = () => {
           </Link>
           <Link to="/manager/talk">
             <Widget
+              className={styles.widget}
               imgSrc={ManTalkImg}
               title="문의 조회"
               smalltitle1="처리 대기"
@@ -59,14 +64,14 @@ const ManMainPage = () => {
             />
           </Link>
         </div>
-        <div className="box">
+        <div className={styles.box}>
           <Link to="/manager/call">
             <Boxcall />
           </Link>
-          <div className="box2">
+          <div className={styles.box2}>
             <Boxdashboard />
-            <div className="box3">
-              <Link to="/">
+            <div className={styles.box3}>
+              <Link to="/cus">
                 <Boxsetting imgSrc={CusImg} word="고객용 페이지" />
               </Link>
             </div>

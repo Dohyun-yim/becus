@@ -1,0 +1,55 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.compareContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.productButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.productButton {
+  background-color: #f8f8f8;
+  border: 1px solid #d2d2d2;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.productButton:hover {
+  background-color: #eaeaea;
+  border-color: #bdbdbd;
+}
+
+.selected {
+  background-color: #0070c9;
+  color: white;
+  border-color: #0070c9;
+}
+
+.productComparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.productComparisonTable th,
+.productComparisonTable td {
+  border: 1px solid #d2d2d2;
+  padding: 20px;
+  text-align: center;
+}
+
+.productComparisonTable th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
