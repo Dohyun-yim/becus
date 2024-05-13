@@ -7,7 +7,7 @@ textarea {
   font-family: "Noto Sans KR", sans-serif;
 }
 
-.widget {
+.manmainwidget {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #f7f7f7;
@@ -21,49 +21,54 @@ textarea {
   flex-direction: column;
   align-items: center;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.widget:hover {
+.manmainwidget:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-3px);
+  text-decoration: none;
 }
 
-.WidgetImg {
+.manmainWidgetImg {
   width: 110px;
   height: 110px;
 }
 
-.title {
+.manmaintitle {
   font-size: 23px;
   color: #13233c;
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
 }
 
-.content {
+.manmaincontent {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 5px;
   border-top: 1px solid #dddddd;
+
+  text-decoration: none;
 }
 
-.content_left {
+.manmaincontent_left {
   margin-right: 10px;
 }
 
-.content_left,
-.content_right {
+.manmaincontent_left,
+.manmaincontent_right {
   text-align: center;
   margin-top: 10px;
 }
 
-.smalltitle {
+.manmainsmalltitle {
   font-size: 15px;
   color: #8b8b8b;
 }
 
-.smallnum {
+.manmainsmallnum {
   font-size: 24px;
   font-weight: bold;
   color: #13233c9a;

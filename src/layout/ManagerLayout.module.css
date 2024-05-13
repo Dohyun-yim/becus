@@ -15,6 +15,7 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
 }
 
 .logo {
@@ -49,4 +50,17 @@ body {
   padding: 10px;
   background-color: #efefef;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 100px 1fr;
+  }
+  .sider .menu-item span {
+    display: none;
+  }
+
+  .sider .menu-item img {
+    display: block;
+  }
 }
