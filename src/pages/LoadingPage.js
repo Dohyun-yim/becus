@@ -12,15 +12,16 @@ const LoadingPage = () => {
 
   const handleLoginPost = async (code, state) => {
     try {
+      console.log("adsfasdf");
       const res = await axios.get(
-        `http://34.64.53.159:8000/api/v1/user/naver/callback?code=${code}&state=${state}`
+        `https://api.be-cus.com:8000/api/v1/user/naver/callback?code=${code}&state=${state}`
       );
       console.log(res);
       console.log(res.data.user);
       setCustomerInfo(res.data.user); // 고객 정보를 상태로 저장
       // localStorage에 고객 정보와 만료 시간을 저장
       setItemWithExpireTime("customerInfo", res.data.user, 2 * 60 * 60 * 1000); // 2시간 만료시간 설정
-      navigate("/connect");
+      navigate("/cus/connect");
       window.location.reload(true);
     } catch (error) {
       console.log(error);
