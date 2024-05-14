@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./CallMainPage.css";
 import CallListPage from "./CallListPage";
 import CallMissListPage from "./CallMissListPage";
-import ManKeywordPage from "./ManKeywordPage";
 
 function CallMainPage() {
   const [selectedButton, setSelectedButton] = useState(1);
@@ -33,7 +32,6 @@ function CallMainPage() {
         <div className="content">
           {selectedButton === 1 && <CallListPage />}
           {selectedButton === 2 && <CallMissListPage />}
-          {selectedButton === 3 && <ManKeywordPage />}
         </div>
       </div>
     </div>

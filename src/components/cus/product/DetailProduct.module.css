@@ -1,4 +1,4 @@
-.productContainer {
+.DetailproductContainer {
   max-width: 800px;
   margin: 30px auto;
   padding: 30px;
@@ -11,29 +11,29 @@
   align-items: center;
 }
 
-.contentContainer {
+.DetailcontentContainer {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
 }
 
-.productImageContainer {
+.DetailproductImageContainer {
   flex: 1;
   max-width: 400px;
 }
 
-.productImage {
+.DetailproductImage {
   width: 100%;
   height: auto;
 }
 
-.productInfo {
+.DetailproductInfo {
   flex: 2;
   padding-left: 20px;
 }
 
-.productName {
+.DetailproductName {
   display: flex;
   align-items: baseline;
   justify-content: flex-start;
@@ -41,22 +41,22 @@
   margin-bottom: 10px;
 }
 
-.productName h1,
-.productName h2 {
+.DetailproductName h1,
+.DetailproductName h2 {
   margin-right: 10px;
 }
 
-.productName h1 {
+.DetailproductName h1 {
   font-size: 35px;
   font-weight: 700;
 }
 
-.productName h2 {
+.DetailproductName h2 {
   font-size: 25px;
   font-weight: 300;
 }
 
-.productDescription {
+.DetailproductDescription {
   color: #666;
   line-height: 1.6;
   text-align: start;
@@ -82,68 +82,70 @@
   background-color: #f8f8f8;
 }
 
-.buttonContainer {
+.DetailbuttonContainer {
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
 }
-
-.button,
-.buttonCompare,
-.buttonBack {
-  padding: 10px 20px;
-  color: white;
-  background-color: #13233c;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.Detailbutton,
+.DetailbuttonCompare,
+.DetailbuttonBack {
+  border: 1px solid #a1a1a1aa;
+  border-radius: 25px;
+  padding: 12px 40px;
   margin: 5px;
-  flex-grow: 1;
-  text-decoration: none; /* 링크의 밑줄 제거 */
-  display: inline-block; /* 버튼처럼 보이도록 */
-  text-align: center; /* 텍스트 중앙 정렬 */
-  opacity: 1;
+  color: #13233c;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.button {
-  background-color: #000000;
-  font-weight: 700;
+.Detailbutton {
+  background-color: #f0f0f0;
 }
 
-.buttonCompare {
-  background-color: #024712;
+.DetailbuttonCompare {
+  background-color: #e1eaf5;
 }
 
-.buttonBack {
-  background-color: #820c18;
+.DetailbuttonBack {
+  background-color: #f8e6e7;
+}
+
+.Detailbutton:hover,
+.DetailbuttonCompare:hover,
+.DetailbuttonBack:hover {
+  background-color: #d4d4d4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
-  .contentContainer {
+  .DetailcontentContainer {
     flex-direction: column;
   }
 
-  .productImageContainer {
+  .DetailproductImageContainer {
     max-width: 100%;
     flex: none;
   }
 
-  .productImage {
+  .DetailproductImage {
     width: 100%;
     height: auto;
   }
 
-  .productInfo {
+  .DetailproductInfo {
     padding: 20px 0;
   }
 
-  .productName h1 {
+  .DetailproductName h1 {
     font-size: 30px;
   }
 
-  .productName h2 {
+  .DetailproductName h2 {
     font-size: 20px;
   }
 
@@ -152,14 +154,14 @@
     margin: 0;
   }
 
-  .buttonContainer {
+  .DetailbuttonContainer {
     flex-direction: column;
     align-items: center;
   }
 
-  .button,
-  .buttonCompare,
-  .buttonBack {
+  .Detailbutton,
+  .DetailbuttonCompare,
+  .DetailbuttonBack {
     width: 90%;
     margin: 10px 0;
   }

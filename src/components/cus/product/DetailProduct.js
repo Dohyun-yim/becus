@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import products from "../../../mockdata/ProductMock.json";
 import styles from "./DetailProduct.module.css";
 
@@ -12,22 +12,37 @@ function DetailProduct() {
     return <div>상품이 없습니다!</div>;
   }
 
+  const handleOrderClick = () => {
+    navigate("/cus/order", { state: { productId: product.pk } });
+  };
+  const handleProductTalkClick = () => {
+    navigate("/cus/producttalk", { state: { productId: product.pk } });
+  };
+
+  const handleCompareClick = () => {
+    navigate("/cus/compare");
+  };
+
+  const handleBackClick = () => {
+    navigate(-1);
+  };
+
   return (
-    <div className={styles.productContainer}>
-      <div className={styles.contentContainer}>
-        <div className={styles.productImageContainer}>
+    <div className={styles.DetailproductContainer}>
+      <div className={styles.DetailcontentContainer}>
+        <div className={styles.DetailproductImageContainer}>
           <img
-            className={styles.productImage}
+            className={styles.DetailproductImage}
             src={product.fields.image_url}
             alt={product.fields.name}
           />
         </div>
-        <div className={styles.productInfo}>
-          <div className={styles.productName}>
+        <div className={styles.DetailproductInfo}>
+          <div className={styles.DetailproductName}>
             <h1>{product.fields.name}</h1>
             <h2>{product.fields.part_number}</h2>
           </div>
-          <p className={styles.productDescription}>
+          <p className={styles.DetailproductDescription}>
             {product.fields.description}
           </p>
           <table className={styles.productDetailsTable}>
@@ -48,17 +63,23 @@ function DetailProduct() {
           </table>
         </div>
       </div>
-      <div className={styles.buttonContainer}>
-        <Link to="/cus/order" className={styles.button}>
+      <div className={styles.DetailbuttonContainer}>
+        <button className={styles.Detailbutton} onClick={handleOrderClick}>
           견적 문의
-        </Link>
-        <Link to="/cus/producttalk" className={styles.button}>
+        </button>
+        <button
+          className={styles.Detailbutton}
+          onClick={handleProductTalkClick}
+        >
           제품 문의
-        </Link>
-        <Link to="/cus/compare" className={styles.buttonCompare}>
+        </button>
+        <button
+          className={styles.DetailbuttonCompare}
+          onClick={handleCompareClick}
+        >
           타 제품과의 비교
-        </Link>
-        <button className={styles.buttonBack} onClick={() => navigate(-1)}>
+        </button>
+        <button className={styles.DetailbuttonBack} onClick={handleBackClick}>
           뒤로 가기
         </button>
       </div>

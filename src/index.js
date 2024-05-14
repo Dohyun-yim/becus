@@ -47,7 +47,6 @@ import CallScriptPage from "./pages/man/call/CallScriptPage"; //개별 통화 �
 
 import CusDetailsPage from "./pages/man/cus/CusDetailsPage"; // 고객 개별 상세페이지
 
-import ManCallonePage from "./pages/man/call/ManCallonePage";
 import Home from "./pages/home/HomePage";
 
 const router = createBrowserRouter([
@@ -96,7 +95,6 @@ const router = createBrowserRouter([
       { path: "calllist/call/:id", element: <CallDetailsPage /> },
       { path: "call/calllist/:id/script", element: <CallScriptPage /> },
       { path: "callmiss", element: <CallMissListPage /> },
-      { path: "callone", element: <ManCallonePage /> },
     ],
   },
 ]);

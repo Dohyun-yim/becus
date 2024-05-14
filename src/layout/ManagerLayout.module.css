@@ -3,6 +3,7 @@ body {
 }
 
 .layout {
+  font-family: "Noto Sans KR", sans-serif;
   display: grid;
   grid-template-columns: 200px 1fr;
   height: 100vh;
@@ -10,7 +11,7 @@ body {
 }
 
 .sider {
-  grid-row: 1 / -1; /* 사이드바는 행 전체를 차지 */
+  grid-row: 1 / -1;
   background-color: #0d182c;
   color: white;
   display: flex;

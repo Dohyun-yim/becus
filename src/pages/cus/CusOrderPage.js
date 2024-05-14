@@ -1,7 +1,17 @@
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Form from "../../components/cus/Form";
+
 import useStoredUserInfo from "../../lib/localStorage";
 
 function OrderPage() {
+  const location = useLocation();
+  const { productId } = location.state;
+
+  useEffect(() => {
+    console.log("전달된 PK:", productId);
+  }, [productId]);
+
   const formFields = [
     {
       id: "o_name",
@@ -69,7 +79,6 @@ function OrderPage() {
         body: JSON.stringify(formData),
       });
 
-      // 응답 확인
       if (response.ok) {
         const jsonResponse = await response.json();
         console.log("서버로부터의 응답:", jsonResponse);
@@ -85,6 +94,7 @@ function OrderPage() {
       onSubmit={handleSubmit}
       title="견적 요청서 작성"
       fields={formFields}
+      productId={productId}
     />
   );
 }

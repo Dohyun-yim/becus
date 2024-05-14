@@ -3,53 +3,186 @@ body {
 }
 
 .compareContainer {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  margin: auto;
+  color: #13233c;
+}
+
+.compareTitle {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.compareLink {
+  color: #13233c;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.infoLink {
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.infoLink:hover {
+  color: #4285f4;
 }
 
 .productButtonsContainer {
+  overflow-x: auto;
+  margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
+  margin-bottom: 20px;
 }
-
 .productButton {
   background-color: #f8f8f8;
   border: 1px solid #d2d2d2;
-  padding: 15px 30px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: background-color 0.1s, border-color 0.1s;
 }
 
 .productButton:hover {
-  background-color: #eaeaea;
+  background-color: #656565;
   border-color: #bdbdbd;
 }
 
 .selected {
-  background-color: #0070c9;
+  background-color: #13233c;
   color: white;
-  border-color: #0070c9;
+  border-color: #b3b3b3;
 }
 
 .productComparisonTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  table-layout: fixed;
 }
 
 .productComparisonTable th,
 .productComparisonTable td {
-  border: 1px solid #d2d2d2;
   padding: 20px;
   text-align: center;
 }
 
 .productComparisonTable th {
-  background-color: #f8f8f8;
+  background-color: #e7e7e7d5;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 14px;
+}
+
+.nameRow {
+  border: 20px solid white;
+}
+
+.nameInfoRow {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.partNumInfoRow {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.imageRow td {
+  background-color: white;
+}
+
+.imageContainer {
+  border-radius: 10px;
+  border: 1px solid #13233c;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sizeWeightRow td {
+  font-weight: bold;
+  border-bottom: 2px solid #d2d2d2;
+  text-align: start;
+  font-size: 25px;
+}
+
+.sizeWeightInfo td {
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.featureRow td {
+  font-weight: bold;
+  border-bottom: 2px solid #d2d2d2;
+  text-align: start;
+  font-size: 25px;
+}
+
+.washableFrozenCell {
+  border: none;
+  text-align: center;
+}
+
+.iconContainer {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+
+.featureInfo td {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 600px) {
+  .productComparisonTable th,
+  .productComparisonTable td {
+    padding: 10px;
+  }
+
+  .productButton {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .selected {
+    font-size: 14px;
+  }
+
+  .nameInfoRow {
+    font-size: 20px;
+  }
+
+  .partNumInfoRow {
+    font-size: 10px;
+  }
+
+  .sizeWeightInfo td,
+  .featureInfo td {
+    font-size: 15px;
+  }
 }
