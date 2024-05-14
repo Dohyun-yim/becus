@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Form from "../../components/cus/Form";
 
 function ProductTalkPage() {
+  const location = useLocation();
+  const { productId } = location.state;
+
+  useEffect(() => {
+    console.log("전달된 PK:", productId);
+  }, [productId]);
+
   const formFields = [
     {
       id: "pc_name",
@@ -49,7 +57,14 @@ function ProductTalkPage() {
     console.log(data); // 여기서 서버로 데이터를 보낼 수 있습니다.
   };
 
-  return <Form title="제품 문의" fields={formFields} onSubmit={handleSubmit} />;
+  return (
+    <Form
+      onSubmit={handleSubmit}
+      title="제품 문의"
+      fields={formFields}
+      productId={productId}
+    />
+  );
 }
 
 export default ProductTalkPage;

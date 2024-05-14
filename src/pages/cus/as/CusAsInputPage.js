@@ -8,7 +8,6 @@ function CusAsInputPage() {
   const [step, setStep] = useState(1);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [repairType, setRepairType] = useState("");
-
   const navigate = useNavigate();
 
   const goToStep2 = (product) => {
@@ -16,11 +15,8 @@ function CusAsInputPage() {
     setStep(2);
   };
 
-  const handleFinalSubmit = () => {
-    console.log({ selectedProduct, repairType });
-    navigate(
-      `/asinput?partNumber=${selectedProduct.fields.part_number}&repairType=${repairType}`
-    );
+  const goToStep3 = () => {
+    setStep(3);
   };
 
   const goBack = () => {
@@ -80,7 +76,7 @@ function CusAsInputPage() {
               이전
             </button>
             <button
-              onClick={handleFinalSubmit}
+              onClick={goToStep3}
               disabled={!repairType}
               className={styles.cusAsInputButton}
             >

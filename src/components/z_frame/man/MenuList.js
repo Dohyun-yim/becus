@@ -33,19 +33,12 @@ const MenuList = () => {
           문의 조회
         </Link>
       </Menu.Item>
-      <Menu.SubMenu key="call" icon={<PhoneOutlined />} title="통화">
-        <Menu.Item key="call">
-          <Link to="/manager/call" style={{ textDecoration: "none" }}>
-            통화 목록 조회
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="callmiss">
-          {" "}
-          <Link to="/manager/callmiss" style={{ textDecoration: "none" }}>
-            부재중 통화
-          </Link>
-        </Menu.Item>
-      </Menu.SubMenu>
+
+      <Menu.Item key="call" icon={<PhoneOutlined />}>
+        <Link to="/manager/call" style={{ textDecoration: "none" }}>
+          통화
+        </Link>
+      </Menu.Item>
     </Menu>
   );
 };

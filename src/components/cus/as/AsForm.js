@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Form from "../../cus/Form";
 import { useLocation } from "react-router-dom";
 
-function AsFormComponent() {
+function AsFormComponent({ selectedProduct, repairType }) {
+  useEffect(() => {
+    if (selectedProduct) {
+      console.log("제품 PK:", selectedProduct.pk);
+    }
+    console.log("수리 유형:", repairType);
+  }, [selectedProduct, repairType]);
+
+  if (!selectedProduct) {
+    return null;
+  }
+
+  return <AsFormWithLocation selectedProduct={selectedProduct} />;
+}
+
+function AsFormWithLocation({ selectedProduct }) {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const partNumber = searchParams.get("partNumber") || "";
-  const repairType = searchParams.get("repairType") || "";
+  const repairTypeFromUrl = searchParams.get("repairType") || "";
 
   const formFields = [
     {
@@ -45,7 +60,7 @@ function AsFormComponent() {
       type: "select",
       required: true,
       options: ["기계 멈춤 현상", "부품 마모/손상", "기계 오작동", "기타"],
-      defaultValue: repairType,
+      defaultValue: repairTypeFromUrl,
     },
     {
       id: "r_content",
