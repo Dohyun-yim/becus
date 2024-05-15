@@ -35,6 +35,8 @@ import CusMyPageDocs from "./pages/cus/mypage/CusMyPageDocs";
 
 import ConnectPage from "./pages/ConnectPage";
 
+import RagPage from "./pages/rag/RagPage";
+
 import ManMainPage from "./pages/man/ManMainPage";
 import ManCusPage from "./pages/man/cus/CusPage";
 import ManAsPage from "./pages/man/as/AsPage";
@@ -79,6 +81,8 @@ const router = createBrowserRouter([
       { path: "login", element: <LoginPage /> },
       { path: "callback", element: <LoadingPage /> },
       { path: "connect", element: <ConnectPage /> },
+
+      { path: "rag", element: <RagPage /> },
     ],
   },
   {
