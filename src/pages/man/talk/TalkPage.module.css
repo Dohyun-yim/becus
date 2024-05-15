@@ -1,5 +1,5 @@
 html {
-  overflow-y: scroll; /* 오타 수정 */
+  overflow-y: scroll;
 }
 
 .alltalk {
@@ -23,37 +23,36 @@ html {
 
 .button-each-talk {
   width: 250px;
-  margin: 0 20px; /* 버튼 사이의 간격 조정 */
+  margin: 0 20px;
   border: 1px solid rgba(128, 128, 128, 0.293);
-  padding: 10px 20px; /* 버튼 내부 여백 조정 */
-  background-color: #f2f2f2; /* 배경색 설정 */
-  color: #7572727f; /* 글자색 설정 */
-  font-size: 20px; /* 폰트 크기 설정 */
-  font-weight: 600; /* 글자 굵기 설정 */
-  border-radius: 30px; /* 버튼을 둥글게 만듦 */
-  cursor: pointer; /* 마우스 커서 모양 변경 */
-  transition: background-color 0.3s, color 0.3s; /* hover 시 부드러운 전환 효과 */
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  color: #7572727f;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .button-each-talk:hover {
-  background-color: #ddd; /* hover 시 배경색 변경 */
+  background-color: #ddd;
 }
 
 .active {
-  background-color: #13233c; /* 선택된 버튼 배경색 */
-  color: #fff; /* 선택된 버튼 글자색 */
+  background-color: #13233c;
+  color: #fff;
 }
 
 .bottomtalk {
   display: flex;
   justify-content: center;
-  margin-top: 50px; /* 원하는 여백 값으로 조정하세요 */
-  /* 기타 원하는 스타일 추가 */
+  margin-top: 50px;
 }
 
 @media (max-width: 768px) {
   .button-container-talk {
-    flex-direction: column; /* 화면이 작아질 때 세로로 정렬 */
+    flex-direction: column;
     align-items: flex-start;
   }
 }

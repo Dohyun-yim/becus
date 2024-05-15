@@ -3,7 +3,6 @@ import styles from "./TalkTable.module.css";
 import mockDataAll from "../../../mockdata/mockAll.json";
 
 const TableAllTalk = () => {
-  // 작성일을 기준으로 데이터를 내림차순 정렬
   const sortedData = [...mockDataAll].sort((a, b) => {
     return new Date(b.fields.gc_created_at) - new Date(a.fields.gc_created_at);
   });

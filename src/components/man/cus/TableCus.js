@@ -11,7 +11,7 @@ const TableCus = ({ customers }) => {
           <th>이름</th>
           <th>이메일</th>
           <th>전화번호</th>
-          <th>더보기</th> {/* 새로 추가한 column */}
+          <th>더보기</th>
         </tr>
       </thead>
       <tbody>
@@ -22,9 +22,8 @@ const TableCus = ({ customers }) => {
             <td>{customer.email}</td>
             <td>{customer.phone}</td>
             <td>
-              {/* 각 row의 고객 ID를 이용하여 상세 페이지로 이동하는 링크 */}
               <Link to={`${customer.id}`} className={styles.linkMore}>
-                더보기
+                ＞
               </Link>
             </td>
           </tr>
