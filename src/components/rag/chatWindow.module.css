@@ -1,0 +1,29 @@
+.chatWindow {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatMessage {
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 16px;
+  max-width: 75%;
+  word-wrap: break-word;
+  align-self: flex-start;
+}
+
+.userMessage {
+  align-self: flex-end;
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.responseMessage {
+  background-color: #f8d7da;
+  color: #842029;
+}
