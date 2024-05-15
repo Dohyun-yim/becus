@@ -33,7 +33,7 @@ import CusProductTalkPage from "./pages/cus/CusProductTalkPage";
 import CusMyPage from "./pages/cus/mypage/CusMyPage";
 import CusMyPageDocs from "./pages/cus/mypage/CusMyPageDocs";
 
-import ConnectPage from "./pages/man/ConnectPage";
+import ConnectPage from "./pages/ConnectPage";
 
 import ManMainPage from "./pages/man/ManMainPage";
 import ManCusPage from "./pages/man/cus/CusPage";

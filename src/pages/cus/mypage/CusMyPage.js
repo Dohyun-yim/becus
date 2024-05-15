@@ -27,7 +27,7 @@ function CusMyPage() {
       <div className={styles.cusMyBottom}>
         <ul>
           <li>
-            <Link to="/mypage/documents">작성문서 조회</Link>
+            <Link to="documents">작성문서 조회</Link>
           </li>
           <li>회원정보 수정</li>
           <li>로그아웃</li>

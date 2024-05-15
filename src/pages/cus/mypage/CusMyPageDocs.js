@@ -29,12 +29,10 @@ function DocumentsPage() {
   const [documents, setDocuments] = useState(documentsData);
   const [selectedType, setSelectedType] = useState("전체");
 
-  // 카테고리 선택 핸들러
   const handleCategoryChange = (type) => {
     setSelectedType(type);
   };
 
-  // 선택된 카테고리에 따른 문서 필터
   const filteredDocuments =
     selectedType === "전체"
       ? documents

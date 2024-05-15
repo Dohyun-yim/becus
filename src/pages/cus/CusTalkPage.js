@@ -51,26 +51,23 @@ function TalkPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (formData) => {
     setLoading(true);
-    const data = formFields.reduce((acc, field) => {
-      acc[field.name] = event.target[field.name].value;
-      return acc;
-    }, {});
 
     try {
       const response = await fetch(
-        "http://34.64.53.159:8000/api/v1/consult/global",
+        "https://api.be-cus.com:8000/api/v1/consult/global",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
             "X-CSRFToken":
-              "VM8ze4ZAqNElg4sdSIu7M7oAB0CojeF0jLqMZT04Cu9i2gnS4jitO7uZyVd0vAyR",
+              "rSbGYBPzaJjbAuCeXypg3HTZlgcnF4ON5RLJS1kPjBHWc7aVxzEbCWF1U9fiXqDU",
+            // Add Authorization header if needed
+            // "Authorization": `Bearer YOUR_AUTH_TOKEN`
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(formData),
         }
       );
 
@@ -86,7 +83,7 @@ function TalkPage() {
       console.error("요청 에러 발생:", error);
     } finally {
       setLoading(false);
-      setTimeout(() => setMessage(""), 5000); // 5초 후 메시지 초기화
+      setTimeout(() => setMessage(""), 5000);
     }
   };
 
