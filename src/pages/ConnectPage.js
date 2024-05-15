@@ -16,7 +16,7 @@ const ConnectPage = () => {
         {/* 사용자 정보가 있는 경우에만 환영 메시지 출력 */}
         {userInfo && userInfo.email && (
           <>
-            안녕하십니까, <strong>{userInfo.email}</strong>님! <br /> 관리자
+            안녕하십니까, <strong>{userInfo.name}</strong>님! <br /> 관리자
             페이지로 넘어가시겠습니까?
           </>
         )}

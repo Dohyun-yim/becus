@@ -18,11 +18,15 @@ function CusMyPage() {
     <div className={styles.cusMyPage}>
       <div className={styles.cusMyTitle}>내 정보</div>
       <div className={styles.cusMyTop}>
-        <div className={styles.cusName}>A기업</div>
-        <div className={styles.cusSubInfo}>
-          {userInfo && userInfo.email && <>{userInfo.email}</>}
-        </div>
-        <div className={styles.cusSubInfo}>010-1234-5678</div>
+        {userInfo && (
+          <>
+            <div className={styles.cusName}>{userInfo.name}</div>
+            <div className={styles.cusSubInfo}>
+              {userInfo.email && <>{userInfo.email}</>}
+            </div>
+            <div className={styles.cusSubInfo}>{userInfo.phone}</div>
+          </>
+        )}
       </div>
       <div className={styles.cusMyBottom}>
         <ul>
