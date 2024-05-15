@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import axios from "axios";
 import axiosInstance from "../../../lib/axios";
 import TableCallList from "../../../components/man/call/TableCallList";
 import DatePicker from "react-datepicker";
@@ -14,6 +15,7 @@ function CallListPage() {
     try {
       const response = await axiosInstance.get("/api/v1/call");
       setRowData(response.data.data);
+      console.log(setRowData);
     } catch (error) {
       console.error("Error fetching call list data:", error);
     }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from "../lib/axios";
 import { useNavigate } from "react-router-dom";
 
 const LoadingPage = () => {
@@ -13,8 +13,8 @@ const LoadingPage = () => {
   const handleLoginPost = async (code, state) => {
     try {
       console.log("adsfasdf");
-      const res = await axios.get(
-        `https://api.be-cus.com:8000/api/v1/user/naver/callback?code=${code}&state=${state}`
+      const res = await axiosInstance.get(
+        `/api/v1/user/naver/callback?code=${code}&state=${state}`
       );
       console.log(res);
       console.log(res.data.user);

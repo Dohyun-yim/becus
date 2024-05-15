@@ -4,8 +4,6 @@ import axiosInstance from "../../../lib/axios";
 import TitleCall from "../../../components/man/call/TitleCall";
 import "./CallScriptPage.css";
 
-//import mockData from "../a_mock_sample.json";
-
 function CallScriptPage() {
   const { id } = useParams(); // URL에서 id를 가져옵니다.
   const [originalData, setOriginalData] = useState(null);
