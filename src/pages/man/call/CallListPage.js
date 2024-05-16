@@ -42,6 +42,7 @@ function CallListPage() {
   const handleDateChange = (date) => {
     setSearchTerm(date);
   };
+  console.log("calllist : ", document.cookie);
 
   return (
     <div>

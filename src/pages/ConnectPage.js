@@ -9,6 +9,7 @@ const ConnectPage = () => {
   // localStorage에 저장된 사용자 정보 가져오기
   const userInfo = useStoredUserInfo();
   console.log("connect page", userInfo);
+  console.log("connect: ", document.cookie);
 
   return (
     <div className={styles.connectContainer}>
