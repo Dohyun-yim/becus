@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axiosInstance from "../../../lib/axios";
 import TitleCall from "../../../components/man/call/TitleCall";
-import "./CallDetailsPage.css";
+import styles from "./CallDetailsPage.module.css";
 
 function CallDetailsPage() {
   const { id } = useParams(); // URL에서 id를 가져옵니다.
@@ -23,10 +23,10 @@ function CallDetailsPage() {
 
   const { name, date, time, cluster, keyword, summarize } = callData || {};
   return (
-    <div className="container-detail">
+    <div className={styles.calldetailContainer}>
       <TitleCall title={name} />
-      <div className="content-detail">
-        <table className="details-table">
+      <div className={styles.calldetailContent}>
+        <table className={styles.calldetailTable}>
           <tbody>
             <tr>
               <td>날짜</td>
@@ -40,26 +40,22 @@ function CallDetailsPage() {
               <td>분류</td>
               <td>{cluster}</td>
             </tr>
-            <tr>
-              <td>요약</td>
-              <td>{keyword}</td>
-            </tr>
           </tbody>
         </table>
-        <div className="summary-box">
+        <div className={styles.calldetailSummaryBox}>
           <p>
             <strong>▶ 요약</strong>
           </p>
           <p>{summarize}</p>
         </div>
       </div>
-      <div className="buttons-detail">
-        <Link to="/manager/call" className="button-detail">
+      <div className={styles.calldetailButtons}>
+        <Link to="/manager/call" className={styles.calldetailButton}>
           뒤로가기
         </Link>
         <Link
           to={`/manager/call/calllist/${id}/script`}
-          className="button-detail"
+          className={styles.calldetailButton}
         >
           전체 스크립트 조회하기
         </Link>

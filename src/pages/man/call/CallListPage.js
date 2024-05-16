@@ -4,7 +4,7 @@ import axiosInstance from "../../../lib/axios";
 import TableCallList from "../../../components/man/call/TableCallList";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "./CallListPage.css";
+import styles from "./CallListPage.module.css";
 
 function CallListPage() {
   const [rowData, setRowData] = useState([]);
@@ -42,15 +42,14 @@ function CallListPage() {
   const handleDateChange = (date) => {
     setSearchTerm(date);
   };
-  console.log("calllist : ", document.cookie);
 
   return (
     <div>
-      <div className="calllistSearchContainer">
+      <div className={styles.calllistSearchContainer}>
         <select
           value={searchCategory}
           onChange={(e) => setSearchCategory(e.target.value)}
-          className="calllistSearchCategory"
+          className={styles.calllistSearchCategory}
         >
           <option value="name">이름</option>
           <option value="date">날짜</option>
@@ -61,8 +60,8 @@ function CallListPage() {
           <DatePicker
             selected={searchTerm}
             onChange={handleDateChange}
-            className="calllistSearchInput"
-            dateFormat="yyyy-MM-dd"
+            className={styles.calllistSearchInput}
+            dateFormat="yyyy.MM.dd"
           />
         ) : (
           <input
@@ -70,11 +69,11 @@ function CallListPage() {
             placeholder="검색"
             value={typeof searchTerm === "string" ? searchTerm : ""}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="calllistSearchInput"
+            className={styles.calllistSearchInput}
           />
         )}
       </div>
-      <div className="calllistTable">
+      <div className={styles.calllistTable}>
         <TableCallList rowData={displayData} />
       </div>
     </div>

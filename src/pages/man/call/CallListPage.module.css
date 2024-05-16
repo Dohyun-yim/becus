@@ -1,0 +1,21 @@
+.calllistSearchContainer {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 65px;
+}
+
+.calllistSearchInput,
+.calllistSearchCategory {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.calllistSearchInput {
+  flex-grow: 1;
+}
+
+.calllistTable {
+  margin-left: 65px;
+}

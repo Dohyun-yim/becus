@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axiosInstance from "../../../lib/axios";
 import TitleCall from "../../../components/man/call/TitleCall";
-import "./CallScriptPage.css";
+import styles from "./CallScriptPage.module.css";
 
 function CallScriptPage() {
   const { id } = useParams(); // URL에서 id를 가져옵니다.
@@ -30,21 +30,24 @@ function CallScriptPage() {
   const { original, name } = originalData;
 
   return (
-    <div className="message-container">
+    <div className={styles.callscriptMessageContainer}>
       <TitleCall title={name} />
-      <div className="message-wrapper">
+      <div className={styles.callscriptMessageWrapper}>
         {original.map((message, index) => (
           <div
             key={index}
-            className={`message-wrapper ${
-              message.spk === 0 ? "spk-0" : "spk-1"
+            className={`${styles.callscriptMessage} ${
+              message.spk === 0 ? styles.callscriptspk0 : styles.callscriptspk1
             }`}
           >
             {message.msg}
           </div>
         ))}
       </div>
-      <Link to={`/manager/calllist/call/${id}`} className="button-script">
+      <Link
+        to={`/manager/calllist/call/${id}`}
+        className={styles.callscriptButton}
+      >
         뒤로가기
       </Link>
     </div>

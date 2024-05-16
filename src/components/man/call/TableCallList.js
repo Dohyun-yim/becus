@@ -72,15 +72,15 @@ function TableCallList({ rowData }) {
               <td>{data.dateParts}</td>
               <td>{data.timeParts}</td>
               <td>
-                <div className="keywordContainer">
-                  <span className="keywordBox">{data.cluster}</span>
+                <div>
+                  <span>{data.cluster}</span>
                 </div>
               </td>
               <td>{data.keyword}</td>
               <td>
                 <Link
                   to={`/manager/calllist/call/${data.id}`}
-                  className="linkMore"
+                  className={styles.linkMore}
                 >
                   ▶
                 </Link>

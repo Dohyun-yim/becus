@@ -1,0 +1,69 @@
+.calldetailContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.calldetailContent {
+  max-width: 600px;
+}
+
+.calldetailTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calldetailTable td {
+  border: none;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calldetailTable tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.calldetailTable tbody tr:hover {
+  background-color: #f0f0f0;
+}
+.calldetailSummaryBox {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+}
+
+.calldetailSummaryBox strong {
+  color: #2c3037;
+  border: 1px solid #b6b6b6;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.calldetailButtons {
+  display: flex;
+}
+
+.calldetailButton {
+  border: 1px solid #a4a4a4;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 20px 10px;
+  text-decoration: none;
+  color: #13233c;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.calldetailButton:hover {
+  background-color: #13233c;
+  color: white;
+}

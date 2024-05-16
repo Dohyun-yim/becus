@@ -1,0 +1,52 @@
+.callscriptMessageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.callscriptMessageWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.callscriptMessage {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  overflow-wrap: break-word;
+  max-width: 600px;
+  width: 100%;
+}
+
+.callscriptspk0 {
+  background-color: #d6e4f5a4;
+  border: 1px solid #d5d5d5;
+  text-align: left;
+}
+
+.callscriptspk1 {
+  background-color: #fbfacd76;
+  border: 1px solid #d5d5d5;
+  text-align: right;
+}
+
+.callscriptButton {
+  border: 1px solid #a4a4a4;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 20px 10px;
+  text-decoration: none;
+  color: #13233c;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.callscriptButton:hover {
+  background-color: #13233c;
+  color: white;
+}

@@ -1,35 +1,38 @@
 import React, { useState } from "react";
-import "./CallMainPage.css";
+import styles from "./CallMainPage.module.css";
 import CallListPage from "./CallListPage";
 import CallMissListPage from "./CallMissListPage";
 
 function CallMainPage() {
   const [selectedButton, setSelectedButton] = useState(1);
 
-  // 버튼 클릭 시 해당 컨텐츠를 표시하는 함수
   const handleButtonClick = (content) => {
     setSelectedButton(content);
   };
 
   return (
-    <div className="containercall">
-      <h1 className="titlecall">통화</h1>
-      <div className="content-container">
-        <div className="button-container">
+    <div className={styles.callContainer}>
+      <h1 className={styles.callTitle}>통화</h1>
+      <div className={styles.callContentContainer}>
+        <div className={styles.callButtonContainer}>
           <button
-            className={`button-each ${selectedButton === 1 ? "active" : ""}`}
+            className={`${styles.callButtonEach} ${
+              selectedButton === 1 ? styles.callActive : ""
+            }`}
             onClick={() => handleButtonClick(1)}
           >
             통화 목록
           </button>
           <button
-            className={`button-each ${selectedButton === 2 ? "active" : ""}`}
+            className={`${styles.callButtonEach} ${
+              selectedButton === 2 ? styles.callActive : ""
+            }`}
             onClick={() => handleButtonClick(2)}
           >
             부재중 통화
           </button>
         </div>
-        <div className="content">
+        <div className={styles.callContent}>
           {selectedButton === 1 && <CallListPage />}
           {selectedButton === 2 && <CallMissListPage />}
         </div>

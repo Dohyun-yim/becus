@@ -1,0 +1,111 @@
+html {
+  overflow-y: scroll; /* 화면에 콘텐츠가 많을 경우 스크롤바 유지 */
+}
+
+.callContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.callTitle {
+  border: 3px solid #13233c;
+  border-radius: 20px;
+  padding: 5px 20px;
+  width: fit-content;
+  font-size: 50px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.callButtonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  margin-left: 40px;
+  font-size: 30px;
+}
+
+.callButtonEach {
+  margin: 0 20px;
+  border: none;
+  padding: 5px 15px;
+  background-color: transparent;
+  color: gray;
+  transition: color 0.4s ease;
+}
+
+.callButtonEach:hover {
+  color: #13233c;
+  text-decoration: underline 1px solid;
+}
+
+.callActive {
+  color: #13233c;
+  font-weight: bold;
+  border: none;
+}
+
+th {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 2px solid rgba(19, 35, 60, 0.1);
+}
+
+td {
+  text-align: center;
+}
+
+.callContent {
+  margin-top: 40px;
+  font-size: 20px;
+  display: block;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 핸드폰 */
+@media (max-width: 600px) {
+  .callTitlecall {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
+  .callButtonContainer {
+    margin-left: 20px;
+    flex-direction: column;
+  }
+
+  .callButtonEach {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  th,
+  td {
+    font-size: 16px;
+  }
+}
+
+/* 태블릿 */
+@media (max-width: 900px) and (min-width: 601px) {
+  .callTitle {
+    font-size: 35px;
+  }
+
+  .callButtonContainer {
+    margin-left: 30px;
+  }
+
+  .callButtonEach {
+    font-size: 24px;
+  }
+
+  th,
+  td {
+    font-size: 16px;
+  }
+}
