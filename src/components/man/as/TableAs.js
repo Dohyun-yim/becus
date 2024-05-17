@@ -1,13 +1,18 @@
 import React from "react";
 import styles from "./TableAs.module.css";
 
-import mockDataAs from "../../../mockdata/mockAs.json";
-
-const TableAs = () => {
+const TableAs = ({ as }) => {
   // 작성일을 기준으로 최신순 정렬
-  const sortedData = mockDataAs.sort((a, b) => {
-    return new Date(b.r_created_at) - new Date(a.r_created_at);
-  });
+  const sortedData = Array.isArray(as)
+    ? as
+        .map((item) => ({
+          ...item,
+          r_created_at: item.r_created_at.split("T")[0],
+          r_modified_at: item.r_modified_at.split("T")[0],
+        }))
+        .sort((a, b) => new Date(b.r_created_at) - new Date(a.r_created_at))
+    : [];
+  console.log(sortedData);
 
   return (
     <table className={styles.AsTable}>
@@ -24,21 +29,21 @@ const TableAs = () => {
       <tbody>
         {sortedData.map((item) => (
           <tr key={item.pk}>
-            <td>{item.fields.r_created_at}</td>
-            <td>{item.fields.r_name}</td>
-            <td>{item.fields.r_phone}</td>
-            <td>{item.fields.r_product_id}</td>
-            <td>{item.fields.r_type}</td>
+            <td>{item.r_created_at}</td>
+            <td>{item.r_name}</td>
+            <td>{item.r_phone}</td>
+            <td>{item.r_product}</td>
+            <td>{item.r_type}</td>
             <td
               className={
-                item.fields.r_status === "요청 대기"
+                item.r_status === "요청 대기"
                   ? styles.waiting
-                  : item.fields.r_status === "처리 완료"
+                  : item.r_status === "처리 완료"
                   ? styles.completed
                   : ""
               }
             >
-              {item.fields.r_status}
+              {item.r_status}
             </td>
           </tr>
         ))}

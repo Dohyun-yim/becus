@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from "react";
-import styles from "./CusPage.module.css"; // CSS 파일을 import합니다.
-
-import mockDataCus from "../../../mockdata/mockCus.json";
+import styles from "./CusPage.module.css";
 
 import TitleBasic from "../../../components/man/TitleBasic";
 import SearchCus from "../../../components/man/cus/SearchCus";
 import TableCus from "../../../components/man/cus/TableCus";
 
 import ManCusImg from "../../../assets/man/cus_navy.png";
+import axiosInstance from "../../../lib/axios";
 
 const CusPage = () => {
   const [nameSearchTerm, setNameSearchTerm] = useState("");
   const [phoneSearchTerm, setPhoneSearchTerm] = useState("");
   const [customers, setCustomers] = useState([]);
 
+  const fetchUserListData = async () => {
+    try {
+      const response = await axiosInstance.get("/api/v1/user");
+      setCustomers(response.data);
+      console.log("Fetched customers:", response.data);
+    } catch (error) {
+      console.error("Error fetching user list data: ", error);
+    }
+  };
+
   useEffect(() => {
-    // 모의 데이터 설정
-    setCustomers(mockDataCus);
+    fetchUserListData();
   }, []);
 
   // 이름에 대한 검색 결과 필터링 함수
@@ -28,6 +36,11 @@ const CusPage = () => {
   const phoneSearchFilter = (customer) => {
     return customer.phone.includes(phoneSearchTerm);
   };
+
+  // customers가 배열인지 확인하고 필터링을 수행
+  const filteredCustomers = Array.isArray(customers)
+    ? customers.filter(nameSearchFilter).filter(phoneSearchFilter)
+    : [];
 
   return (
     <div className={styles.allcus}>
@@ -49,12 +62,11 @@ const CusPage = () => {
         </div>
 
         <div className={styles.bottomdowncus}>
-          {/* 각각의 필터링 함수를 적용하여 필터링 */}
-          <TableCus
-            customers={customers
-              .filter(nameSearchFilter)
-              .filter(phoneSearchFilter)}
-          />
+          {Array.isArray(customers) && customers.length > 0 ? (
+            <TableCus customers={filteredCustomers} />
+          ) : (
+            <p>로딩 중...</p>
+          )}
         </div>
       </div>
     </div>
