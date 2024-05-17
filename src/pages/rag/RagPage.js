@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./RagPage.module.css";
 import ChatWindow from "../../components/rag/chatWindow";
 import ChatInput from "../../components/rag/chatInput";
@@ -14,6 +14,13 @@ const mockResponses = {
 function RagPage() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isFirstQuestion, setIsFirstQuestion] = useState(true);
+
+  useEffect(() => {
+    setMessages([
+      { text: "어떤 제품에 관해서 검색하려고 하시나요?", fromUser: false },
+    ]);
+  }, []);
 
   const handleSendMessage = async (message) => {
     const newMessage = { text: message, fromUser: true };
@@ -29,6 +36,7 @@ function RagPage() {
         { text: responseText, fromUser: false },
       ]);
       setLoading(false);
+      setIsFirstQuestion(false);
     }, 1000);
   };
 
@@ -36,7 +44,10 @@ function RagPage() {
     <div className={styles.ragContainer}>
       <ChatWindow messages={messages} />
       {loading && <Loading />}
-      <ChatInput onSendMessage={handleSendMessage} />
+      <ChatInput
+        onSendMessage={handleSendMessage}
+        isFirstQuestion={isFirstQuestion}
+      />
     </div>
   );
 }

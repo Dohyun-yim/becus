@@ -1,18 +1,13 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import styles from "./Nav.module.css";
 import Container from "./Container";
 import UserMenu from "../total/UserMenu";
-import searchBarStyles from "../../../components/z_frame/cus/SearchBar.module.css";
-import searchIcon from "../../../assets/navigation/search.svg";
 
 import logoImg from "../../../assets/logo/logo_horizontal.png";
 import personIcon from "../../../assets/navigation/icon_cus.png";
+import chatbotIcon from "../../../assets/logo/chatbotIcon.png";
 
 function Nav() {
-  const [keyword, setKeyword] = useState("");
-  const handleKeywordChange = (e) => setKeyword(e.target.value);
-
   return (
     <div className={styles.nav}>
       <Container className={styles.container}>
@@ -25,17 +20,10 @@ function Nav() {
         </Link>
         <ul className={styles.menu}>
           <li>
-            <form className={searchBarStyles.form}>
-              <input
-                name="keyword"
-                value={keyword}
-                onChange={handleKeywordChange}
-                placeholder="궁금한 것을 찾아보세요."
-              ></input>
-              <button type="submit">
-                <img src={searchIcon} alt="검색" />
-              </button>
-            </form>
+            <Link to="/cus/rag" className={styles.chatbotLink}>
+              <img src={chatbotIcon} alt="Chatbot" />
+              <span>무엇이든 물어보세요!</span>
+            </Link>
           </li>
           <li>
             <UserMenu Icon={personIcon} />

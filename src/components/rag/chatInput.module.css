@@ -1,22 +1,25 @@
 .chatInput {
+  font-family: "Noto Sans KR", sans-serif;
   display: flex;
   padding: 15px;
-  border-top: 1px solid #e0e0e0;
-  background-color: #fafafa;
+  border-top: 1px solid #dcdfe6;
+  background-color: #ffffff;
 }
 
-.chatInput input {
+.selectInput,
+.textInput {
   flex: 1;
   padding: 10px 15px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #dcdfe6;
   border-radius: 20px;
   font-size: 16px;
   outline: none;
   transition: border-color 0.3s;
 }
 
-.chatInput input:focus {
-  border-color: #007bff;
+.selectInput:focus,
+.textInput:focus {
+  border-color: #123369;
 }
 
 .chatInput button {
