@@ -30,27 +30,35 @@ ul.menu a:active {
   text-decoration: underline;
 }
 
-.chatbotLink {
+.logo {
+  cursor: pointer;
+}
+
+.chatbotButton {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   color: #ffffff;
   background: linear-gradient(135deg, #6d5dfc, #3f9efc);
   font-size: 16px;
   font-weight: bold;
   transition: background 0.3s, box-shadow 0.3s;
-  padding: 10px 20px;
+  padding: 4px 20px;
   border-radius: 30px;
   box-shadow: 0 4px 12px rgba(63, 158, 252, 0.4);
+  border: none;
+  cursor: pointer;
 }
 
-.chatbotLink img {
-  width: 24px;
-  height: 24px;
+.chatbotIcon {
+  width: 30px;
+  height: 30px;
   margin-right: 8px;
 }
 
-.chatbotLink:hover {
+.chatbotButton:hover {
+  text-decoration: none;
   background: linear-gradient(135deg, #5b49e3, #2b7de3);
   box-shadow: 0 6px 16px rgba(43, 125, 227, 0.4);
 }

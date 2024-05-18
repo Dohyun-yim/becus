@@ -2,8 +2,6 @@ import React from "react";
 import iconMan from "../../assets/navigation/icon_man.png";
 import styles from "./chatWindow.module.css";
 
-const profileImageUrl = "https://via.placeholder.com/40"; // 여기에 실제 프로필 이미지 URL을 넣으세요
-
 function ChatWindow({ messages }) {
   return (
     <div className={styles.chatWindow}>

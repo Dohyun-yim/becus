@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import styles from "./chatInput.module.css";
 
-const productOptions = ["Product 1", "Product 2", "Product 3"];
-
-function ChatInput({ onSendMessage, isFirstQuestion }) {
+function ChatInput({ onSendMessage, isFirstQuestion, productOptions }) {
   const [input, setInput] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
 
@@ -11,12 +9,12 @@ function ChatInput({ onSendMessage, isFirstQuestion }) {
     e.preventDefault();
     if (isFirstQuestion) {
       if (selectedProduct) {
-        onSendMessage(selectedProduct);
+        onSendMessage(selectedProduct, true); // isProduct를 true로 설정
         setSelectedProduct("");
       }
     } else {
       if (input.trim()) {
-        onSendMessage(input);
+        onSendMessage(input, false); // isProduct를 false로 설정
         setInput("");
       }
     }
@@ -31,11 +29,11 @@ function ChatInput({ onSendMessage, isFirstQuestion }) {
           className={styles.selectInput}
         >
           <option value="" disabled>
-            Select a product...
+            제품을 선택하세요...
           </option>
           {productOptions.map((product, index) => (
-            <option key={index} value={product}>
-              {product}
+            <option key={index} value={product.value}>
+              {product.label}
             </option>
           ))}
         </select>
@@ -52,7 +50,7 @@ function ChatInput({ onSendMessage, isFirstQuestion }) {
         type="submit"
         disabled={isFirstQuestion ? !selectedProduct : !input.trim()}
       >
-        SEND
+        전송
       </button>
     </form>
   );
