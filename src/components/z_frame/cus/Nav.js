@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Nav.module.css";
 import Container from "./Container";
 import UserMenu from "../total/UserMenu";
@@ -8,22 +8,35 @@ import personIcon from "../../../assets/navigation/icon_cus.png";
 import chatbotIcon from "../../../assets/logo/chatbotIcon.png";
 
 function Nav() {
+  const navigate = useNavigate();
+
+  const handleChatbotClick = () => {
+    navigate("/cus/rag");
+  };
+
   return (
     <div className={styles.nav}>
       <Container className={styles.container}>
-        <Link to="/cus">
-          <img
-            src={logoImg}
-            alt="Becus Logo"
-            style={{ width: "100px", height: "50px" }}
-          />
-        </Link>
+        <img
+          src={logoImg}
+          alt="Becus Logo"
+          style={{ width: "100px", height: "50px" }}
+          onClick={() => navigate("/cus")}
+          className={styles.logo}
+        />
         <ul className={styles.menu}>
           <li>
-            <Link to="/cus/rag" className={styles.chatbotLink}>
-              <img src={chatbotIcon} alt="Chatbot" />
+            <button
+              className={styles.chatbotButton}
+              onClick={handleChatbotClick}
+            >
+              <img
+                src={chatbotIcon}
+                alt="Chatbot"
+                className={styles.chatbotIcon}
+              />
               <span>무엇이든 물어보세요!</span>
-            </Link>
+            </button>
           </li>
           <li>
             <UserMenu Icon={personIcon} />
