@@ -29,7 +29,7 @@ function ChatInput({ onSendMessage, isFirstQuestion, productOptions }) {
           className={styles.selectInput}
         >
           <option value="" disabled>
-            제품을 선택하세요...
+            제품을 선택하세요!
           </option>
           {productOptions.map((product, index) => (
             <option key={index} value={product.value}>

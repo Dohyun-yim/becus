@@ -1,0 +1,89 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.boxCus {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  border: 1px solid #cbcfcf;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 20px;
+  max-width: 300px;
+  transition: all 0.3s ease;
+}
+
+.boxCus:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.boxCusIcon {
+  width: 80px;
+  height: auto;
+  margin-left: 15px;
+}
+
+.boxCusLeft {
+  margin-right: 10px;
+}
+
+.boxCusRight {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.boxCusTitle {
+  color: #13233c;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.boxCusExplain {
+  font-size: 14px;
+  color: #13233c;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .boxCus {
+    max-width: 100%;
+  }
+
+  .boxCusIcon {
+    width: 50px;
+    height: auto;
+  }
+
+  .boxCusTitle {
+    font-size: 18px;
+  }
+
+  .boxCusExplain {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .boxCus {
+    max-width: 100%;
+  }
+
+  .boxCusIcon {
+    width: 40px;
+    height: auto;
+  }
+
+  .boxCusTitle {
+    font-size: 16px;
+  }
+
+  .boxCusExplain {
+    font-size: 12px;
+  }
+}

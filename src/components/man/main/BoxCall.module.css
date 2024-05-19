@@ -6,16 +6,18 @@ body {
   flex: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #e8f2f371;
-  border-radius: 10px;
   border: 1px solid #cbcfcf;
+  border-radius: 10px;
   padding: 20px;
-  margin: 10px;
-  max-width: 680px;
+  margin-left: 10px;
+  max-width: 500px;
+  max-height: 100px;
   transition: all 0.3s ease;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   text-decoration: none;
   color: inherit;
+  align-items: center;
 }
 
 .BoxCall:hover {
@@ -24,12 +26,14 @@ body {
 }
 
 .BoxCallFirst {
+  justify-content: center;
+  padding-left: 10px;
   padding-right: 20px;
 }
 
 .callIcon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 .boxCallTitle,
@@ -40,72 +44,80 @@ body {
 }
 
 .boxCallTitle {
-  font-size: 35px;
+  font-size: 32px;
 }
 
-.BoxCallSecond,
-.BoxCallThird {
+.BoxCallSecond {
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  padding-left: 8px;
   border-left: 1px solid #cbcfcf;
-  padding: 10px;
+}
+
+.BoxCallThird {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .smalltitle {
   flex: 1;
-  font-size: 24px;
-  margin-left: 15px;
-  margin-right: 20px;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
 }
 
 .smallTitleLine {
-  display: block; /* 블록 수준 요소로 만들어 줄 바꿈 효과 */
+  display: block;
 }
 
 .smallnum {
-  font-size: 50px;
-  text-align: right;
+  font-size: 35px;
+  text-align: center;
   color: #13233c;
   font-weight: 500;
-  margin-right: 15px;
 }
 
 @media (max-width: 800px) {
   .BoxCall {
-    flex-direction: column; /* 컨테이너 내 항목을 세로로 나열 */
-    max-width: 100%; /* 최대 너비를 화면 너비에 맞춤 */
-    margin: 10px 0; /* 상하 여백 조정 */
-    padding: 15px; /* 패딩 축소 */
+    flex-direction: column;
+    min-width: 100%;
+    max-height: 100%;
+    margin: 10px 0;
+    padding: 15px;
   }
 
   .BoxCallFirst,
-  .BoxCallSecond,
-  .BoxCallThird {
-    margin-right: 0; /* 마진 제거 */
-    border-left: none; /* 세로 구분선 제거 */
-    padding: 8px 0; /* 패딩 조정 */
-    align-items: center; /* 중앙 정렬 */
-    text-align: center; /* 텍스트 중앙 정렬 */
+  .BoxCallSecond {
+    margin-right: 0;
+    border-left: none;
+    padding: 8px 0;
+    align-items: center;
+    text-align: center;
   }
 
-  .BoxCallSecond,
   .BoxCallThird {
+    display: flex;
+    flex-direction: row;
     border-top: 1px solid #cbcfcf;
   }
 
   .boxCallTitle,
   .smalltitle {
-    font-size: 18px; /* 제목 글자 크기 축소 */
+    font-size: 18px;
   }
 
   .smallnum {
-    font-size: 28px; /* 숫자 글자 크기 축소 */
+    font-size: 28px;
   }
 
   .callIcon {
-    width: 60px; /* 아이콘 크기 축소 */
-    height: 60px; /* 아이콘 크기 축소 */
+    width: 60px;
+    height: 60px;
   }
 }

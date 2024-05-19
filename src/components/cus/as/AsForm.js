@@ -67,7 +67,7 @@ function AsFormWithLocation({ selectedProduct }) {
       name: "r_content",
       label: "요청사항",
       type: "textarea",
-      required: false,
+      required: true,
     },
   ];
 
