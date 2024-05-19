@@ -1,6 +1,6 @@
 import React from "react";
 import callIcon from "../../../assets/man/CusCall_navy.png";
-import styles from "./Boxcall.module.css";
+import styles from "./BoxCall.module.css";
 
 // 날짜 포매팅 함수
 const formatDate = (date) => {
