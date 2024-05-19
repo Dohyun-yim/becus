@@ -3,10 +3,10 @@ body {
 }
 
 .compareContainer {
+  font-family: "Noto Sans KR", sans-serif;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  margin: auto;
   color: #13233c;
 }
 
@@ -31,37 +31,34 @@ body {
 }
 
 .infoLink:hover {
-  color: #4285f4;
+  color: #0048ff;
 }
 
-.productButtonsContainer {
-  overflow-x: auto;
+.productDropdownContainer {
+  text-align: center;
   margin-top: 20px;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 10px;
   margin-bottom: 20px;
 }
-.productButton {
-  background-color: #f8f8f8;
-  border: 1px solid #d2d2d2;
-  padding: 10px 20px;
-  margin-right: 10px;
+
+.productDropdownContainer label {
+  font-size: 20px;
+  font-weight: 600;
   margin-bottom: 10px;
+}
+
+.productDropdownContainer select {
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.1s, border-color 0.1s;
+  padding: 10px;
+  margin-left: 10px;
+  border: 1px solid #13233c;
+  border-radius: 20px;
+  outline: none;
+  background-color: #ffffff;
 }
 
-.productButton:hover {
-  background-color: #656565;
-  border-color: #bdbdbd;
-}
-
-.selected {
-  background-color: #13233c;
-  color: white;
-  border-color: #b3b3b3;
+.productDropdownContainer select:focus {
+  border-color: #13233c;
+  box-shadow: 0 0 5px rgba(19, 35, 60, 0.5);
 }
 
 .productComparisonTable {
@@ -78,7 +75,8 @@ body {
 }
 
 .productComparisonTable th {
-  background-color: #e7e7e7d5;
+  background-color: #13233c;
+  color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 14px;
@@ -109,7 +107,6 @@ body {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  background-color: white;
 }
 
 .productImage {
@@ -118,23 +115,17 @@ body {
   object-fit: cover;
 }
 
-.sizeWeightRow td {
-  font-weight: bold;
-  border-bottom: 2px solid #d2d2d2;
-  text-align: start;
-  font-size: 25px;
-}
-
-.sizeWeightInfo td {
-  font-size: 23px;
-  font-weight: 400;
-}
-
+.sizeWeightRow td,
 .featureRow td {
   font-weight: bold;
   border-bottom: 2px solid #d2d2d2;
   text-align: start;
-  font-size: 25px;
+  font-size: 23px;
+}
+
+.sizeWeightInfo td {
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .washableFrozenCell {
