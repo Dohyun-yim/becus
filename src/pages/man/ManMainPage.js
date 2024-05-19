@@ -5,12 +5,10 @@ import styles from "./ManMainPage.module.css";
 import ManCusImg from "../../assets/man/cus_navy.png";
 import ManAsImg from "../../assets/man/as_navy.png";
 import ManTalkImg from "../../assets/man/talk_navy.png";
-import CusImg from "../../assets/man/cus_gray.png";
 
 import Widget from "../../components/man/main/Widget";
 import Boxcall from "../../components/man/main/Boxcall";
-import Boxdashboard from "../../components/man/main/Boxdashboard";
-import Boxsetting from "../../components/man/main/Boxsetting";
+import Boxcus from "../../components/man/main/Boxcus";
 
 import asMockData from "../../mockdata/mockAs.json";
 
@@ -66,16 +64,13 @@ const ManMainPage = () => {
           </Link>
         </div>
         <div className={styles.managerbox}>
-          <Link to="/manager/call">
+          <Link to="/manager/call" className={styles.managerboxLink}>
             <Boxcall />
           </Link>
           <div className={styles.managerbox2}>
-            <Boxdashboard />
-            <div className={styles.managerbox3}>
-              <Link to="/cus">
-                <Boxsetting imgSrc={CusImg} word="고객용 페이지" />
-              </Link>
-            </div>
+            <Link to="/cus" className={styles.managerboxLink}>
+              <Boxcus />
+            </Link>
           </div>
         </div>
       </div>

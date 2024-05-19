@@ -17,10 +17,10 @@ const introductionMessages = [
 ];
 
 function RagPage() {
-  const [messages, setMessages] = useState([]); // 대화 메시지 상태
-  const [loading, setLoading] = useState(false); // 로딩 상태
-  const [isFirstQuestion, setIsFirstQuestion] = useState(true); // 첫 번째 질문 여부 상태
-  const [productOptions, setProductOptions] = useState([]); // 제품 목록 드롭다운 옵션 상태
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false); // 로딩
+  const [isFirstQuestion, setIsFirstQuestion] = useState(true); // 첫 번째 질문 여부
+  const [productOptions, setProductOptions] = useState([]); // 제품 선택 드롭다운 상태
 
   useEffect(() => {
     // 초기 메시지 설정

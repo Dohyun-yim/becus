@@ -10,36 +10,62 @@ import {
   PhoneOutlined,
 } from "@ant-design/icons";
 
+const items = [
+  {
+    key: "home",
+    icon: <HomeOutlined />,
+    label: (
+      <Link to="/manager" style={{ textDecoration: "none" }}>
+        HOME
+      </Link>
+    ),
+  },
+  {
+    key: "cus",
+    icon: <TeamOutlined />,
+    label: (
+      <Link to="/manager/cus" style={{ textDecoration: "none" }}>
+        고객관리
+      </Link>
+    ),
+  },
+  {
+    key: "as",
+    icon: <ToolOutlined />,
+    label: (
+      <Link to="/manager/as" style={{ textDecoration: "none" }}>
+        수리 현황
+      </Link>
+    ),
+  },
+  {
+    key: "talk",
+    icon: <UnorderedListOutlined />,
+    label: (
+      <Link to="/manager/talk" style={{ textDecoration: "none" }}>
+        문의 조회
+      </Link>
+    ),
+  },
+  {
+    key: "call",
+    icon: <PhoneOutlined />,
+    label: (
+      <Link to="/manager/call" style={{ textDecoration: "none" }}>
+        통화
+      </Link>
+    ),
+  },
+];
+
 const MenuList = () => {
   return (
-    <Menu theme="dark" mode="inline" className={styles.menu_bar}>
-      <Menu.Item key="home" icon={<HomeOutlined />}>
-        <Link to="/manager" style={{ textDecoration: "none" }}>
-          HOME
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="cus" icon={<TeamOutlined />}>
-        <Link to="/manager/cus" style={{ textDecoration: "none" }}>
-          고객관리
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="as" icon={<ToolOutlined />}>
-        <Link to="/manager/as" style={{ textDecoration: "none" }}>
-          수리 현황
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="talk" icon={<UnorderedListOutlined />}>
-        <Link to="/manager/talk" style={{ textDecoration: "none" }}>
-          문의 조회
-        </Link>
-      </Menu.Item>
-
-      <Menu.Item key="call" icon={<PhoneOutlined />}>
-        <Link to="/manager/call" style={{ textDecoration: "none" }}>
-          통화
-        </Link>
-      </Menu.Item>
-    </Menu>
+    <Menu
+      theme="dark"
+      mode="inline"
+      className={styles.menu_bar}
+      items={items}
+    />
   );
 };
 
