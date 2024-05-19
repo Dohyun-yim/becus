@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       { path: "product/:id", element: <ProductDetailsPage /> },
       { path: "order", element: <CusOrderPage /> },
 
-      { path: "compare", element: <ProductComparePage /> },
+      { path: "compare/:id", element: <ProductComparePage /> },
 
       { path: "asinput", element: <CusAsInputPage /> },
 

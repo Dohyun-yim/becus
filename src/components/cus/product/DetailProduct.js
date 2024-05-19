@@ -15,12 +15,13 @@ function DetailProduct() {
   const handleOrderClick = () => {
     navigate("/cus/order", { state: { productId: product.pk } });
   };
+
   const handleProductTalkClick = () => {
     navigate("/cus/producttalk", { state: { productId: product.pk } });
   };
 
   const handleCompareClick = () => {
-    navigate("/cus/compare");
+    navigate(`/cus/compare/${product.pk}`);
   };
 
   const handleBackClick = () => {
