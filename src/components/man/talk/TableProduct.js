@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TalkTable.module.css";
-import mockDataProduct from "../../../mockdata/mockProduct.json";
+import axiosInstance from "../../../lib/axios";
 
 const TableProduct = () => {
-  // 작성일을 기준으로 데이터를 내림차순 정렬
-  const sortedData = [...mockDataProduct].sort((a, b) => {
-    return new Date(b.fields.pc_created_at) - new Date(a.fields.pc_created_at);
-  });
+  const [productData, setProductData] = useState([]);
+
+  const fetchProductData = async () => {
+    try {
+      const response = await axiosInstance.get("api/v1/consult/product");
+      setProductData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log("Error fetching product consult data", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProductData();
+  }, []);
 
   return (
     <table className={styles.OrderTable}>
@@ -21,26 +32,32 @@ const TableProduct = () => {
         </tr>
       </thead>
       <tbody>
-        {sortedData.map((item) => (
-          <tr key={item.pk}>
-            <td>{item.fields.pc_created_at}</td>
-            <td>{item.fields.pc_name}</td>
-            <td>{item.fields.pc_phone}</td>
-            <td>{item.fields.pc_email}</td>
-            <td>{item.fields.pc_product_id}</td>
-            <td
-              className={
-                item.fields.pc_status === "요청 대기"
-                  ? styles.waiting
-                  : item.fields.pc_status === "처리 완료"
-                  ? styles.completed
-                  : ""
-              }
-            >
-              {item.fields.pc_status}
-            </td>
+        {productData.length > 0 ? (
+          productData.map((item) => (
+            <tr key={item.pk}>
+              <td>{new Date(item.pc_created_at).toLocaleDateString()}</td>
+              <td>{item.pc_name}</td>
+              <td>{item.pc_phone}</td>
+              <td>{item.pc_email}</td>
+              <td>{item.pc_product_id}</td>
+              <td
+                className={
+                  item.pc_status === "요청 대기"
+                    ? styles.waiting
+                    : item.pc_status === "처리 완료"
+                    ? styles.completed
+                    : ""
+                }
+              >
+                {item.pc_status}
+              </td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="6">데이터가 없습니다</td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );

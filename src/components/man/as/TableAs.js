@@ -40,7 +40,7 @@ const TableAs = ({ as }) => {
                   ? styles.waiting
                   : item.r_status === "처리 완료"
                   ? styles.completed
-                  : ""
+                  : item.r_status === "요청 수락"
               }
             >
               {item.r_status}

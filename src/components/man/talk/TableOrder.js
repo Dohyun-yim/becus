@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TalkTable.module.css";
-import mockDataOrder from "../../../mockdata/mockOrder.json";
+import axiosInstance from "../../../lib/axios";
+
 const TableOrder = () => {
-  // 작성일을 기준으로 데이터를 내림차순 정렬
-  const sortedData = [...mockDataOrder].sort((a, b) => {
-    return new Date(b.fields.o_created_at) - new Date(a.fields.o_created_at);
-  });
+  const [orderData, setOrderData] = useState([]);
+
+  const fetchOrderData = async () => {
+    try {
+      const response = await axiosInstance.get("api/v1/order");
+      setOrderData(response.data);
+      console.log("견적서: ", response.data);
+    } catch (error) {
+      console.error("Error fetching order data: ", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrderData();
+  }, []);
 
   return (
     <table className={styles.OrderTable}>
@@ -20,26 +32,34 @@ const TableOrder = () => {
         </tr>
       </thead>
       <tbody>
-        {sortedData.map((item) => (
-          <tr key={item.pk}>
-            <td>{item.fields.o_created_at}</td>
-            <td>{item.fields.o_name}</td>
-            <td>{item.fields.o_phone}</td>
-            <td>{item.fields.o_email}</td>
-            <td>{item.fields.o_product_id}</td>
-            <td
-              className={
-                item.fields.o_status === "요청 대기"
-                  ? styles.waiting
-                  : item.fields.o_status === "처리 완료"
-                  ? styles.completed
-                  : ""
-              }
-            >
-              {item.fields.o_status}
-            </td>
+        {orderData && orderData.length > 0 ? (
+          orderData
+            .sort((a, b) => new Date(b.o_created_at) - new Date(a.o_created_at))
+            .map((item) => (
+              <tr key={item.pk}>
+                <td>{new Date(item.o_created_at).toLocaleDateString()}</td>
+                <td>{item.o_name}</td>
+                <td>{item.o_phone}</td>
+                <td>{item.o_email}</td>
+                <td>{item.o_product_id}</td>
+                <td
+                  className={
+                    item.o_status === "요청 대기"
+                      ? styles.waiting
+                      : item.o_status === "처리 완료"
+                      ? styles.completed
+                      : ""
+                  }
+                >
+                  {item.o_status}
+                </td>
+              </tr>
+            ))
+        ) : (
+          <tr>
+            <td colSpan="6">데이터가 없습니다</td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );
