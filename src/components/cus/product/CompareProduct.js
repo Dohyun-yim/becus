@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import styles from "./CompareProduct.module.css";
 import products from "../../../mockdata/ProductMock.json";
@@ -11,10 +11,22 @@ function CompareProduct() {
   const { id } = useParams();
   const leftProduct = products.find((p) => p.pk.toString() === id);
   const [rightProduct, setRightProduct] = useState(null);
+  const [selectedProductId, setSelectedProductId] = useState("");
+
+  useEffect(() => {
+    const initialProductId = products[0]?.pk.toString() || "";
+    setSelectedProductId(initialProductId);
+    const initialProduct = products.find(
+      (p) => p.pk.toString() === initialProductId
+    );
+    setRightProduct(initialProduct);
+  }, []);
 
   const handleSelectProduct = (event) => {
+    const selectedProductId = event.target.value;
+    setSelectedProductId(selectedProductId);
     const selectedProduct = products.find(
-      (p) => p.pk.toString() === event.target.value
+      (p) => p.pk.toString() === selectedProductId
     );
     setRightProduct(selectedProduct);
   };
@@ -38,8 +50,16 @@ function CompareProduct() {
         </Link>
       </p>
       <div className={styles.productDropdownContainer}>
-        <label htmlFor="product-select">비교할 제품 선택 해주세요! </label>
-        <select id="product-select" onChange={handleSelectProduct}>
+        <label htmlFor="product-select">
+          {leftProduct
+            ? `${leftProduct.fields.name}(${leftProduct.fields.part_number})과 비교할 제품을 선택 해주세요!`
+            : "비교할 제품 선택 해주세요!"}
+        </label>
+        <select
+          id="product-select"
+          value={selectedProductId}
+          onChange={handleSelectProduct}
+        >
           <option value="">--제품을 선택하세요--</option>
           {products.map((product) => (
             <option key={product.pk} value={product.pk}>

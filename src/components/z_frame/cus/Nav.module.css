@@ -62,3 +62,13 @@ ul.menu a:active {
   background: linear-gradient(135deg, #5b49e3, #2b7de3);
   box-shadow: 0 6px 16px rgba(43, 125, 227, 0.4);
 }
+
+@media (max-width: 480px) {
+  .chatbotButton span::after {
+    content: attr(data-text);
+  }
+
+  .chatbotButton span[data-text="문의"]::after {
+    content: "문의";
+  }
+}

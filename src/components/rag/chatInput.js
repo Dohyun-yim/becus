@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import styles from "./chatInput.module.css";
 
-function ChatInput({ onSendMessage, isFirstQuestion, productOptions }) {
+function ChatInput({
+  onSendMessage,
+  isFirstQuestion,
+  productOptions,
+  onDropdownSelection,
+  selectedProduct,
+  setSelectedProduct,
+}) {
   const [input, setInput] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFirstQuestion) {
       if (selectedProduct) {
-        onSendMessage(selectedProduct, true); // isProduct를 true로 설정
-        setSelectedProduct("");
+        onSendMessage(selectedProduct);
+        setInput("");
       }
     } else {
       if (input.trim()) {
-        onSendMessage(input, false); // isProduct를 false로 설정
+        onSendMessage(input);
         setInput("");
       }
     }
@@ -25,14 +31,18 @@ function ChatInput({ onSendMessage, isFirstQuestion, productOptions }) {
       {isFirstQuestion ? (
         <select
           value={selectedProduct}
-          onChange={(e) => setSelectedProduct(e.target.value)}
+          onChange={(e) => {
+            onDropdownSelection(e.target.value);
+            setSelectedProduct(e.target.value);
+          }}
           className={styles.selectInput}
         >
-          <option value="" disabled>
-            제품을 선택하세요!
-          </option>
           {productOptions.map((product, index) => (
-            <option key={index} value={product.value}>
+            <option
+              key={index}
+              value={product.value}
+              disabled={product.value === "divider" || product.disabled}
+            >
               {product.label}
             </option>
           ))}
