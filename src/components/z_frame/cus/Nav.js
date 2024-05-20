@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Nav.module.css";
 import Container from "./Container";
@@ -9,6 +10,18 @@ import chatbotIcon from "../../../assets/logo/chatbotIcon.png";
 
 function Nav() {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 480);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleChatbotClick = () => {
     navigate("/cus/rag");
@@ -35,7 +48,7 @@ function Nav() {
                 alt="Chatbot"
                 className={styles.chatbotIcon}
               />
-              <span>무엇이든 물어보세요!</span>
+              <span>{isMobile ? "문의" : "무엇이든 물어보세요!"}</span>
             </button>
           </li>
           <li>
