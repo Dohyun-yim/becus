@@ -1,13 +1,15 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 .allcus {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .topcus {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
 }
 
 .bottomcus {
