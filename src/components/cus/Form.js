@@ -10,15 +10,18 @@ function Form({ title, fields, onSubmit }) {
   );
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [errorModalOpen, setErrorModalOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    // console.log(`Field Name: ${name}, Field Value: ${value}`); // 입력값 확인용 콘솔 로그
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const validateForm = () => {
     for (let field of fields) {
       if (field.required && !formData[field.name]) {
+        setErrorMessage(`"${field.label}" 값을 입력해주세요.`);
         setErrorModalOpen(true);
         return false;
       }
@@ -73,6 +76,7 @@ function Form({ title, fields, onSubmit }) {
                 onChange={handleChange}
                 required={field.required}
               >
+                <option value="">선택해주세요</option>
                 {field.options.map((option, idx) => (
                   <option key={idx} value={option}>
                     {option}
@@ -123,7 +127,7 @@ function Form({ title, fields, onSubmit }) {
         className={styles.modalContent}
       >
         <h4>오류</h4>
-        <p>필수 값을 입력해주세요!</p>
+        <p>{errorMessage}</p>
         <button onClick={handleCloseModal} className={styles.modalButton}>
           확인
         </button>

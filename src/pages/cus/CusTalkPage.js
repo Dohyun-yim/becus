@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Form from "../../components/cus/Form";
+import axiosInstance from "../../lib/axios";
 
 function TalkPage() {
   const formFields = [
@@ -30,7 +31,7 @@ function TalkPage() {
       label: "문의유형",
       type: "select",
       required: true,
-      options: ["구매", "A/S", "상담"],
+      options: ["상담", "A/S", "구매"],
     },
     {
       id: "gc_product_id",
@@ -55,29 +56,22 @@ function TalkPage() {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "https://api.be-cus.com:8000/api/v1/consult/global",
+      const response = await axiosInstance.post(
+        "/api/v1/consult/global",
+        formData,
         {
-          method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
             "X-CSRFToken":
-              "rSbGYBPzaJjbAuCeXypg3HTZlgcnF4ON5RLJS1kPjBHWc7aVxzEbCWF1U9fiXqDU",
-            // Add Authorization header if needed
-            // "Authorization": `Bearer YOUR_AUTH_TOKEN`
+              "7Llv9j54QO6VdKL9LibpXCX6GbOcPPKeBQCKUJuwWz5rSkkonXcYF0ZnpXjCUDa9",
+            Authorization: `Bearer YOUR_AUTH_TOKEN`, // 실제 인증 토큰으로 변경 필요
           },
-          body: JSON.stringify(formData),
         }
       );
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const jsonResponse = await response.json();
       setMessage("성공적으로 처리되었습니다.");
-      console.log("서버로부터의 응답:", jsonResponse);
+      console.log("서버로부터의 응답:", response.data);
     } catch (error) {
       setMessage("에러가 발생했습니다: " + error.message);
       console.error("요청 에러 발생:", error);
