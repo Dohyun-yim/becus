@@ -2,6 +2,21 @@ import React, { useState } from "react";
 import Form from "../../components/cus/Form";
 import axiosInstance from "../../lib/axios";
 
+// getCookie 함수 정의
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    const cookies = document.cookie.split(";").map((c) => c.trim());
+    for (let cookie of cookies) {
+      if (cookie.startsWith(name + "=")) {
+        cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+
 function TalkPage() {
   const formFields = [
     {
@@ -55,17 +70,26 @@ function TalkPage() {
   const handleSubmit = async (formData) => {
     setLoading(true);
 
+    // 필요한 필드만 추출
+    const { gc_name, gc_email, gc_phone, gc_content, gc_product_id } = formData;
+
+    const postData = {
+      gc_name,
+      gc_email,
+      gc_phone,
+      gc_content,
+      gc_product_id,
+    };
+
     try {
       const response = await axiosInstance.post(
         "/api/v1/consult/global",
-        formData,
+        postData,
         {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            "X-CSRFToken":
-              "7Llv9j54QO6VdKL9LibpXCX6GbOcPPKeBQCKUJuwWz5rSkkonXcYF0ZnpXjCUDa9",
-            Authorization: `Bearer YOUR_AUTH_TOKEN`, // 실제 인증 토큰으로 변경 필요
+            "X-CSRFToken": getCookie("csrftoken"),
           },
         }
       );
