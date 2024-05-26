@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "../../cus/Form";
 import { useLocation } from "react-router-dom";
+import axiosInstance from "../../../lib/axios";
 
 function AsFormComponent({ selectedProduct, repairType }) {
   useEffect(() => {
@@ -10,14 +11,54 @@ function AsFormComponent({ selectedProduct, repairType }) {
     console.log("수리 유형:", repairType);
   }, [selectedProduct, repairType]);
 
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (formData) => {
+    setLoading(true);
+    const { r_name, r_phone, r_email, r_product_id, r_type, r_content } =
+      formData;
+    const postData = {
+      r_name,
+      r_phone,
+      r_email,
+      r_product_id,
+      r_type,
+      r_content,
+    };
+    try {
+      const response = await axiosInstance.post("/api/v1/repair/", postData, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+
+      setMessage("성공적으로 처리되었습니다.");
+      console.log("서버로부터의 응답:", response.data);
+    } catch (error) {
+      setMessage("에러가 발생했습니다: " + error.message);
+      console.error("요청 에러 발생:", error);
+    } finally {
+      setLoading(false);
+      setTimeout(() => setMessage(""), 5000);
+    }
+  };
   if (!selectedProduct) {
     return null;
   }
 
-  return <AsFormWithLocation selectedProduct={selectedProduct} />;
+  return (
+    <AsFormWithLocation
+      selectedProduct={selectedProduct}
+      onSubmit={handleSubmit}
+      loading={loading} // 추가
+      message={message} // 추가
+    />
+  );
 }
 
-function AsFormWithLocation({ selectedProduct }) {
+function AsFormWithLocation({ selectedProduct, onSubmit, loading, message }) {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const partNumber = searchParams.get("partNumber") || "";
@@ -71,20 +112,16 @@ function AsFormWithLocation({ selectedProduct }) {
     },
   ];
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = {};
-    formData.forEach((value, key) => (data[key] = value));
-    console.log(data); // 여기서 서버로 데이터를 보낼 수 있습니다.
-  };
-
   return (
-    <Form
-      title="A/S 수리 요청서 작성"
-      fields={formFields}
-      onSubmit={handleSubmit}
-    />
+    <div>
+      {loading && <p>Loading...</p>}
+      {message && <p>{message}</p>}
+      <Form
+        title="A/S 수리 요청서 작성"
+        fields={formFields}
+        onSubmit={onSubmit}
+      />
+    </div>
   );
 }
 

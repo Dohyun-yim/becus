@@ -6,7 +6,10 @@ Modal.setAppElement("#root");
 
 function Form({ title, fields, onSubmit }) {
   const [formData, setFormData] = useState(
-    fields.reduce((acc, field) => ({ ...acc, [field.name]: "" }), {})
+    fields.reduce(
+      (acc, field) => ({ ...acc, [field.name]: field.defaultValue || "" }),
+      {}
+    )
   );
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [errorModalOpen, setErrorModalOpen] = useState(false);
@@ -14,7 +17,6 @@ function Form({ title, fields, onSubmit }) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    // console.log(`Field Name: ${name}, Field Value: ${value}`); // 입력값 확인용 콘솔 로그
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -44,7 +46,10 @@ function Form({ title, fields, onSubmit }) {
     onSubmit(formData);
     setModalIsOpen(false);
     setFormData(
-      fields.reduce((acc, field) => ({ ...acc, [field.name]: "" }), {})
+      fields.reduce(
+        (acc, field) => ({ ...acc, [field.name]: field.defaultValue || "" }),
+        {}
+      )
     );
   };
 

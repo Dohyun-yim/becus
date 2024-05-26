@@ -29,7 +29,7 @@ function TalkPage() {
     {
       id: "gc_phone",
       name: "gc_phone",
-      label: "연락처",
+      label: "연락처 (010-xxxx-xxxx 형태로 작성)",
       type: "text",
       required: true,
     },
@@ -53,14 +53,14 @@ function TalkPage() {
       name: "gc_product_id",
       label: "문의상품",
       type: "text",
-      required: false,
+      required: true,
     },
     {
       id: "gc_content",
       name: "gc_content",
       label: "기타 요청사항",
       type: "textarea",
-      required: false,
+      required: true,
     },
   ];
 
@@ -70,7 +70,6 @@ function TalkPage() {
   const handleSubmit = async (formData) => {
     setLoading(true);
 
-    // 필요한 필드만 추출
     const { gc_name, gc_email, gc_phone, gc_content, gc_product_id } = formData;
 
     const postData = {
@@ -89,7 +88,6 @@ function TalkPage() {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            "X-CSRFToken": getCookie("csrftoken"),
           },
         }
       );
