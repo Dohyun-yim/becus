@@ -40,17 +40,13 @@ function CusAsInputPage() {
         <div className={styles.cusAsInputStep}>
           <div className={styles.productInfo}>
             <img
-              src={selectedProduct.fields.image_url}
-              alt={selectedProduct.fields.name}
+              src={selectedProduct.p_picture}
+              alt={selectedProduct.p_name}
               className={styles.productImage}
             />
             <div className={styles.productDetails}>
-              <p className={styles.productName}>
-                {selectedProduct.fields.name}
-              </p>
-              <p className={styles.productNumber}>
-                {selectedProduct.fields.part_number}
-              </p>
+              <p className={styles.productName}>{selectedProduct.p_name}</p>
+              <p className={styles.productNumber}>{selectedProduct.p_number}</p>
             </div>
           </div>
           <hr className={styles.divider} />
@@ -62,10 +58,10 @@ function CusAsInputPage() {
               className={styles.cusAsInputSelect}
             >
               <option value="">선택하세요</option>
-              <option value="stop">기계 멈춤 현상</option>
-              <option value="worn">부품 마모/손상</option>
-              <option value="error">기계 오작동</option>
-              <option value="other">기타</option>
+              <option value="기계 멈춤 현상">기계 멈춤 현상</option>
+              <option value="부품 마모/손상">부품 마모/손상</option>
+              <option value="기계 오작동">기계 오작동</option>
+              <option value="기타">기타</option>
             </select>
           </label>
           <div className={styles.buttons}>

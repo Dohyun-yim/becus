@@ -70,8 +70,15 @@ function OrderPage() {
 
   const handleSubmit = async (formData) => {
     console.log(formData);
-    const { o_name, o_phone, o_email, o_product_id, o_address, o_content } =
-      formData;
+    const {
+      o_name,
+      o_phone,
+      o_email,
+      o_product_id,
+      o_address,
+      o_content,
+      o_amount,
+    } = formData;
     const postData = {
       o_name,
       o_phone,
@@ -79,6 +86,7 @@ function OrderPage() {
       o_product_id,
       o_address,
       o_content,
+      o_amount,
     };
     try {
       // API 호출

@@ -1,39 +1,71 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import styles from "./CompareProduct.module.css";
-import products from "../../../mockdata/ProductMock.json";
-
+import axiosInstance from "../../../lib/axios";
 import washableIcon from "../../../assets/cus/washableIcon.png";
 import freshIcon from "../../../assets/cus/freshIcon.png";
 import frozenIcon from "../../../assets/cus/frozenIcon.png";
 
 function CompareProduct() {
   const { id } = useParams();
-  const leftProduct = products.find((p) => p.pk.toString() === id);
+  const [leftProduct, setLeftProduct] = useState(null);
   const [rightProduct, setRightProduct] = useState(null);
   const [selectedProductId, setSelectedProductId] = useState("");
+  const [productOptions, setProductOptions] = useState([]);
 
   useEffect(() => {
-    const initialProductId = products[0]?.pk.toString() || "";
-    setSelectedProductId(initialProductId);
-    const initialProduct = products.find(
-      (p) => p.pk.toString() === initialProductId
-    );
-    setRightProduct(initialProduct);
+    const fetchProducts = async () => {
+      try {
+        const response = await axiosInstance.get("/api/v1/product"); // Assuming this endpoint returns an array of products
+        const products = response.data;
+        setProductOptions(
+          products.map((product) => ({
+            value: product.id,
+            label: `${product.p_name} (${product.p_number})`,
+          }))
+        );
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
   }, []);
 
-  const handleSelectProduct = (event) => {
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const leftResponse = await axiosInstance.get(`/api/v1/product/${id}`);
+        setLeftProduct(leftResponse.data);
+
+        const initialProductId = "1"; // or any default product id
+        const rightResponse = await axiosInstance.get(
+          `/api/v1/product/${initialProductId}`
+        );
+        setRightProduct(rightResponse.data);
+
+        setSelectedProductId(initialProductId);
+      } catch (error) {
+        console.error("Error fetching product detail:", error);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  const handleSelectProduct = async (event) => {
     const selectedProductId = event.target.value;
     setSelectedProductId(selectedProductId);
-    const selectedProduct = products.find(
-      (p) => p.pk.toString() === selectedProductId
-    );
-    setRightProduct(selectedProduct);
-  };
 
-  if (!leftProduct) {
-    return <div>상품을 찾을 수 없습니다!!</div>;
-  }
+    try {
+      const rightResponse = await axiosInstance.get(
+        `/api/v1/product/${selectedProductId}`
+      );
+      setRightProduct(rightResponse.data);
+    } catch (error) {
+      console.error("Error fetching product detail:", error);
+    }
+  };
 
   return (
     <div className={styles.compareContainer}>
@@ -52,7 +84,7 @@ function CompareProduct() {
       <div className={styles.productDropdownContainer}>
         <label htmlFor="product-select">
           {leftProduct
-            ? `${leftProduct.fields.name}(${leftProduct.fields.part_number})과 비교할 제품을 선택 해주세요!`
+            ? `${leftProduct.p_name} (${leftProduct.p_number})과 비교할 제품을 선택 해주세요!`
             : "비교할 제품 선택 해주세요!"}
         </label>
         <select
@@ -61,9 +93,9 @@ function CompareProduct() {
           onChange={handleSelectProduct}
         >
           <option value="">--제품을 선택하세요--</option>
-          {products.map((product) => (
-            <option key={product.pk} value={product.pk}>
-              {product.fields.name}({product.fields.part_number})
+          {productOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
             </option>
           ))}
         </select>
@@ -76,20 +108,20 @@ function CompareProduct() {
                 <th className={styles.nameRow}>
                   <div>
                     <div className={styles.nameInfoRow}>
-                      {leftProduct.fields.name}
+                      {leftProduct.p_name}
                     </div>
                     <div className={styles.partNumInfoRow}>
-                      {leftProduct.fields.part_number}
+                      {leftProduct.p_number}
                     </div>
                   </div>
                 </th>
                 <th className={styles.nameRow}>
                   <div>
                     <div className={styles.nameInfoRow}>
-                      {rightProduct.fields.name}
+                      {rightProduct.p_name}
                     </div>
                     <div className={styles.partNumInfoRow}>
-                      {rightProduct.fields.part_number}
+                      {rightProduct.p_number}
                     </div>
                   </div>
                 </th>
@@ -100,8 +132,8 @@ function CompareProduct() {
                 <td>
                   <div className={styles.imageContainer}>
                     <img
-                      src={leftProduct.fields.image_url}
-                      alt={leftProduct.fields.name}
+                      src={leftProduct.p_picture}
+                      alt={leftProduct.p_name}
                       className={styles.productImage}
                     />
                   </div>
@@ -109,30 +141,31 @@ function CompareProduct() {
                 <td>
                   <div className={styles.imageContainer}>
                     <img
-                      src={rightProduct.fields.image_url}
-                      alt={rightProduct.fields.name}
+                      src={rightProduct.p_picture}
+                      alt={rightProduct.p_name}
                       className={styles.productImage}
                     />
                   </div>
                 </td>
               </tr>
               <tr className={styles.sizeWeightRow}>
-                <td colSpan="2">크기 및 무게</td>
+                <td>크기 및 무게</td>
+                <td>{rightProduct.p_dimension}</td>
               </tr>
               <tr className={styles.sizeWeightInfo}>
-                <td>{leftProduct.fields.dimension}</td>
-                <td>{rightProduct.fields.dimension}</td>
+                <td>{leftProduct.p_dimension}</td>
+                <td>{rightProduct.p_dimension}</td>
               </tr>
               <tr className={styles.sizeWeightInfo}>
-                <td>{leftProduct.fields.net_weight}</td>
-                <td>{rightProduct.fields.net_weight}</td>
+                <td>{leftProduct.p_netweight}</td>
+                <td>{rightProduct.p_netweight}</td>
               </tr>
               <tr className={styles.featureRow}>
                 <td colSpan="2">특징</td>
               </tr>
-              <tr>
-                <td className={styles.washableFrozenCell}>
-                  {leftProduct.fields.washable && (
+              <tr className={styles.featureInfo}>
+                <td>
+                  {leftProduct.p_washable && (
                     <div className={styles.iconContainer}>
                       <img
                         src={washableIcon}
@@ -141,7 +174,7 @@ function CompareProduct() {
                       />
                     </div>
                   )}
-                  {leftProduct.fields.fresh_frozen === "fresh" && (
+                  {leftProduct.p_status === "fresh" && (
                     <div className={styles.iconContainer}>
                       <img
                         src={freshIcon}
@@ -150,7 +183,7 @@ function CompareProduct() {
                       />
                     </div>
                   )}
-                  {leftProduct.fields.fresh_frozen === "frozen" && (
+                  {leftProduct.p_status === "frozen" && (
                     <div className={styles.iconContainer}>
                       <img
                         src={frozenIcon}
@@ -160,8 +193,8 @@ function CompareProduct() {
                     </div>
                   )}
                 </td>
-                <td className={styles.washableFrozenCell}>
-                  {rightProduct.fields.washable && (
+                <td>
+                  {rightProduct.p_washable && (
                     <div className={styles.iconContainer}>
                       <img
                         src={washableIcon}
@@ -170,7 +203,7 @@ function CompareProduct() {
                       />
                     </div>
                   )}
-                  {rightProduct.fields.fresh_frozen === "fresh" && (
+                  {rightProduct.p_status === "fresh" && (
                     <div className={styles.iconContainer}>
                       <img
                         src={freshIcon}
@@ -179,7 +212,7 @@ function CompareProduct() {
                       />
                     </div>
                   )}
-                  {rightProduct.fields.fresh_frozen === "frozen" && (
+                  {rightProduct.p_status === "frozen" && (
                     <div className={styles.iconContainer}>
                       <img
                         src={frozenIcon}
@@ -191,16 +224,16 @@ function CompareProduct() {
                 </td>
               </tr>
               <tr className={styles.featureInfo}>
-                <td>{leftProduct.fields.feature1}</td>
-                <td>{rightProduct.fields.feature1}</td>
+                <td>{leftProduct.p_feature1}</td>
+                <td>{rightProduct.p_feature1}</td>
               </tr>
               <tr className={styles.featureInfo}>
-                <td>{leftProduct.fields.feature2}</td>
-                <td>{rightProduct.fields.feature2}</td>
+                <td>{leftProduct.p_feature2}</td>
+                <td>{rightProduct.p_feature2}</td>
               </tr>
               <tr className={styles.featureInfo}>
-                <td>{leftProduct.fields.feature3}</td>
-                <td>{rightProduct.fields.feature3}</td>
+                <td>{leftProduct.p_feature3}</td>
+                <td>{rightProduct.p_feature3}</td>
               </tr>
             </tbody>
           </table>

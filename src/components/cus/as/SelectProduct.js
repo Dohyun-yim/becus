@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SelectProduct.module.css";
-import products from "../../../mockdata/ProductMock.json";
+import axiosInstance from "../../../lib/axios";
 
 function SelectProduct({ goToStep2 }) {
-  const handleProductClick = (product) => {
-    // 수정된 부분
-    goToStep2(product); // 수정된 부분
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchProductData = async () => {
+    try {
+      const response = await axiosInstance.get("/api/v1/product");
+      setProducts(response.data);
+      setLoading(false);
+    } catch (error) {
+      setError("제품 데이터를 가져오는 중 오류가 발생했습니다.");
+      setLoading(false);
+    }
   };
+
+  useEffect(() => {
+    fetchProductData();
+  }, []);
+
+  const handleProductClick = (product) => {
+    goToStep2(product);
+  };
+
+  if (loading) {
+    return <div>로딩 중...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div className={styles.productGrid}>
       {products.map((product) => (
-        <div key={product.pk} className={styles.productCard}>
-          <img src={product.fields.image_url} alt={product.fields.name} />
-          <h3>{product.fields.name}</h3>
-          <h4>{product.fields.part_number}</h4>
+        <div key={product.id} className={styles.productCard}>
+          <img src={product.p_picture} alt={product.p_name} />
+          <h3>{product.p_name}</h3>
+          <h4>{product.p_number}</h4>
           {goToStep2 && (
             <button onClick={() => handleProductClick(product)}>선택</button>
           )}

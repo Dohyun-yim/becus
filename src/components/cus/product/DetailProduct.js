@@ -1,27 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import products from "../../../mockdata/ProductMock.json";
 import styles from "./DetailProduct.module.css";
+import axiosInstance from "../../../lib/axios";
 
 function DetailProduct() {
+  const [product, setProduct] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
-  const product = products.find((p) => p.pk.toString() === id);
+
+  const fetchDetailProduct = async () => {
+    try {
+      const response = await axiosInstance.get(`/api/v1/product/${id}`);
+      setProduct(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching product detail:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchDetailProduct();
+  }, [id]);
 
   if (!product) {
     return <div>상품이 없습니다!</div>;
   }
 
   const handleOrderClick = () => {
-    navigate("/cus/order", { state: { productId: product.pk } });
+    navigate("/cus/order", { state: { productId: product.id } });
   };
 
   const handleProductTalkClick = () => {
-    navigate("/cus/producttalk", { state: { productId: product.pk } });
+    navigate("/cus/producttalk", { state: { productId: product.id } });
   };
 
   const handleCompareClick = () => {
-    navigate(`/cus/compare/${product.pk}`);
+    navigate(`/cus/compare/${product.id}`);
   };
 
   const handleBackClick = () => {
@@ -34,31 +48,31 @@ function DetailProduct() {
         <div className={styles.DetailproductImageContainer}>
           <img
             className={styles.DetailproductImage}
-            src={product.fields.image_url}
-            alt={product.fields.name}
+            src={product.p_picture}
+            alt={product.p_name}
           />
         </div>
         <div className={styles.DetailproductInfo}>
           <div className={styles.DetailproductName}>
-            <h1>{product.fields.name}</h1>
-            <h2>{product.fields.part_number}</h2>
+            <h1>{product.p_name}</h1>
+            <h2>{product.p_number}</h2>
           </div>
           <p className={styles.DetailproductDescription}>
-            {product.fields.description}
+            {product.p_content} {/* 수정된 부분 */}
           </p>
           <table className={styles.productDetailsTable}>
             <tbody>
               <tr>
                 <th>DIMENSION</th>
-                <td>{product.fields.dimension}</td>
+                <td>{product.p_dimension}</td>
               </tr>
               <tr>
                 <th>기계 중량</th>
-                <td>{product.fields.net_weight}</td>
+                <td>{product.p_netweight}</td> {/* 수정된 부분 */}
               </tr>
               <tr>
                 <th>처리 능력</th>
-                <td>{product.fields.capacity}</td>
+                <td>{product.p_capacity}</td>
               </tr>
             </tbody>
           </table>

@@ -4,8 +4,7 @@ import ChatInput from "../../components/rag/chatInput";
 import Loading from "../../components/rag/loading";
 import styles from "./RagPage.module.css";
 
-//여기는 나중에 db랑 연결해서 제품 정보 불러와야 함 (이후 삭제!)
-import productMock from "../../mockdata/ProductMock.json";
+import axiosInstance from "../../lib/axios";
 
 //API 응답이 없는 경우 나타나는 응답 default 값
 const mockResponses = {
@@ -35,12 +34,12 @@ function RagPage() {
     resetPage();
   }, []);
 
-  // 로그인 되어 있는지 확인을 위해서 api 호출해야 하는 란^^
+  // 로그인 상태 확인을 위해서 API 호출해야 하는 함수
   const fetchLoginStatus = async () => {
     return true; // 실제 로그인 상태 확인 로직
   };
 
-  const resetPage = () => {
+  const resetPage = async () => {
     const introductionMessage = introductionMessages.map((message) => ({
       text: message,
       fromUser: false,
@@ -53,24 +52,35 @@ function RagPage() {
     ];
     // 로그인 했을 경우, 사용자 소유 상품 옵션 추가!
     if (isLoggedIn) {
-      initialOptions.push({ value: "user_owned", label: "사용자 소유 상품" });
+      initialOptions.push({
+        value: "내가 가진 상품",
+        label: "사용자 소유 상품",
+      });
     }
 
     // 선택 안하는 경우도 있어야 하기에 전체 상품 옵션 추가!
-    initialOptions.push({ value: "none", label: "전체 상품" });
+    initialOptions.push({ value: "상품 선택 안함", label: "전체 상품" });
 
-    // 제품 데이터 (연결해야 하는 부분)
-    const options = productMock.map((product) => ({
-      value: product.fields.part_number,
-      label: `${product.fields.name} (${product.fields.part_number})`,
-    }));
+    try {
+      const response = await axiosInstance.get("/api/v1/product/");
+      const products = response.data;
 
-    // 드롭다운 옵션 설정
-    setProductOptions([
-      ...initialOptions,
-      { value: "divider", label: "-------------------" },
-      ...options,
-    ]);
+      const options = products.map((product) => ({
+        value: product.p_number,
+        label: `${product.p_name} (${product.p_number})`,
+      }));
+
+      // 드롭다운 옵션 설정
+      setProductOptions([
+        ...initialOptions,
+        { value: "divider", label: "-------------------" },
+        ...options,
+      ]);
+    } catch (error) {
+      console.error("제품 정보를 불러오는데 실패했습니다.", error);
+      setProductOptions(initialOptions);
+    }
+
     setLoading(false);
     setIsFirstQuestion(true);
   };
@@ -97,18 +107,13 @@ function RagPage() {
     setLoading(true);
 
     try {
-      // API 호출 시 선택된 제품과 함께 보냄
-      // const response = await fetch('/api/chat', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({ message, selectedProduct }),
-      // });
-      // const data = await response.json();
-      // const responseText = data.response || mockResponses["default"];
-
-      const responseText = mockResponses["default"];
+      const response = await axiosInstance.get("/api/v1/chatbot/", {
+        params: {
+          q: message,
+          p: selectedProduct,
+        },
+      });
+      const responseText = response.data.response || mockResponses["default"];
 
       setMessages((prevMessages) => [
         ...prevMessages,
