@@ -150,7 +150,7 @@ function CompareProduct() {
               </tr>
               <tr className={styles.sizeWeightRow}>
                 <td>크기 및 무게</td>
-                <td>{rightProduct.p_dimension}</td>
+                <td></td>
               </tr>
               <tr className={styles.sizeWeightInfo}>
                 <td>{leftProduct.p_dimension}</td>

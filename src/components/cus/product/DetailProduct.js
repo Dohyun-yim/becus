@@ -27,11 +27,11 @@ function DetailProduct() {
   }
 
   const handleOrderClick = () => {
-    navigate("/cus/order", { state: { productId: product.id } });
+    navigate("/cus/order", { state: { productId: product.p_number } });
   };
 
   const handleProductTalkClick = () => {
-    navigate("/cus/producttalk", { state: { productId: product.id } });
+    navigate("/cus/producttalk", { state: { productId: product.p_number } });
   };
 
   const handleCompareClick = () => {

@@ -29,7 +29,7 @@ function TalkPage() {
     {
       id: "gc_phone",
       name: "gc_phone",
-      label: "연락처 (010-xxxx-xxxx 형태로 작성)",
+      label: "연락처 (010-xxxx-xxxx)",
       type: "text",
       required: true,
     },

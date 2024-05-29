@@ -24,7 +24,7 @@ function OrderPage() {
     {
       id: "o_phone",
       name: "o_phone",
-      label: "연락처",
+      label: "연락처 (010-xxxx-xxxx)",
       type: "text",
       required: true,
     },
@@ -39,8 +39,10 @@ function OrderPage() {
       id: "o_product_id",
       name: "o_product_id",
       label: "상품 품번",
+
       type: "text",
       required: true,
+      defaultValue: productId,
     },
     {
       id: "o_amount",

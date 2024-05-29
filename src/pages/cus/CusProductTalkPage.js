@@ -38,6 +38,7 @@ function ProductTalkPage() {
       label: "문의상품명",
       type: "text",
       required: true,
+      defaultValue: productId,
     },
 
     {
