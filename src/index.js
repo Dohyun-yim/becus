@@ -38,12 +38,13 @@ import ConnectPage from "./pages/ConnectPage";
 import RagPage from "./pages/rag/RagPage";
 
 import ManMainPage from "./pages/man/ManMainPage";
+import SearchResultsPage from "./pages/man/SearchResultPage";
+
 import ManCusPage from "./pages/man/cus/CusPage";
 import ManAsPage from "./pages/man/as/AsPage";
 import ManTalkPage from "./pages/man/talk/TalkPage";
 
 import CallMainPage from "./pages/man/call/CallMainPage"; //통화리스트
-import CallMissListPage from "./pages/man/call/CallMissListPage"; //부재중리스트
 import CallDetailsPage from "./pages/man/call/CallDetailsPage"; //개별 통화 요약
 import CallScriptPage from "./pages/man/call/CallScriptPage"; //개별 통화 스크립트
 
@@ -91,6 +92,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <ManMainPage /> },
+      { path: "search-results", element: <SearchResultsPage /> },
       { path: "cus", element: <ManCusPage /> },
       { path: "cus/:id", element: <CusDetailsPage /> },
       { path: "as", element: <ManAsPage /> },
@@ -98,7 +100,6 @@ const router = createBrowserRouter([
       { path: "call", element: <CallMainPage /> },
       { path: "calllist/call/:id", element: <CallDetailsPage /> },
       { path: "call/calllist/:id/script", element: <CallScriptPage /> },
-      { path: "callmiss", element: <CallMissListPage /> },
     ],
   },
 ]);
