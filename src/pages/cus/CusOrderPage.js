@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Form from "../../components/cus/Form";
-
 import useStoredUserInfo from "../../lib/localStorage";
 import axiosInstance from "../../lib/axios";
 
 function OrderPage() {
   const location = useLocation();
-  const { productId } = location.state;
+  const { productPk, productId } = location.state;
 
   useEffect(() => {
     console.log("전달된 PK:", productId);
@@ -80,11 +79,12 @@ function OrderPage() {
       o_content,
       o_amount,
     } = formData;
+
     const postData = {
       o_name,
       o_phone,
       o_email,
-      o_product_id,
+      o_product_id: productPk,
       o_address,
       o_content,
       o_amount,

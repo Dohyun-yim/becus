@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Form from "../../components/cus/Form";
+import axiosInstance from "../../lib/axios";
 
 function ProductTalkPage() {
   const location = useLocation();
-  const { productId } = location.state;
+  const { productPk, productId } = location.state;
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     console.log("전달된 PK:", productId);
@@ -40,7 +43,6 @@ function ProductTalkPage() {
       required: true,
       defaultValue: productId,
     },
-
     {
       id: "pc_content",
       name: "pc_content",
@@ -50,12 +52,49 @@ function ProductTalkPage() {
     },
   ];
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = {};
-    formData.forEach((value, key) => (data[key] = value));
-    console.log(data); // 여기서 서버로 데이터를 보낼 수 있습니다.
+  const handleSubmit = async (formData) => {
+    console.log(formData);
+    const {
+      pc_name,
+      pc_phone,
+      pc_email,
+      pc_product_id,
+      pc_address,
+      pc_content,
+      pc_amount,
+    } = formData;
+
+    const postData = {
+      pc_name,
+      pc_phone,
+      pc_email,
+      pc_product_id: productPk,
+      pc_address,
+      pc_content,
+      pc_amount,
+    };
+    try {
+      // API 호출
+      const response = await axiosInstance.post(
+        "/api/v1/consult/product",
+        postData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
+
+      setMessage("성공적으로 처리되었습니다.");
+      console.log("서버로부터의 응답:", response.data);
+    } catch (error) {
+      setMessage("에러가 발생했습니다: " + error.message);
+      console.error("요청 에러 발생:", error);
+    } finally {
+      setLoading(false);
+      setTimeout(() => setMessage(""), 5000);
+    }
   };
 
   return (
