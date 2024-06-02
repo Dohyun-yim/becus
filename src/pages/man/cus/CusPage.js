@@ -62,11 +62,7 @@ const CusPage = () => {
         </div>
 
         <div className={styles.bottomdowncus}>
-          {Array.isArray(customers) && customers.length > 0 ? (
-            <TableCus customers={filteredCustomers} />
-          ) : (
-            <p>로딩 중...</p>
-          )}
+          <TableCus customers={filteredCustomers} />
         </div>
       </div>
     </div>

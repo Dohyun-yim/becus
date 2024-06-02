@@ -7,7 +7,7 @@ const TableOrder = () => {
 
   const fetchOrderData = async () => {
     try {
-      const response = await axiosInstance.get("api/v1/order");
+      const response = await axiosInstance.get("api/v1/order/admin");
       setOrderData(response.data);
       console.log("견적서: ", response.data);
     } catch (error) {
@@ -41,7 +41,7 @@ const TableOrder = () => {
                 <td>{item.o_name}</td>
                 <td>{item.o_phone}</td>
                 <td>{item.o_email}</td>
-                <td>{item.o_product_id}</td>
+                <td>{item.o_product}</td>
                 <td
                   className={
                     item.o_status === "요청 대기"

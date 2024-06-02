@@ -1,6 +1,6 @@
 import React from "react";
 import TableOrder from "../../../components/man/talk/TableOrder";
-import styles from "./TalkAboutPage.module.css";
+import styles from "./EveryTalkPage.module.css";
 
 function TalkOrderPage() {
   return (

@@ -21,7 +21,7 @@ function ProductTalkPage() {
     {
       id: "pc_phone",
       name: "pc_phone",
-      label: "연락처",
+      label: "연락처 (010-xxxx-xxxx)",
       type: "text",
       required: true,
     },

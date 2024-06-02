@@ -16,7 +16,7 @@ const AsPage = () => {
   const [as, setAs] = useState([]);
   const fetchAs = async () => {
     try {
-      const response = await axiosInstance.get("/api/v1/repair");
+      const response = await axiosInstance.get("/api/v1/repair/admin");
       const data = response.data;
       setAs(data);
       console.log("AS: ", response.data);

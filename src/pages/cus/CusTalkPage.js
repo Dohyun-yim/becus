@@ -46,14 +46,14 @@ function TalkPage() {
       label: "문의유형",
       type: "select",
       required: true,
-      options: ["상담", "A/S", "구매"],
+      options: ["상담", "AS", "구매"],
     },
     {
-      id: "gc_product_id",
-      name: "gc_product_id",
+      id: "gc_product",
+      name: "gc_product",
       label: "문의상품",
       type: "text",
-      required: true,
+      required: false,
     },
     {
       id: "gc_content",
@@ -70,14 +70,14 @@ function TalkPage() {
   const handleSubmit = async (formData) => {
     setLoading(true);
 
-    const { gc_name, gc_email, gc_phone, gc_content, gc_product_id } = formData;
+    const { gc_name, gc_email, gc_phone, gc_content, gc_product } = formData;
 
     const postData = {
       gc_name,
       gc_email,
       gc_phone,
       gc_content,
-      gc_product_id,
+      gc_product,
     };
 
     try {

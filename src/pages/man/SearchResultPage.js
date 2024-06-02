@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import axiosInstance from "../../lib/axios";
+import axios from "axios";
 import TableCallList from "../../components/man/call/TableCallList";
 import styles from "./SearchResultPage.module.css";
 
@@ -19,8 +19,20 @@ const SearchResultPage = () => {
 
         console.log("사용자가 입력한 검색어:", query);
 
-        const response = await axiosInstance.get(
-          `/api/v1/call/search?query=${query}`
+        // URL 인코딩 추가
+        const encodedQuery = encodeURIComponent(query);
+
+        // API 요청
+        const response = await axios.get(
+          `https://api.be-cus.com:8000/api/v1/call/search?query=${encodedQuery}`,
+          {
+            headers: {
+              accept: "application/json",
+              "X-CSRFToken":
+                "oxOEqDQ0UslqN3REjJNK8gT2woh7pHTivhITIxJ6EvjOgVZjpIaYcGXprWvlXmYV",
+            },
+            withCredentials: true, // CSRF 토큰을 보내기 위해 필요할 수 있음
+          }
         );
         setResults(response.data.data);
       } catch (error) {

@@ -1,6 +1,6 @@
 import React from "react";
 import TableProduct from "../../../components/man/talk/TableProduct";
-import styles from "./TalkAboutPage.module.css";
+import styles from "./EveryTalkPage.module.css";
 
 function TalkProductPage() {
   return (

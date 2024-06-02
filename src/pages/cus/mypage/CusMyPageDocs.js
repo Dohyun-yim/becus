@@ -1,36 +1,16 @@
 import React, { useState } from "react";
 import styles from "./CusMyPageDocs.module.css";
 
-const documentsData = [
-  {
-    id: 1,
-    type: "견적서 문의",
-    date: "2024-04-01",
-    product: "육절기",
-    status: "요청 대기",
-  },
-  {
-    id: 2,
-    type: "AS 수리 문의",
-    date: "2024-04-02",
-    product: "민서기",
-    status: "요청 수락",
-  },
-  {
-    id: 3,
-    type: "제품 문의",
-    date: "2024-04-03",
-    product: "파인애플 절단기",
-    status: "처리 완료",
-  },
-];
-
 function DocumentsPage() {
-  const [documents, setDocuments] = useState(documentsData);
+  const [documents, setDocuments] = useState([]);
   const [selectedType, setSelectedType] = useState("전체");
 
   const handleCategoryChange = (type) => {
     setSelectedType(type);
+  };
+
+  const handleTotal = () => {
+    setSelectedType("전체");
   };
 
   const filteredDocuments =
@@ -42,29 +22,32 @@ function DocumentsPage() {
     <div className={styles.cusDocs}>
       <h1 className={styles.cusDocstitle}>TOTAL</h1>
       <div className={styles.cusDocsButtonContainer}>
-        <button
-          className={styles.cusDocsbutton}
-          onClick={() => handleCategoryChange("전 체")}
-        >
-          전체
+        <button className={styles.cusDocsbutton} onClick={handleTotal}>
+          TOTAL
         </button>
         <button
           className={styles.cusDocsbutton}
-          onClick={() => handleCategoryChange("견적서 문의")}
+          onClick={() => handleCategoryChange("상담")}
         >
-          견적서 문의
+          상담
         </button>
         <button
           className={styles.cusDocsbutton}
-          onClick={() => handleCategoryChange("AS 수리 문의")}
+          onClick={() => handleCategoryChange("구매")}
         >
-          AS 수리 문의
+          구매
         </button>
         <button
           className={styles.cusDocsbutton}
-          onClick={() => handleCategoryChange("제품 문의")}
+          onClick={() => handleCategoryChange("AS")}
         >
-          제품 문의
+          AS
+        </button>
+        <button
+          className={styles.cusDocsbutton}
+          onClick={() => handleCategoryChange("제품문의")}
+        >
+          제품문의
         </button>
       </div>
       <table className={styles.cusDocstable}>

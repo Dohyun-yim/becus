@@ -19,7 +19,6 @@ function ManagerLayout() {
       </div>
       <div className={styles.main}>
         <header className={styles.header}>
-          <SearchMan />
           <UserMenu Icon={ManagerIcon} />
         </header>
         <main className={styles.content}>

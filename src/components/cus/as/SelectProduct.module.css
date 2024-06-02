@@ -1,8 +1,5 @@
-body {
-  font-family: "Noto Sans KR", sans-serif;
-}
-
 .productGrid {
+  font-family: "Noto Sans KR", sans-serif;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;

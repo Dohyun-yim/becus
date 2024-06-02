@@ -39,7 +39,6 @@ function OrderPage() {
       id: "o_product_id",
       name: "o_product_id",
       label: "상품 품번",
-
       type: "text",
       required: true,
       defaultValue: productId,

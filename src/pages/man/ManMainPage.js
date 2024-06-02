@@ -35,9 +35,9 @@ const ManMainPage = () => {
               imgSrc={ManCusImg}
               title="고객관리"
               smalltitle1="신규 고객"
-              num1="10"
+              num1="4"
               smalltitle2="전체 고객"
-              num2="500"
+              num2="347"
             />
           </Link>
           <Link to="/manager/as" style={{ textDecoration: "none" }}>
@@ -57,7 +57,7 @@ const ManMainPage = () => {
               imgSrc={ManTalkImg}
               title="문의 조회"
               smalltitle1="처리 대기"
-              num1="32"
+              num1="9"
               smalltitle2="처리 진행"
               num2="6"
             />

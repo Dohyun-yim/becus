@@ -1,0 +1,68 @@
+.cusDocs {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #ffffff;
+  max-width: 600px;
+  margin: auto;
+}
+
+.cusDocstitle {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #13233c;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cusDocsButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cusDocsbutton {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #13233c;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative; /* 부모 요소 설정 */
+}
+
+.cusDocsbutton:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -5px; /* 오른쪽으로 조절 */
+  transform: translateY(-50%);
+  width: 1px;
+  height: 70%;
+  background-color: #b4b4b473; /* 구분선 색상 */
+}
+
+.cusDocstable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cusDocsth,
+.cusDocstd {
+  padding: 10px;
+  text-align: center;
+}
+
+.cusDocsth {
+  background-color: #b4b4b473;
+  color: #000000;
+}
+
+.cusDocstd:hover {
+  background-color: #e0e0e0;
+}
