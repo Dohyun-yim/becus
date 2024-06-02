@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./TableAs.module.css";
+import productData from "../../../mockdata/ProductMock.json";
 
 const TableAs = ({ as }) => {
   // 작성일을 기준으로 최신순 정렬
@@ -13,6 +14,11 @@ const TableAs = ({ as }) => {
         .sort((a, b) => new Date(b.r_created_at) - new Date(a.r_created_at))
     : [];
   console.log(sortedData);
+
+  const getPartNumber = (r_product) => {
+    const product = productData.find((item) => item.id === r_product);
+    return product ? product.p_number : "N/A";
+  };
 
   return (
     <table className={styles.AsTable}>
@@ -32,7 +38,7 @@ const TableAs = ({ as }) => {
             <td>{item.r_created_at}</td>
             <td>{item.r_name}</td>
             <td>{item.r_phone}</td>
-            <td>{item.r_product}</td>
+            <td>{getPartNumber(item.r_product)}</td>
             <td>{item.r_type}</td>
             <td
               className={

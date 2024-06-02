@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./TalkTable.module.css";
 import axiosInstance from "../../../lib/axios";
+import productmockData from "../../../mockdata/ProductMock.json";
 
 const TableProduct = () => {
   const [productData, setProductData] = useState([]);
@@ -18,6 +19,11 @@ const TableProduct = () => {
   useEffect(() => {
     fetchProductData();
   }, []);
+
+  const getPartNumber = (pc_product) => {
+    const product = productmockData.find((item) => item.id === pc_product);
+    return product ? product.p_number : "N/A";
+  };
 
   return (
     <table className={styles.OrderTable}>
@@ -43,7 +49,7 @@ const TableProduct = () => {
                 <td>{item.pc_name}</td>
                 <td>{item.pc_phone}</td>
                 <td>{item.pc_email}</td>
-                <td>{item.pc_product}</td>
+                <td>{getPartNumber(item.pc_product)}</td>
                 <td
                   className={
                     item.pc_status === "요청 대기"
