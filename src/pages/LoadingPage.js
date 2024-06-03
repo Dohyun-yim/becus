@@ -21,7 +21,7 @@ const LoadingPage = () => {
       setCustomerInfo(res.data.user); // 고객 정보를 상태로 저장
       // localStorage에 고객 정보와 만료 시간을 저장
       setItemWithExpireTime("customerInfo", res.data.user, 2 * 60 * 60 * 1000); // 2시간 만료시간 설정
-      navigate("/cus/connect");
+      navigate("/cus");
       window.location.reload(true);
     } catch (error) {
       console.log(error);
