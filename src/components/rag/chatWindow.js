@@ -21,9 +21,8 @@ function ChatWindow({ messages }) {
             className={`${styles.chatMessage} ${
               msg.fromUser ? styles.userMessage : styles.responseMessage
             }`}
-          >
-            {msg.text}
-          </div>
+            dangerouslySetInnerHTML={{ __html: msg.text }}
+          />
         </div>
       ))}
     </div>
