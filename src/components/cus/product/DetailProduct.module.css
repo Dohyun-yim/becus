@@ -159,6 +159,11 @@
     padding: 20px 0;
   }
 
+  .DetailproductName {
+    display: flex;
+    flex-direction: column;
+  }
+
   .DetailproductName h1 {
     font-size: 30px;
   }
