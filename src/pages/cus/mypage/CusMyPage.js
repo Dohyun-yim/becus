@@ -15,13 +15,6 @@ function deleteCookie(name) {
 function CusMyPage() {
   const navigate = useNavigate();
 
-  const handleUnsubscribe = () => {
-    const confirmUnsubscribe = window.confirm("회원 탈퇴를 진행하시겠습니까?");
-    if (confirmUnsubscribe) {
-      console.log("회원 탈퇴 성공.");
-    }
-  };
-
   const handleDocumentView = () => {
     navigate("/cus/mypage/documents");
   };
@@ -72,7 +65,6 @@ function CusMyPage() {
         <ul>
           <li onClick={handleDocumentView}>작성문서 조회</li>
           <li onClick={handleLogout}>로그아웃</li>
-          <li onClick={handleUnsubscribe}>회원 탈퇴</li>
         </ul>
       </div>
     </div>
