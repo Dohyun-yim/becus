@@ -26,7 +26,7 @@ function Cus_MainPage() {
           paddingLeft: "100px",
         }}
       >
-        <div className="col">
+        <div className="col" style={{ marginBottom: "20px" }}>
           <div
             className="card mb-4 rounded-3 shadow-sm"
             style={{ height: "100%" }}
@@ -55,7 +55,7 @@ function Cus_MainPage() {
           </div>
         </div>
 
-        <div className="col">
+        <div className="col" style={{ marginBottom: "20px" }}>
           <div
             className="card mb-4 rounded-3 shadow-sm"
             style={{ height: "100%" }}
@@ -83,7 +83,7 @@ function Cus_MainPage() {
           </div>
         </div>
 
-        <div className="col">
+        <div className="col" style={{ marginBottom: "20px" }}>
           <div
             className="card mb-4 rounded-3 shadow-sm"
             style={{ height: "100%" }}

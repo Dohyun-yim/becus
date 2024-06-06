@@ -46,6 +46,20 @@ function DetailProduct() {
     navigate(-1);
   };
 
+  const getYouTubeEmbedUrl = (url) => {
+    let videoId = "";
+    if (url.includes("youtu.be")) {
+      videoId = url.split("youtu.be/")[1];
+    } else if (url.includes("youtube.com")) {
+      videoId = url.split("v=")[1];
+      const ampersandPosition = videoId.indexOf("&");
+      if (ampersandPosition !== -1) {
+        videoId = videoId.substring(0, ampersandPosition);
+      }
+    }
+    return videoId;
+  };
+
   return (
     <div className={styles.DetailproductContainer}>
       <div className={styles.DetailcontentContainer}>
@@ -61,9 +75,7 @@ function DetailProduct() {
             <h1>{product.p_name}</h1>
             <h2>{product.p_number}</h2>
           </div>
-          <p className={styles.DetailproductDescription}>
-            {product.p_content} {/* 수정된 부분 */}
-          </p>
+          <p className={styles.DetailproductDescription}>{product.p_content}</p>
           <table className={styles.productDetailsTable}>
             <tbody>
               <tr>
@@ -72,7 +84,7 @@ function DetailProduct() {
               </tr>
               <tr>
                 <th>기계 중량</th>
-                <td>{product.p_netweight}</td> {/* 수정된 부분 */}
+                <td>{product.p_netweight}</td>
               </tr>
               <tr>
                 <th>처리 능력</th>
@@ -80,6 +92,20 @@ function DetailProduct() {
               </tr>
             </tbody>
           </table>
+          {product.p_video && (
+            <div className={styles.DetailproductVideo}>
+              <iframe
+                width="560"
+                height="315"
+                src={`https://www.youtube.com/embed/${getYouTubeEmbedUrl(
+                  product.p_video
+                )}`}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
         </div>
       </div>
       <div className={styles.DetailbuttonContainer}>

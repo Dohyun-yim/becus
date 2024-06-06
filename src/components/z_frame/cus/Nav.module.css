@@ -37,7 +37,7 @@ ul.menu a:active {
 .chatbotButton {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-decoration: none;
   color: #ffffff;
   background: linear-gradient(135deg, #6d5dfc, #3f9efc);
@@ -54,7 +54,7 @@ ul.menu a:active {
 .chatbotIcon {
   width: 30px;
   height: 30px;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 .chatbotButton:hover {
@@ -64,11 +64,20 @@ ul.menu a:active {
 }
 
 @media (max-width: 480px) {
-  .chatbotButton span::after {
-    content: attr(data-text);
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .chatbotButton span[data-text="문의"]::after {
-    content: "문의";
+  .chatbotButton {
+    font-size: 14px; /* 모바일 화면에서 버튼의 폰트 크기를 줄입니다. */
+    padding: 8px; /* 모바일 화면에서 버튼의 패딩을 조정합니다. */
+  }
+
+  .chatbotIcon {
+    width: 20px; /* 아이콘 크기 조정 */
+    height: 20px; /* 아이콘 크기 조정 */
+    margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 조정 */
   }
 }

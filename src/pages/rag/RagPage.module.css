@@ -27,3 +27,25 @@
   border-radius: 30px;
   cursor: pointer;
 }
+
+/* 태블릿 및 작은 화면을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .ragContainer {
+    max-width: 100%;
+    margin: 0;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .refreshContainer {
+    justify-content: end;
+  }
+}
+
+/* 스마트폰을 위한 미디어 쿼리 */
+@media (max-width: 480px) {
+  .ragContainer {
+    height: 100vh;
+  }
+}

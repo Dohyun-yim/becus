@@ -9,7 +9,7 @@
 .selectInput,
 .textInput {
   flex: 1;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: 1px solid #dcdfe6;
   border-radius: 20px;
   font-size: 16px;
@@ -24,7 +24,7 @@
 
 .chatInput button {
   margin-left: 10px;
-  padding: 10px 20px;
+  padding: 10px 30px;
   border: none;
   background-color: #13233c;
   color: white;
@@ -36,4 +36,29 @@
 
 .chatInput button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+  .chatInput {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+
+  .selectInput,
+  .textInput {
+    flex: 4;
+    font-size: 15px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+  }
+
+  .chatInput button {
+    flex: 1;
+    padding: 10px;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    width: auto;
+  }
 }

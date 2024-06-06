@@ -12,8 +12,11 @@ const Services = () => {
               <div className="mb-2">
                 <i className="bi-telephone-plus-fill fs-1 text-primary"></i>
               </div>
-              <h3 className="h4 mb-2">부재중 통화 관리</h3>
-              <p className="text-muted mb-0">Manage missed calls</p>
+              <h3 className="h4 mb-2">통화 요약 및 분류</h3>
+              <p className="text-muted mb-0">
+                {" "}
+                Phone Summary and Classification
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 text-center">
@@ -21,8 +24,8 @@ const Services = () => {
               <div className="mb-2">
                 <i className="bi-telephone-inbound-fill fs-1 text-primary"></i>
               </div>
-              <h3 className="h4 mb-2">수신 통화 목록 관리</h3>
-              <p className="text-muted mb-0">Manage incoming call lists</p>
+              <h3 className="h4 mb-2">QA 시스템</h3>
+              <p className="text-muted mb-0">Question & Answer System</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 text-center">
